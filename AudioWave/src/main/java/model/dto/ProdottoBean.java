@@ -135,7 +135,6 @@ public class ProdottoBean {
 	public double getPrezzoConIva() {
 		
 		return (double) Math.round((((prezzo * iva) / 100) + prezzo) * 100) / 100;
-		//return ((prezzo * iva) / 100) + prezzo;
 	}
 	
 	public int getDisponibilita() {
