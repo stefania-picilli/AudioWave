@@ -61,10 +61,6 @@ public class OrdineTesterSerblet extends HttpServlet {
 		
 		try {
 			
-			List<OrdineBean> list = (List<OrdineBean>) dao.doRetrieveByParameters(null, null, null, "data");
-			
-			for(OrdineBean o : list)
-				System.out.println(o);
 			
 			
 			String data = dao.doRetrievePrimaData();
@@ -92,7 +88,7 @@ public class OrdineTesterSerblet extends HttpServlet {
 			
 			
 			
-			Collection<OrdineBean> coll = dao.doRetrieveAll("");
+			Collection<OrdineBean> coll = dao.doRetrieveAll();
 			
 			Iterator<OrdineBean> iter = coll.iterator();
 			

@@ -58,7 +58,7 @@ public class UtenteTesterServlet extends HttpServlet {
 			System.out.println("bean=" + beanCaricato);
 			
 			
-			Collection<UtenteBean> coll = dao.doRetrieveAll("email");
+			Collection<UtenteBean> coll = dao.doRetrieveAll();
 			
 			Iterator<UtenteBean> iter = coll.iterator();
 			

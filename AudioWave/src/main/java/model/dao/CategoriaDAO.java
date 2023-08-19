@@ -151,7 +151,7 @@ public class CategoriaDAO {
 		
 	}
 	
-	public Collection<CategoriaBean> doRetrieveAll(String order) throws SQLException{
+	public Collection<CategoriaBean> doRetrieveAll() throws SQLException{
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -160,14 +160,10 @@ public class CategoriaDAO {
 
 		String selectSQL = "SELECT * FROM " + CategoriaDAO.TABLE_NAME;
 
-		if (order != null && !order.equals("")) {
-			selectSQL += " ORDER BY " + order;
-		}
-
 		try {
 			con = ds.getConnection();
 			ps = con.prepareStatement(selectSQL);
-
+			
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {

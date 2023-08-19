@@ -208,7 +208,7 @@ public class UtenteDAO {
 	}
 	
 	
-	public Collection<UtenteBean> doRetrieveAll(String order) throws SQLException{
+	public Collection<UtenteBean> doRetrieveAll() throws SQLException{
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -216,10 +216,6 @@ public class UtenteDAO {
 		Collection<UtenteBean> accounts = new LinkedList<UtenteBean>();
 
 		String selectSQL = "SELECT * FROM " + UtenteDAO.TABLE_NAME;
-
-		if (order != null && !order.equals("")) {
-			selectSQL += " ORDER BY " + order;
-		}
 
 		try {
 			con = ds.getConnection();

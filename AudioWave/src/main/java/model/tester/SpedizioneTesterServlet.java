@@ -55,7 +55,7 @@ SpedizioneBean bean = new SpedizioneBean();
 			System.out.println("beanCaricato=" + beanCaricato);
 			
 			
-			Collection<SpedizioneBean> coll = dao.doRetrieveAll("");
+			Collection<SpedizioneBean> coll = dao.doRetrieveAll();
 			
 			Iterator<SpedizioneBean> iter = coll.iterator();
 			

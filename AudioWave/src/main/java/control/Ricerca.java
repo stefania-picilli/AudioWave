@@ -152,6 +152,9 @@ public class Ricerca extends HttpServlet {
 	
 	private static double maxPrezzo(List<ProdottoBean> list) {
 		
+		if(list == null)
+			return 0;
+		
 		double max = 0;
 		
 		for(ProdottoBean prodotto : list) 

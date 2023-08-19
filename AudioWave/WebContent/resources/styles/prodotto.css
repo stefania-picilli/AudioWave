@@ -1,0 +1,225 @@
+@charset "ISO-8859-1";
+
+
+
+.message{
+	
+	width: 100%;
+	
+	
+	overflow: hidden;
+	padding: 5px 0px; 
+	
+	height: 70px;
+	
+	/*display: none;*/
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	
+}
+
+
+
+.message-txt{
+	
+	float: left;
+	
+	width: 40%;
+	
+	/*display: flex;
+	justify-content: flex-start;
+	align-items: center;*/
+	
+}
+
+
+.message-txt div{
+	
+	margin-left: 20px;
+	
+}
+
+.message-txt h3, .message-txt h4{
+	
+	text-align: left;
+	margin: 2px 0px;
+	
+}
+
+
+
+
+.mess-btn-wrap{
+	
+	float: right;
+	width: 45%;
+	
+	height: 100%;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+.message-btn{
+	
+	width: 45%;
+	float: left;
+	
+	/*height: 100%;*/
+	
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	
+}
+
+
+.message-btn button{
+	
+	border-radius: 10px;
+	padding: 8px 65px;
+	
+}
+
+/*.messaggio h3, .messaggio h4{
+	
+	text-align: center;
+	margin: 8px 0px;
+	
+}*/
+
+
+/*
+.mess-btn-wrap{
+	
+	width: 55%;
+	float: right;
+	
+	height: 100%;
+	
+	overflow: hidden;
+	
+}
+
+.message-btn{
+	
+	width: 45%;
+	float: left;
+	
+	height: 100%;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+.message-btn button{
+	
+	border-radius: 10px;
+	padding: 8px 65px;
+	
+}
+
+.message-txt{
+	
+	width: 40%;
+	float: left;
+	
+	height: 100%;
+	
+	
+}*/
+
+.line{
+	
+	width: 100%;
+	
+}
+
+
+#prodotto{
+	
+	overflow: auto;
+	width: 100%;
+	
+	
+}
+
+#immagine{
+	
+	float: left;
+	width: 60%;
+	
+}
+
+
+#immagine img{
+	
+	max-width: 100%;
+	height: auto;
+	
+	
+}
+
+
+#info-prod{
+	
+	float: right;
+	width: 35%;
+	text-align: left;
+	
+}
+
+#carrello-btn, #acquista-btn{
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	margin: 15px 0px;
+	
+}
+
+#carrello-btn button, #acquista-btn button{
+	
+	border-radius: 10px;
+	padding: 15px 60px;
+	width: 100%;
+	
+}
+
+#info-prod > div{
+	
+	margin-bottom: 25px;
+	
+}
+
+#prod-action{
+	
+	margin-top: 70px;
+	
+}
+
+
+#prodotto{
+	
+	margin-bottom: 50px;
+	
+}
+
+#descrizione{
+	
+	width: 100%;
+	clear: both;
+	
+	margin: 20px 0px;
+	
+}

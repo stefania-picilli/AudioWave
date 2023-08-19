@@ -206,7 +206,7 @@ public class SpedizioneDAO {
 	}
 	
 	
-	public Collection<SpedizioneBean> doRetrieveAll(String order) throws SQLException{
+	public Collection<SpedizioneBean> doRetrieveAll() throws SQLException{
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -215,9 +215,6 @@ public class SpedizioneDAO {
 
 		String selectSQL = "SELECT * FROM " + SpedizioneDAO.TABLE_NAME;
 
-		if (order != null && !order.equals("")) {
-			selectSQL += " ORDER BY " + order;
-		}
 
 		try {
 			con = ds.getConnection();

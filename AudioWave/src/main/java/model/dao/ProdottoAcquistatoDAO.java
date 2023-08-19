@@ -217,7 +217,7 @@ public class ProdottoAcquistatoDAO {
 	}
 	
 	
-	public Collection<ProdottoAcquistatoBean> doRetrieveAll(String order) throws SQLException{
+	public Collection<ProdottoAcquistatoBean> doRetrieveAll() throws SQLException{
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -225,10 +225,6 @@ public class ProdottoAcquistatoDAO {
 		Collection<ProdottoAcquistatoBean> accounts = new LinkedList<ProdottoAcquistatoBean>();
 
 		String selectSQL = "SELECT * FROM " + ProdottoAcquistatoDAO.TABLE_NAME;
-
-		if (order != null && !order.equals("")) {
-			selectSQL += " ORDER BY " + order;
-		}
 
 		try {
 			con = ds.getConnection();

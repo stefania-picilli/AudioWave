@@ -55,7 +55,7 @@ public class CategoriaTesterServlet extends HttpServlet {
 			
 			dao.doSave(bean);
 		
-			Collection<CategoriaBean> coll = dao.doRetrieveAll("nome");
+			Collection<CategoriaBean> coll = dao.doRetrieveAll();
 			
 			Iterator<CategoriaBean> iter = coll.iterator();
 			

@@ -41,7 +41,7 @@ public class Home extends HttpServlet {
 			CategoriaDAO categoriaDAO = new CategoriaDAO();
 			ProdottoDAO prodottoDAO;
 		
-			List<CategoriaBean> categorie = (List<CategoriaBean>) categoriaDAO.doRetrieveAll("");
+			List<CategoriaBean> categorie = (List<CategoriaBean>) categoriaDAO.doRetrieveAll();
     	
 			
 			RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/home.jsp");

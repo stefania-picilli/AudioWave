@@ -26,7 +26,7 @@ public class MyContextListener implements ServletContextListener {
     	
     	try {
     		
-    		List<CategoriaBean> categorie = (List<CategoriaBean>) categoriaDAO.doRetrieveAll("");
+    		List<CategoriaBean> categorie = (List<CategoriaBean>) categoriaDAO.doRetrieveAll();
     		sc.setAttribute("categorie", categorie);
     	
     	}catch(SQLException e) {

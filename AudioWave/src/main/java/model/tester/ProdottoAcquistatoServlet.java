@@ -59,7 +59,7 @@ public class ProdottoAcquistatoServlet extends HttpServlet {
 			System.out.println("beanCaricato=" + beanCaricato);
 			
 			
-			Collection<ProdottoAcquistatoBean> coll = dao.doRetrieveAll("");
+			Collection<ProdottoAcquistatoBean> coll = dao.doRetrieveAll();
 			
 			Iterator<ProdottoAcquistatoBean> iter = coll.iterator();
 			

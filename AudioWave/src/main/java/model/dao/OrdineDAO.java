@@ -170,7 +170,7 @@ public class OrdineDAO {
 		
 	}
 	
-	public Collection<OrdineBean> doRetrieveByAccount(String email, String order) throws SQLException{
+	public Collection<OrdineBean> doRetrieveByAccount(String email) throws SQLException{
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -178,12 +178,9 @@ public class OrdineDAO {
 		Collection<OrdineBean> accounts = new LinkedList<OrdineBean>();
 
 		String selectSQL = "SELECT * FROM " + OrdineDAO.TABLE_NAME + " WHERE email = ?";
-		
-		if (order != null && !order.equals("")) {
-			selectSQL += " ORDER BY " + order;
-		}
 
 		try {
+			
 			con = ds.getConnection();
 			ps = con.prepareStatement(selectSQL);
 
@@ -226,7 +223,7 @@ public class OrdineDAO {
 	
 	
 	
-	public Collection<OrdineBean> doRetrieveAll(String order) throws SQLException{
+	public Collection<OrdineBean> doRetrieveAll() throws SQLException{
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -235,9 +232,6 @@ public class OrdineDAO {
 
 		String selectSQL = "SELECT * FROM " + OrdineDAO.TABLE_NAME;
 
-		if (order != null && !order.equals("")) {
-			selectSQL += " ORDER BY " + order;
-		}
 
 		try {
 			con = ds.getConnection();
@@ -278,91 +272,6 @@ public class OrdineDAO {
 		
 	}
 	
-	public Collection<OrdineBean> doRetrieveByParameters(String email, String da, String a, String order) throws SQLException{
-		
-		Connection con = null;
-		PreparedStatement ps = null;
-
-		Collection<OrdineBean> accounts = new LinkedList<OrdineBean>();
-		String selectSQL = "SELECT * FROM " + OrdineDAO.TABLE_NAME; 
-		int caso = 0;
-		
-		if((da != "" && da != null && a != null && a != "") && (email != "" && email != null)) { 
-			
-			selectSQL += " WHERE email = ? AND data BETWEEN ? AND ?";
-			caso = 1;
-			
-		}else if(da != "" && da != null && a != "" && a != null) { 
-			
-			selectSQL += " WHERE data BETWEEN ? AND ?";
-			caso = 2;
-			
-		}else if(email != "" && email != null) {
-			
-			selectSQL += " WHERE email = ?";
-			caso = 3; 
-			
-		}
-		
-		if (order != null && !order.equals("")) {
-			selectSQL += " ORDER BY " + order;
-		}
-
-		try {
-			con = ds.getConnection();
-			ps = con.prepareStatement(selectSQL);
-			
-			if(caso == 1) {
-				
-				ps.setString(1, email);
-				ps.setString(2, da);
-				ps.setString(3, a);
-				
-			}else if(caso == 2) {
-				
-				ps.setString(1, da);
-				ps.setString(2, a);
-				
-			}else if(caso == 3){
-				
-				ps.setString(1, email);
-				
-			}
-			
-			ResultSet rs = ps.executeQuery();
-
-			while (rs.next()) {
-				
-				OrdineBean bean = new OrdineBean();
-
-				bean.setNumeroOrdine(rs.getInt("numeroOrdine"));
-				bean.setData(rs.getString("data"));
-				bean.setIndirizzo(rs.getString("indirizzo"));
-				bean.setStatoOrdine(rs.getString("statoOrdine"));
-				bean.setCostoTotale(rs.getDouble("costoTotale"));
-				bean.setMetodoPagamento(rs.getString("metodoPagamento"));
-				bean.setEmail(rs.getString("email"));
-				
-				
-				accounts.add(bean);
-			
-			}
-
-		} finally {
-			try {
-				if (ps != null)
-					ps.close();
-			} finally {
-				if (con != null)
-					con.close();
-			}
-		}
-		
-		return accounts;
-		
-		
-		
-	}
 
 	
 	public String doRetrievePrimaData() throws SQLException{
