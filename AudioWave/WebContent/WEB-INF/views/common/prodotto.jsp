@@ -5,7 +5,7 @@
 <%@ page import="java.util.List" %> 
   
 <!DOCTYPE html>
-<html>
+<html lang="it">
 	<head>
 		<link rel="stylesheet" href="resources/styles/prodotto.css" type="text/css" >
 		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >

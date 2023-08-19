@@ -38,6 +38,7 @@ public class OrdineDAO {
 		
 		Connection con = null;
 		PreparedStatement ps = null;
+		Statement stm = null;
 
 		String insertSQL = "INSERT INTO " + OrdineDAO.TABLE_NAME
 				+ " (data, indirizzo, statoOrdine, costoTotale, metodoPagamento, email) VALUES (?, ?, ?, ?, ?, ?);";
@@ -59,7 +60,7 @@ public class OrdineDAO {
 			ps.executeUpdate();
 
 			
-			Statement stm = con.createStatement();
+			stm = con.createStatement();
 			String selectSQL = "SELECT LAST_INSERT_ID();";
 			
 			ResultSet rs = stm.executeQuery(selectSQL);
@@ -75,8 +76,14 @@ public class OrdineDAO {
 				if (ps != null)
 					ps.close();
 			} finally {
-				if (con != null)
-					con.close();
+				
+				try {
+					if (con != null)
+						con.close();
+				}finally {
+					if (stm != null)
+						stm.close();
+				}
 			}
 		}
 		

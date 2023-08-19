@@ -40,7 +40,7 @@ public class Ricerca extends HttpServlet {
 		
 		try {
 		
-			if(categoria != null && categoria != ""){
+			if(categoria != null && !categoria.equals("")){
 				
 				ProdottoDAO prodottoDAO = new ProdottoDAO();
 				coll = prodottoDAO.doRetrieveByCategoria(categoria);
@@ -49,7 +49,7 @@ public class Ricerca extends HttpServlet {
 				request.setAttribute("rimuovicat", 1);
 				
 				
-			}else if(search != null && search != "") {
+			}else if(search != null && !search.equals("")) {
 			
 				ProdottoDAO prodottoDAO = new ProdottoDAO();
 				coll = search(prodottoDAO, search);

@@ -158,21 +158,5 @@ public class ProdottoBean {
 	}
 	
 	
-	public boolean equals(Object obj) {
-		
-		if(obj == null)
-			return false;
-		
-		if(getClass() != obj.getClass())
-			return false;
-		
-		ProdottoBean prod = (ProdottoBean) obj;
-		
-		return codiceProdotto == prod.codiceProdotto && nome.equals(prod.nome) && marca.equals(prod.marca) && descrizione.equals(prod.descrizione) && 
-				immagine.equals(prod.immagine) && prezzo == prod.prezzo && iva == prod.iva && disponibilita == prod.disponibilita &&
-				categoriaID == prod.categoriaID;
-		
-	}
-	
 	
 }
