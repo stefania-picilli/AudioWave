@@ -17,8 +17,6 @@ public class ProdottoBean {
 	
 	public ProdottoBean() {
 		
-		
-		
 	}
 	
 	public void setCodiceProdotto(int num) {
