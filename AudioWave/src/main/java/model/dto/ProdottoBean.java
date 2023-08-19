@@ -6,6 +6,7 @@ public class ProdottoBean {
 	private String nome;
 	private String marca;
 	private String descrizione;
+	private String tag;
 	private String immagine;
 	private double prezzo;
 	private double iva;
@@ -41,6 +42,12 @@ public class ProdottoBean {
 	public void setDescrizione(String str) {
 		
 		descrizione = str;
+		
+	}
+	
+	public void setTag(String str) {
+		
+		tag = str;
 		
 	}
 	
@@ -101,6 +108,12 @@ public class ProdottoBean {
 		
 	}
 	
+	public String getTag() {
+		
+		return tag;
+		
+	}
+	
 	public String getImmagine() {
 		
 		return immagine;
@@ -139,12 +152,9 @@ public class ProdottoBean {
 	
 	
 	public String toString() {
-		
-		return getClass().getName() + "[codiceProdotto=" + codiceProdotto + 
-		",nome=" + nome + ",marca=" + marca +  ",descrizione=" + 
-		descrizione + ",immagine=" + immagine + ",prezzo=" + prezzo +   
-		",disponibilita=" + "iva=" + iva +  ",categoriaID=" + categoriaID + "]";
-		
+		return "ProdottoBean [codiceProdotto=" + codiceProdotto + ", nome=" + nome + ", marca=" + marca
+				+ ", descrizione=" + descrizione + ", tag=" + tag + ", immagine=" + immagine + ", prezzo=" + prezzo
+				+ ", iva=" + iva + ", disponibilita=" + disponibilita + ", categoriaID=" + categoriaID + "]";
 	}
 	
 	

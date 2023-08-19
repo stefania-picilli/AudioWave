@@ -59,7 +59,7 @@ body{
 
 #content{
 	
-	margin-top: 190px;
+	margin-top: 100px;
 
 	max-width: 1500px;
 	width: 90%;
@@ -71,6 +71,45 @@ body{
 }
 
 
+.box{
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: #E3DBDB;
+	border-radius: 10px;
+	background-color: #FFFEFE;
+	
+}
+
+.cta-button, .reverse-button:hover{
+	
+	border: solid;
+	border-color: #2D86F6;
+	border-width: 1px;
+	
+	background-color: #2D86F6;
+	color: #FFFEFE;
+	
+	cursor:pointer;
+	transition-duration: 0.4s;
+	
+}
+
+
+.reverse-button, .cta-button:hover{ /*es utilizzo, messaggio carrello, hover, header*/
+	
+	border: solid;
+	border-color: #2D86F6;
+	border-width: 1px;
+	 
+	background-color: #FFFEFE;
+	color: #2D86F6;
+	
+	cursor:pointer;
+	transition-duration: 0.4s;
+	
+}
+
 
 .action-icon{
 	
@@ -81,5 +120,16 @@ body{
 .grey-action-icon{
 	
 	color: #ACA6A6;
+	
+}
+
+
+.line{
+	
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #E3DBDB;
+	background-color: #FFFEFE;
+	
 	
 }

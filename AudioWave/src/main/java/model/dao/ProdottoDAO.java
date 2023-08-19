@@ -39,7 +39,7 @@ public class ProdottoDAO {
 		PreparedStatement ps = null;
 
 		String insertSQL = "INSERT INTO " + ProdottoDAO.TABLE_NAME
-				+ " (nome, marca, descrizione,	immagine, prezzo, disponibilita, IVA, categoriaID) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+				+ " (nome, marca, descrizione,	immagine, tag, prezzo, disponibilita, IVA, categoriaID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			
@@ -49,10 +49,11 @@ public class ProdottoDAO {
 			ps.setString(2, prodotto.getMarca());
 			ps.setString(3, prodotto.getDescrizione());
 			ps.setString(4, prodotto.getImmagine());
-			ps.setDouble(5, prodotto.getPrezzo());
-			ps.setInt(6, prodotto.getDisponibilita());
-			ps.setDouble(7, prodotto.getIva());
-			ps.setInt(8, prodotto.getCategoriaID());
+			ps.setString(5, prodotto.getTag());
+			ps.setDouble(6, prodotto.getPrezzo());
+			ps.setInt(7, prodotto.getDisponibilita());
+			ps.setDouble(8, prodotto.getIva());
+			ps.setInt(9, prodotto.getCategoriaID());
 			
 			
 			ps.executeUpdate();
@@ -137,6 +138,7 @@ public class ProdottoDAO {
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
 				bean.setImmagine(rs.getString("immagine"));
+				bean.setTag(rs.getString("tag"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));
 				bean.setIva(rs.getDouble("iva"));
@@ -163,73 +165,6 @@ public class ProdottoDAO {
 	}
 	
 	
-	public Collection<ProdottoBean> doRetrieveByVenduti(String limit) throws SQLException{
-		
-		
-		Connection con = null;
-		PreparedStatement ps = null;
-
-		Collection<ProdottoBean> prodotti = new LinkedList<ProdottoBean>();
-
-		String selectSQL = "SELECT * FROM " + ProdottoDAO.TABLE_NAME + " AS P, " + ProdottoAcquistatoDAO.TABLE_NAME + " AS A " + 
-							"WHERE P.codiceProdotto = A.codiceProdotto " +
-							"GROUP BY P.codiceProdotto " +
-							"ORDER BY COUNT(*) DESC";
-		
-		if(limit != null && limit != "") 
-			selectSQL += " LIMIT ?";
-			
-			try {
-				con = ds.getConnection();
-				ps = con.prepareStatement(selectSQL);
-	
-				
-				if(limit != null && limit != "") 
-					ps.setInt(1, Integer.parseInt(limit));
-				
-					
-				ResultSet rs = ps.executeQuery();
-	
-				while (rs.next()) {
-					
-					ProdottoBean bean = new ProdottoBean();
-	
-					bean.setCodiceProdotto(rs.getInt("codiceProdotto"));
-					bean.setNome(rs.getString("nome"));
-					bean.setMarca(rs.getString("marca"));
-					bean.setDescrizione(rs.getString("descrizione"));
-					bean.setImmagine(rs.getString("immagine"));
-					bean.setPrezzo(rs.getDouble("prezzo"));
-					bean.setDisponibilita(rs.getInt("disponibilita"));
-					bean.setIva(rs.getDouble("iva"));
-					bean.setCategoriaID(rs.getInt("categoriaID"));
-					
-					prodotti.add(bean);
-					
-				}
-				
-	
-				if(prodotti.size() == 0)
-					prodotti = null;
-
-			} finally {
-				try {
-					if (ps != null)
-						ps.close();
-				} finally {
-					if (con != null)
-						con.close();
-				}
-			}
-		
-		return prodotti;
-		
-		
-		
-	}
-	
-	
-	
 	
 	
 	
@@ -244,7 +179,7 @@ public class ProdottoDAO {
 
 		
 		String selectSQL = "SELECT * FROM " + ProdottoDAO.TABLE_NAME + 
-						   " WHERE nome LIKE ? OR descrizione LIKE ? OR marca LIKE ?" + 
+						   " WHERE nome LIKE ? OR marca LIKE ? OR tag LIKE ?" + 
 						   	" ORDER BY codiceProdotto";
 
 		try {
@@ -253,7 +188,7 @@ public class ProdottoDAO {
 
 			ps.setString(1, "%" + search + "%");
 			ps.setString(2, "%" + search + "%");
-			ps.setString(3, search + "%");
+			ps.setString(3, "%" + search + "%");
 			
 			rs = ps.executeQuery();
 
@@ -265,6 +200,7 @@ public class ProdottoDAO {
 				bean.setNome(rs.getString("nome"));
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setTag(rs.getString("tag"));
 				bean.setImmagine(rs.getString("immagine"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));
@@ -325,6 +261,7 @@ public class ProdottoDAO {
 				bean.setNome(rs.getString("nome"));
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setTag(rs.getString("tag"));
 				bean.setImmagine(rs.getString("immagine"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));
@@ -400,7 +337,7 @@ public class ProdottoDAO {
 		PreparedStatement ps = null;
 
 		String updateSQL =  "UPDATE " + ProdottoDAO.TABLE_NAME
-							+ " SET	nome = ?, marca = ?, descrizione = ?, immagine = ?, prezzo = ?, disponibilita = ?, iva = ?, categoriaID = ?"
+							+ " SET	nome = ?, marca = ?, descrizione = ?, immagine = ?, tag = ?, prezzo = ?, disponibilita = ?, iva = ?, categoriaID = ?"
 							+ " WHERE codiceProdotto = ?;";
 
 		try {
@@ -412,11 +349,12 @@ public class ProdottoDAO {
 			ps.setString(2, prodotto.getMarca());
 			ps.setString(3, prodotto.getDescrizione());
 			ps.setString(4, prodotto.getImmagine());
-			ps.setDouble(5, prodotto.getPrezzo());
-			ps.setInt(6, prodotto.getDisponibilita());
-			ps.setDouble(7, prodotto.getIva());
-			ps.setInt(8, prodotto.getCategoriaID());
-			ps.setInt(9, prodotto.getCodiceProdotto());
+			ps.setString(5, prodotto.getTag());
+			ps.setDouble(6, prodotto.getPrezzo());
+			ps.setInt(7, prodotto.getDisponibilita());
+			ps.setDouble(8, prodotto.getIva());
+			ps.setInt(9, prodotto.getCategoriaID());
+			ps.setInt(10, prodotto.getCodiceProdotto());
 			
 			ps.executeUpdate();
 
@@ -465,6 +403,7 @@ public class ProdottoDAO {
 				bean.setNome(rs.getString("nome"));
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setTag(rs.getString("tag"));
 				bean.setImmagine(rs.getString("immagine"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));
@@ -516,6 +455,7 @@ public class ProdottoDAO {
 				bean.setNome(rs.getString("nome"));
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setTag(rs.getString("tag"));
 				bean.setImmagine(rs.getString("immagine"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));

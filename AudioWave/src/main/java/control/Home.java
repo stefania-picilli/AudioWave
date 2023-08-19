@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.dao.CategoriaDAO;
 import model.dao.ProdottoDAO;
-import model.dto.ProdottoBean;
+import model.dto.CategoriaBean;
 
 /**
  * Servlet implementation class Home
@@ -37,11 +38,11 @@ public class Home extends HttpServlet {
 		
 		try {
 		
-			ProdottoDAO prodottoDAO = new ProdottoDAO();
-			
-			List<ProdottoBean> venduti = (List<ProdottoBean>) prodottoDAO.doRetrieveByVenduti("4");
-			request.setAttribute("venduti", venduti);
-			
+			CategoriaDAO categoriaDAO = new CategoriaDAO();
+			ProdottoDAO prodottoDAO;
+		
+			List<CategoriaBean> categorie = (List<CategoriaBean>) categoriaDAO.doRetrieveAll("");
+    	
 			
 			RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/home.jsp");
 			dis.forward(request, response);

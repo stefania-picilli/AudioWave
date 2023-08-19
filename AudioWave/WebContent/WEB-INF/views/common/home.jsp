@@ -28,7 +28,7 @@
 		
 		
 		
-			<div id="venduti" class="gruppo-prodotti">
+			<!-- <div id="venduti" class="gruppo-prodotti">
 			
 				<div class="info-prodotti">
 				
@@ -65,7 +65,7 @@
 					
 					
 				<div class="altro">
-						<!-- <a href='${pageContext.request.contextPath}/Ricerca?param=ven'>Visualizza altro</a>-->
+						<!-- <a href='${pageContext.request.contextPath}/Ricerca?param=ven'>Visualizza altro</a>
 						<form action='${pageContext.request.contextPath}/Ricerca' method="get">
 							 <input type="hidden" name="param" value="ven">
 						 	 <button class="cta-button">Visualizza altro</button>
@@ -75,7 +75,7 @@
 					
 				
 			
-			</div>
+			</div>-->
 		
 		
 				

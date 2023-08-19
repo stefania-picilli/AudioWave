@@ -1,0 +1,204 @@
+@charset "ISO-8859-1";
+
+
+#filtri{
+	
+	width: 100%;
+	overflow: auto;
+	
+	box-sizing: border-box;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+}
+
+#item-group{
+	
+	display: flex;
+	justify-content: flex-start;
+    align-items: center;
+    
+  	flex-grow: 2;
+  
+}
+
+
+.filtro-item{
+	
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    
+    padding-right: 100px;
+	
+}
+
+
+/*.filtro-item > div{
+	
+	padding-right: 20px;
+	
+}*/
+
+.filtro-item input, .filtro-item select{
+	
+	padding: 10px 15px;
+	
+}
+
+#prezzo-da, #prezzo-a{
+	
+	width: 50%;
+	
+}
+
+
+.filtro-action{
+	
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-grow: 1;
+	
+}
+
+
+.filtro-action button{
+	
+	padding: 10px 70px;
+	border-radius: 6px;
+	
+}
+
+
+
+.line{
+	
+	margin-top: 20px;
+	margin-bottom: 30px;
+	width: 100%;
+	
+}
+
+
+.tab-prodotti{
+	
+	
+	
+	width: 100%;
+	
+	margin: 10px 0px;
+	
+	padding: 20px 0px;
+	
+	overflow: auto;
+	
+	display: grid;
+	grid-template-columns: 22% 22% 22% 22%;
+	column-gap: 2%;
+	row-gap: 20px;
+	justify-content: space-evenly;
+  	justify-items: center;
+ 	align-content: space-evenly;
+  	align-items: center;
+	
+}
+
+.img img{
+	
+	max-width: 100%;
+	height: auto;
+	
+}
+
+
+.prodotto{
+
+	background-color: white;
+	
+	/*margin: 5px 10px;*/
+	
+	padding: 5px;
+	
+	/*width: 23%;*/
+	width: 100%;
+	/*float: left;*/
+	
+	
+}
+
+
+.hidden-info{
+	display: none;
+}
+
+.img{
+	overflow: hidden;
+}
+
+
+
+
+.info{
+	text-align: left;
+	padding: 15px;
+}
+
+
+
+h1{
+	
+	margin-bottom: 80px;
+	
+}
+
+
+h3{
+	
+	margin-top: 10px;
+	margin-bottom: 0px;
+	
+}
+
+span{
+	
+	display: block;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	
+}
+
+
+@media screen and (max-width: 1200px){
+	
+	.tab-prodotti{
+	
+		grid-template-columns: 30% 30% 30%;
+	
+	}
+	
+}
+
+
+@media screen and (max-width: 900px){
+	
+	.tab-prodotti{
+	
+		grid-template-columns: 45% 45%;
+	
+	}
+	
+}
+
+
+@media screen and (max-width: 700px){
+	
+	.tab-prodotti{
+	
+		grid-template-columns: 90%;
+	
+	}
+	
+}
