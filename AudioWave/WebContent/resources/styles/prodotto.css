@@ -5,53 +5,26 @@
 .message{
 	
 	width: 100%;
-	
-	
 	overflow: hidden;
-	padding: 5px 0px; 
-	
-	height: 70px;
-	
-	/*display: none;*/
-	
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	
+	padding: 20px 0px; 
 	
 }
-
-
 
 .message-txt{
 	
 	float: left;
-	
 	width: 40%;
-	
-	/*display: flex;
-	justify-content: flex-start;
-	align-items: center;*/
-	
+	margin-left: 30px; 
+
 }
 
-
-.message-txt div{
-	
-	margin-left: 20px;
-	
-}
-
-.message-txt h3, .message-txt h4{
+.message-txt .p3, .message-txt h4{
 	
 	text-align: left;
 	margin: 2px 0px;
 	
 }
 
-
-
-
 .mess-btn-wrap{
 	
 	float: right;
@@ -59,58 +32,13 @@
 	
 	height: 100%;
 	
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
 }
 
 
 .message-btn{
 	
 	width: 45%;
-	float: left;
-	
-	/*height: 100%;*/
-	
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	
-}
-
-
-.message-btn button{
-	
-	border-radius: 10px;
-	padding: 8px 65px;
-	
-}
-
-/*.messaggio h3, .messaggio h4{
-	
-	text-align: center;
-	margin: 8px 0px;
-	
-}*/
-
-
-/*
-.mess-btn-wrap{
-	
-	width: 55%;
 	float: right;
-	
-	height: 100%;
-	
-	overflow: hidden;
-	
-}
-
-.message-btn{
-	
-	width: 45%;
-	float: left;
 	
 	height: 100%;
 	
@@ -128,19 +56,12 @@
 	
 }
 
-.message-txt{
-	
-	width: 40%;
-	float: left;
-	
-	height: 100%;
-	
-	
-}*/
+
 
 .line{
 	
 	width: 100%;
+	margin: 0px;
 	
 }
 
@@ -150,8 +71,15 @@
 	overflow: auto;
 	width: 100%;
 	
-	
 }
+
+
+
+/*#prodotto span{
+	
+	display: block;
+	
+}*/
 
 #immagine{
 	
@@ -173,8 +101,33 @@
 #info-prod{
 	
 	float: right;
-	width: 35%;
+	width: 36%;
 	text-align: left;
+	
+}
+
+#nome-div{
+	margin: 0px 0px 40px 0px;
+}
+
+#nome-div h1, #nome-div h5{
+	margin: 0px 0px 2px 0px;
+}
+
+#info-prod h2{
+	margin: 40px 0px;
+}
+
+#info-prod p{
+	
+	margin: 25px 0px;
+	
+}
+
+
+#prod-action{
+	
+	margin-top: 100px;
 	
 }
 
@@ -191,20 +144,8 @@
 #carrello-btn button, #acquista-btn button{
 	
 	border-radius: 10px;
-	padding: 15px 60px;
+	padding: 20px 60px;
 	width: 100%;
-	
-}
-
-#info-prod > div{
-	
-	margin-bottom: 25px;
-	
-}
-
-#prod-action{
-	
-	margin-top: 70px;
 	
 }
 
@@ -220,6 +161,183 @@
 	width: 100%;
 	clear: both;
 	
-	margin: 20px 0px;
+	margin: 0px 0px 40px 0px;
+	
+}
+
+#descrizione h2{
+	
+	margin: 40px 0px 15px 0px;
+	
+}
+
+#descrizione p{
+	
+	margin: 15px 0px;
+	
+}
+
+
+
+@media screen and (max-width: 1300px){
+	
+	
+	#nome-div{
+		margin: 0px 0px 15px 0px;
+	}
+	
+	#nome-div h1, #nome-div h5{
+		margin: 0px 0px 0px 0px;
+	}
+	
+	#info-prod h2{
+		margin: 20px 0px;
+	}
+	
+	#info-prod p{
+		
+		margin: 15px 0px;
+		
+	}
+	
+	
+	#prod-action{
+		margin-top: 50px;
+	}
+	
+	#prodotto{
+		margin-bottom: 40px;
+	}
+		
+	
+	
+	#descrizione h2{
+	
+		margin: 30px 0px 15px 0px;
+		
+	}
+	
+	#descrizione p{
+		
+		margin: 15px 0px;
+		
+	}
+	
+	
+	.message-txt{
+	
+		width: 40%;
+		margin-left: 30px; 
+	
+	}
+	
+	.mess-btn-wrap{
+	
+		width: 50%;
+		
+	}
+		
+	
+	.message-btn button{
+		
+		padding: 8px 40px;
+		
+	}
+	
+}
+
+
+@media screen and (max-width: 900px){
+	
+	
+	#immagine{
+	
+		float: none;
+		width: 100%;
+		
+	}
+	
+	
+	#info-prod{
+		
+		float: none;
+		width: 100%;
+		
+	}
+	
+
+	#nome-div{
+		margin: 15px 0px 20px 0px;
+	}
+	
+	#nome-div h1, #nome-div h5{
+		margin: 0px 0px 0px 0px;
+	}
+	
+	#info-prod h2{
+		margin: 20px 0px;
+	}
+	
+	#info-prod p{
+		
+		margin: 20px 0px;
+		
+	}
+	
+	
+	#prodotto{
+	
+		margin-bottom: 40px;
+		
+	}
+	
+	.message-txt{
+	
+		width: 100%;
+		float: none;
+		
+		margin-left: 0px;
+		
+	}
+	
+	.message-txt .p3, .message-txt h4{
+		
+		text-align: center;
+		margin: 2px 0px;
+		
+	}
+
+	
+	.mess-btn-wrap{
+	
+		width: 100%;
+		float: none;
+		
+		margin-top: 20px;
+		
+		height: auto;
+		overflow: hidden;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		flex-direction: column;
+			
+	}
+		
+	
+	.message-btn{
+	
+		margin: 5px 0px;
+	
+	}
+	
+	.message-btn button{
+		
+		padding: 8px 60px;
+		
+	}
+		
 	
 }

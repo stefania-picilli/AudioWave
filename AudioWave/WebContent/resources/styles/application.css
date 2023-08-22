@@ -54,6 +54,8 @@ body{
 	display:flex; 
 	flex-direction:column;
 	
+	font-family: Noto Sans;
+	
 }
 
 
@@ -68,6 +70,13 @@ body{
 	
 	flex:1;
 	
+	box-sizing: border-box;
+	
+}
+
+
+#content *{
+	box-sizing: inherit;
 }
 
 
@@ -163,5 +172,137 @@ body{
 	color: red;
 	
 }
+
+
+
+
+h1{
+	
+	/* h1 - title */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 700;
+	font-size: 42px;
+	/*line-height: 77px;*/
+	
+}
+
+
+h2{
+	
+	/* h2 - sub-title */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 600;
+	font-size: 30px;
+	/*line-height: 58px;*/
+	
+}
+
+h3{
+	
+	/* h3 - product title */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 400;
+	font-size: 25px;
+	/*line-height: 44px;*/
+	
+}
+
+
+h4{
+	
+	/* h4 - table title */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 550;
+	font-size: 18px;
+	/*line-height: 29px;*/
+	
+}
+
+h5{
+	
+	/* h5 - light header */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 100;
+	font-size: 22px;
+	/*line-height: 39px;*/
+	
+}
+
+
+.p1{
+	
+	/* p1 - paragraph */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 200;
+	font-size: 20px;
+	/*line-height: 34px;*/
+	
+}
+
+
+.p2{
+	
+	/* p2 - Input */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 240;
+	font-size: 18px;
+	/*line-height: 29px;*/
+	
+}
+
+.p3{
+	
+	/* p3 - Input label */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 160;
+	font-size: 18px;
+	/*line-height: 27px;*/
+	
+}
+
+
+.b1{
+	
+	/* b1 - primary button */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	/*line-height: 29px;*/
+	
+}
+
+.b2{
+	
+	/* b2 - secondary button */
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 300;
+	font-size: 15px;
+	/*line-height: 24px;*/
+	
+}
+
+
+
+
+
 
 

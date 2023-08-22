@@ -27,24 +27,22 @@
 			<div id="prod-aggiunto" class="message light-color-box">
 			
 				<div class="message-txt">
-					<div>
-						<h3>Hai aggiunto il seguente prodotto:</h3>
-						<h4>${prodotto.nome}</h4>
-					</div>
+					<h4>Hai aggiunto il prodotto:</h4>
+					<p class="p3">${prodotto.nome}</p>
 				</div>
 			
 				<div class="mess-btn-wrap">
-			
-					<div class="message-btn">
-						<button class="reverse-button" onclick="eliminaMess()">Continua</button>
-					</div>
 				
 					<div class="message-btn">
 
 						<form action='${pageContext.request.contextPath}/Carrello' method="get">
-							<button class="cta-button" value="Vai al carrello" >Vai al carrello</button>
+							<button class="cta-button b2" value="Vai al carrello" >Vai al carrello</button>
 						</form>
 						
+					</div>
+					
+					<div class="message-btn">
+						<button class="reverse-button b2" onclick="eliminaMess()">Continua</button>
 					</div>
 				
 				</div>
@@ -57,14 +55,14 @@
 				<div class="message-txt">
 				
 					<div>
-						<h3>Impossibile aggiungere il prodotto</h3>
+						<h4>Impossibile aggiungere il prodotto</h4>
 					</div>
 				</div>
 				
 				<div class="mess-btn-wrap">
 			
 					<div class="message-btn">
-						<button class="cta-button" onclick="eliminaMess()">Continua</button>
+						<button class="cta-button b2" onclick="eliminaMess()">Continua</button>
 					</div>
 			
 				</div>
@@ -81,27 +79,25 @@
 				
 				<div id="info-prod">
 				
-					<div>
+					<div id="nome-div">
 						<h1>${prodotto.nome}</h1>
-						<span id="prodSpan">${prodotto.marca}</span><br>
+						<h5>${prodotto.marca}</h5><br>
 					</div>
 				
 					<div class="line"></div>
 				
-					<div>
-						<span id="prezzoTit">Prezzo:</span>
-						<span id="prezzoSpan">&euro; ${prodotto.prezzoConIva}</span> <br>
-					</div>
+					
+					<h2>&euro; ${prodotto.prezzoConIva}</h2>
+				
 					
 					<div class="line"></div>
 				
-					<div>
-						<span id="dispSpan" class="${colore}" >${disponibilita}</span><br>
-					</div>
+					<p class="${colore} p2" >${disponibilita}</p>
+					
 				
 					<div id="prod-action">
-						<div id="carrello-btn"><button onclick="addFromProd(${prodotto.codiceProdotto})" id="${prodotto.codiceProdotto}" class="reverse-button">Aggiungi al carrello</button></div>
-						<div id="acquista-btn"><button id="${prodotto.codiceProdotto}" class="cta-button">Acquista</button></div>
+						<div id="carrello-btn"><button onclick="addFromProd(${prodotto.codiceProdotto})" id="${prodotto.codiceProdotto}" class="reverse-button b1">Aggiungi al carrello</button></div>
+						<div id="acquista-btn"><button id="${prodotto.codiceProdotto}" class="cta-button b1">Acquista</button></div>
 					</div>
 				
 				</div>
@@ -113,7 +109,7 @@
 			<div id="descrizione">
 				
 				<h2>Descrizione</h2>
-				<p>${prodotto.descrizione}</p>
+				<p class="p1">${prodotto.descrizione}</p>
 				
 			</div>
 		

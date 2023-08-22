@@ -65,6 +65,10 @@ public class Ricerca extends HttpServlet {
 		
 		
 			List<ProdottoBean> list = (List<ProdottoBean>) coll;
+			
+			if(list == null || list.size() == 0)
+				list = null;
+			
 			request.setAttribute("prodotti", list);
 			
 			request.setAttribute("maxPrezzo", maxPrezzo(list));

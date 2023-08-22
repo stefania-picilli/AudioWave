@@ -33,13 +33,13 @@
 							
 								<div>
 							
-									<label>Categoria: </label>
+									<p class="p3">Categoria: </p>
 									
-									<select name="categoria" id="categoria-fil" class="box">
+									<select name="categoria" id="categoria-fil" class="box p2">
 											
-										<option value="Tutte">Tutte</option>
+										<option value="Tutte" class="p2">Tutte</option>
 										<c:forEach  items="${categorie}" var="categoria">
-											<option value="${categoria.id}">${categoria.nome}</option>
+											<option value="${categoria.id}" class="p2">${categoria.nome}</option>
 										</c:forEach>
 											
 									</select>
@@ -55,15 +55,15 @@
 						
 							<div>
 									
-								<label>Da: &euro; </label>
-								<input type="number" step="0.01" min="0" id="prezzo-da" class="box" value="0">
+								<p class="p3">Da: &euro; </p>
+								<input type="number" step="0.01" min="0" id="prezzo-da" class="box p2" value="0.00">
 									
 							</div>
 								
 							<div>
 									
-								<label>A: &euro; </label>
-								<input type="number" step="0.01" min="0" id="prezzo-a" class="box" value="${maxPrezzo}">
+								<p class="p3">A: &euro; </p>
+								<input type="number" step="0.01" min="0" id="prezzo-a" class="box p2" value="${maxPrezzo}">
 									
 							</div>
 						
@@ -73,7 +73,7 @@
 						
 					<div class="filtro-action">
 					
-						<div><button class="cta-button" onclick="filtraProd()">Applica</button></div>
+						<div><button class="cta-button b1" onclick="filtraProd()">Applica</button></div>
 					
 					</div>
 				
@@ -106,11 +106,9 @@
 				
 							<div class="info">
 									
-								<h3><a href='${pageContext.request.contextPath}/Prodotto?id=${prodotto.codiceProdotto}'>${prodotto.nome}<br></a></h3>
-								<span>${prodotto.marca}</span><br>
+								<h3><a href='${pageContext.request.contextPath}/Prodotto?id=${prodotto.codiceProdotto}'>${prodotto.nome}</a></h3>
+								<p class="p3">${prodotto.marca}</p>
 								<h3>&euro; ${prodotto.prezzoConIva}</h3>
-								
-					
 					
 							</div>
 										
@@ -125,8 +123,6 @@
 		
 		</div>
 		
-
-
 
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="resources/scripts/filtri.js"></script>
