@@ -71,15 +71,11 @@
 	overflow: auto;
 	width: 100%;
 	
+	margin-bottom: 50px;
+	
 }
 
 
-
-/*#prodotto span{
-	
-	display: block;
-	
-}*/
 
 #immagine{
 	
@@ -150,11 +146,6 @@
 }
 
 
-#prodotto{
-	
-	margin-bottom: 50px;
-	
-}
 
 #descrizione{
 	

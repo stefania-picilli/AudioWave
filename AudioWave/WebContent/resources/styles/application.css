@@ -54,7 +54,7 @@ body{
 	display:flex; 
 	flex-direction:column;
 	
-	font-family: Noto Sans;
+	font-family: Noto Sans, Helvetica, sans-serif;;
 	
 }
 
@@ -208,7 +208,7 @@ h3{
 	/*font-family: 'Inter';*/
 	font-style: normal;
 	font-weight: 400;
-	font-size: 25px;
+	font-size: 26px;
 	/*line-height: 44px;*/
 	
 }

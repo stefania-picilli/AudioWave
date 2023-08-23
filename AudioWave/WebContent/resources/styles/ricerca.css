@@ -1,6 +1,98 @@
 @charset "ISO-8859-1";
 
 
+
+#filtri{
+	
+	width: 100%;
+	overflow: auto;
+	
+}
+
+#item-group{
+	
+	float: left;
+	width: 70%;
+  
+}
+
+
+#single-item{
+	
+	width: 30%;
+	float: left;
+	
+}
+
+#double-item{
+	
+	width: 60%;
+	float: left;
+	
+}
+
+#double-item .item{
+	
+	width: 50%;
+	float: left;
+	
+}
+
+.filtro-item .p3{
+	
+	float: left;
+	width: 35%;
+	
+	text-align: right;
+	
+	margin: 10px 5px;
+	
+}
+
+.filtro-item .input-item{
+	
+	float: left;
+	width: 60%;
+	
+	
+}
+
+.input-item input, .input-item select{
+	
+	width: 100%;
+	
+}
+
+.filtro-item input, .filtro-item select{
+	
+	padding: 10px 15px;
+	
+}
+
+
+
+
+#filtro-action{
+	
+	float: right;
+	width: 25%;
+	
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	
+}
+
+
+#filtro-action button{
+	
+	padding: 10px 70px;
+	border-radius: 6px;
+	
+}
+
+
+/*
 #filtri{
 	
 	width: 100%;
@@ -40,7 +132,7 @@
 	
 	padding-right: 20px;
 	
-}*/
+}
 
 .filtro-item input, .filtro-item select{
 	
@@ -72,20 +164,19 @@
 	
 }
 
+*/
 
 
 .line{
 	
-	margin-top: 20px;
-	margin-bottom: 30px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	width: 100%;
 	
 }
 
 
-.tab-prodotti{
-	
-	
+.tab-prodotti{	
 	
 	width: 100%;
 	
@@ -96,13 +187,21 @@
 	overflow: auto;
 	
 	display: grid;
-	grid-template-columns: 22% 22% 22% 22%;
+	grid-template-columns: 23% 23% 23% 23%;
 	column-gap: 2%;
 	row-gap: 20px;
-	justify-content: space-evenly;
+	justify-content: space-between;
   	justify-items: center;
  	align-content: space-evenly;
   	align-items: center;
+	
+}
+
+
+a {
+	
+	text-decoration: none;
+	color: #222526;
 	
 }
 
@@ -115,8 +214,6 @@
 
 
 .prodotto{
-
-	background-color: white;
 	
 	/*margin: 5px 10px;*/
 	
@@ -150,7 +247,7 @@
 
 h1{
 	
-	margin-bottom: 80px;
+	margin: 20px 0px 90px 0px;
 	
 }
 
@@ -162,11 +259,10 @@ h3{
 	
 }
 
-span{
+.p3{
 	
-	display: block;
 	margin-top: 0px;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 	
 }
 
@@ -179,6 +275,18 @@ span{
 	
 	}
 	
+	#item-group{
+	
+		width: 75%;
+	
+	}
+	
+	
+	#filtro-action{
+	
+		width: 20%;
+	
+	}
 }
 
 
@@ -198,6 +306,7 @@ span{
 	.tab-prodotti{
 	
 		grid-template-columns: 90%;
+		justify-content: space-around;
 	
 	}
 	

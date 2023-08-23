@@ -29,20 +29,22 @@
 						
 					<% if(request.getAttribute("rimuovicat") == null){ %>
 					
-							<div class="filtro-item">
+							<div class="filtro-item" id="single-item">
 							
-								<div>
+								<div class="item">
 							
 									<p class="p3">Categoria: </p>
 									
-									<select name="categoria" id="categoria-fil" class="box p2">
-											
-										<option value="Tutte" class="p2">Tutte</option>
-										<c:forEach  items="${categorie}" var="categoria">
-											<option value="${categoria.id}" class="p2">${categoria.nome}</option>
-										</c:forEach>
-											
-									</select>
+									<div class="input-item">
+										<select name="categoria" id="categoria-fil" class="box p2">
+												
+											<option value="Tutte" class="p2">Tutte</option>
+											<c:forEach  items="${categorie}" var="categoria">
+												<option value="${categoria.id}" class="p2">${categoria.nome}</option>
+											</c:forEach>
+												
+										</select>
+									</div>
 									
 								</div>
 							
@@ -51,19 +53,23 @@
 						<%} %>
 						
 						
-						<div class="filtro-item">
+						<div class="filtro-item" id="double-item">
 						
-							<div>
+							<div class="item">
 									
 								<p class="p3">Da: &euro; </p>
-								<input type="number" step="0.01" min="0" id="prezzo-da" class="box p2" value="0.00">
+								<div class="input-item">
+									<input type="number" step="0.01" min="0" id="prezzo-da" class="box p2" value="0.00">
+								</div>
 									
 							</div>
 								
-							<div>
+							<div class="item">
 									
 								<p class="p3">A: &euro; </p>
-								<input type="number" step="0.01" min="0" id="prezzo-a" class="box p2" value="${maxPrezzo}">
+								<div class="input-item">
+									<input type="number" step="0.01" min="0" id="prezzo-a" class="box p2" value="${maxPrezzo}">
+								</div>
 									
 							</div>
 						
@@ -71,9 +77,9 @@
 						
 					</div>
 						
-					<div class="filtro-action">
+					<div id="filtro-action">
 					
-						<div><button class="cta-button b1" onclick="filtraProd()">Applica</button></div>
+						<button class="cta-button b1" onclick="filtraProd()">Applica</button>
 					
 					</div>
 				
@@ -92,27 +98,29 @@
 				<div class="tab-prodotti">
 						 
 					 <c:forEach  items="${prodotti}" var="prodotto">
-						 
-						<div class="prodotto box" >
+					 
+							<div class="prodotto box">
+							
+								<div class="hidden-info categoria-hidd">${prodotto.categoriaID}</div>
+								<div class="hidden-info prezzo-hidd">${prodotto.prezzoConIva}</div>
+												
+								<div class="img">
 						
-							<div class="hidden-info categoria-hidd">${prodotto.categoriaID}</div>
-							<div class="hidden-info prezzo-hidd">${prodotto.prezzoConIva}</div>
-											
-							<div class="img">
+									<img src="${prodotto.immagine}" alt="IMG" height=220px>
+						
+								</div>
 					
-								<img src="${prodotto.immagine}" alt="IMG" height=220px>
-					
-							</div>
-				
-							<div class="info">
-									
-								<h3><a href='${pageContext.request.contextPath}/Prodotto?id=${prodotto.codiceProdotto}'>${prodotto.nome}</a></h3>
-								<p class="p3">${prodotto.marca}</p>
-								<h3>&euro; ${prodotto.prezzoConIva}</h3>
-					
-							</div>
+								<div class="info">
 										
-						</div>		
+									<h3><a href='${pageContext.request.contextPath}/Prodotto?id=${prodotto.codiceProdotto}'>${prodotto.nome}</a></h3>
+									<p class="p3">${prodotto.marca}</p>
+									<h3>&euro; ${prodotto.prezzoConIva}</h3>
+						
+								</div>
+											
+							</div>
+						
+						
 						
 					</c:forEach>
 						
@@ -124,7 +132,7 @@
 		</div>
 		
 
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="resources/scripts/jquery.js"></script>
 		<script src="resources/scripts/filtri.js"></script>
 
 
