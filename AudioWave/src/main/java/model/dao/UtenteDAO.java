@@ -17,7 +17,7 @@ import model.dto.UtenteBean;
 
 public class UtenteDAO {
 
-	public final static String TABLE_NAME = "Utente";
+	public static final String TABLE_NAME = "Utente";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(UtenteDAO.class.getName());
 

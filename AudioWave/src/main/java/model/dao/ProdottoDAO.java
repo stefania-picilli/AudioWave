@@ -17,7 +17,7 @@ import model.dto.ProdottoBean;
 
 public class ProdottoDAO {
 
-	public final static String TABLE_NAME = "Prodotto";
+	public static final String TABLE_NAME = "Prodotto";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(ProdottoDAO.class.getName());
 
@@ -303,7 +303,7 @@ public class ProdottoDAO {
 
 
 		String selectSQL = "UPDATE " + ProdottoDAO.TABLE_NAME
-							+ " SET	disponibilita = disponibilita - ?"
+							+ " SET disponibilita = disponibilita - ?"
 							+ " WHERE codiceProdotto = ?;";
 
 		try {
@@ -339,7 +339,7 @@ public class ProdottoDAO {
 		PreparedStatement ps = null;
 
 		String updateSQL =  "UPDATE " + ProdottoDAO.TABLE_NAME
-							+ " SET	nome = ?, marca = ?, descrizione = ?, immagine = ?, tag = ?, prezzo = ?, disponibilita = ?, iva = ?, categoriaID = ?"
+							+ " SET nome = ?, marca = ?, descrizione = ?, immagine = ?, tag = ?, prezzo = ?, disponibilita = ?, iva = ?, categoriaID = ?"
 							+ " WHERE codiceProdotto = ?;";
 
 		try {

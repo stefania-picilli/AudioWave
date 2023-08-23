@@ -17,7 +17,7 @@ import model.dto.SpedizioneBean;
 
 public class SpedizioneDAO {
 
-	public final static String TABLE_NAME = "Spedizione";
+	public static final String TABLE_NAME = "Spedizione";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(SpedizioneDAO.class.getName());
 

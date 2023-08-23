@@ -19,7 +19,7 @@ import model.dto.OrdineBean;
 
 public class OrdineDAO {
 	
-	public final static String TABLE_NAME = "Ordine";
+	public static final String TABLE_NAME = "Ordine";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(OrdineDAO.class.getName());
 

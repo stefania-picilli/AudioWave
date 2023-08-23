@@ -18,7 +18,7 @@ import model.dto.ProdottoAcquistatoBean;
 
 public class ProdottoAcquistatoDAO {
 
-	public final static String TABLE_NAME = "ProdottoAcquistato";
+	public static final String TABLE_NAME = "ProdottoAcquistato";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(ProdottoAcquistatoDAO.class.getName());
 

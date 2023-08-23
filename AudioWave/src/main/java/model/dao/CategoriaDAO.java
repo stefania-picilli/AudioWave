@@ -19,7 +19,7 @@ import model.dto.CategoriaBean;
 
 public class CategoriaDAO {
 	
-	public final static String TABLE_NAME = "Categoria";
+	public static final String TABLE_NAME = "Categoria";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(CategoriaDAO.class.getName());
 
