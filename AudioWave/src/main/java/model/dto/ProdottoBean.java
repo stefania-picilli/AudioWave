@@ -14,11 +14,6 @@ public class ProdottoBean {
 	private int categoriaID;
 	
 	
-	
-	public ProdottoBean() {
-		
-	}
-	
 	public void setCodiceProdotto(int num) {
 		
 		codiceProdotto = num;

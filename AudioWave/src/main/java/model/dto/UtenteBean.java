@@ -10,13 +10,6 @@ public class UtenteBean {
 	private String dataNascita;
 	
 	
-	public UtenteBean() {
-		
-		
-		
-		
-	}
-	
 	public void setEmail(String str) {
 		
 		email = str;

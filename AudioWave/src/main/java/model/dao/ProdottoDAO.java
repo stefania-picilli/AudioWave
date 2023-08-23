@@ -41,7 +41,7 @@ public class ProdottoDAO {
 		PreparedStatement ps = null;
 
 		String insertSQL = "INSERT INTO " + ProdottoDAO.TABLE_NAME
-				+ " (nome, marca, descrizione,	immagine, tag, prezzo, disponibilita, IVA, categoriaID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ " (nome, marca, descrizione, immagine, tag, prezzo, disponibilita, IVA, categoriaID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			

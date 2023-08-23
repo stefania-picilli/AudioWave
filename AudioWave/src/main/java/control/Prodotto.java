@@ -58,29 +58,33 @@ public class Prodotto extends HttpServlet {
 			request.setAttribute("prodotto", prodotto);
 			
 			int disp = prodotto.getDisponibilita();
+			String disponibilita = "";
+			String colore = "";
 			
 			if(disp >= 10) { 
 				
-				request.setAttribute("disponibilita", "Disponibile");
-				request.setAttribute("colore", "green-text");
+				disponibilita = "Disponibile";
+				colore = "green-text";
 				
 			}else if(disp > 1) {
 				
-				request.setAttribute("disponibilita", "Solo " + disp +  " disponibili");
-				request.setAttribute("colore", "yellow-text");
+				disponibilita = "Solo " + disp +  " disponibili";
+				colore = "yellow-text";
 				
 			}else if(disp == 1) {
 				
-				request.setAttribute("disponibilita", "Solo " + disp +  " disponibile");
-				request.setAttribute("colore", "yellow-text");
-				
+				disponibilita = "Solo " + disp +  " disponibile";
+				colore = "yellow-text";
+			
 			}else {
 				
-				request.setAttribute("disponibilita", "Non disponibile");
-				request.setAttribute("colore", "red-text");
+				disponibilita = "Non disponibile";
+				colore = "red-text";
 				
 			}
 			
+			request.setAttribute("disponibilita", disponibilita);
+			request.setAttribute("colore", colore);
 			RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/prodotto.jsp");
 			dis.forward(request, response);
 		
