@@ -3,6 +3,7 @@ package control;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,6 +26,8 @@ import helpers.InputFilter;
 public class Prodotto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private static final Logger logger = Logger.getLogger(Prodotto.class.getName());
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -84,10 +87,8 @@ public class Prodotto extends HttpServlet {
 		}catch(SQLException e) {
 			
 			response.sendError(500);
-			
-			System.out.println(e.getMessage());
-			return;
-			
+			logger.warning(e.getMessage() + "\n" + e.getStackTrace());
+			return;	
 			
 		}
 		

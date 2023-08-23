@@ -28,54 +28,7 @@
 		
 		
 		
-			<!-- <div id="venduti" class="gruppo-prodotti">
 			
-				<div class="info-prodotti">
-				
-					<h1>I più venduti</h1>
-				
-				</div>
-			
-				<div class="riga-prodotti">
-					
-					 <c:forEach  items="${venduti}" var="prodotto">
-						 
-						<div class="prodotto" >
-										
-							<div class="img">
-				
-								<img src="${prodotto.immagine}" alt="IMG" height=220px>
-				
-							</div>
-			
-							<div class="info">
-								
-								<span class="nomeSpan"><a href='${pageContext.request.contextPath}/Prodotto?id=${prodotto.codiceProdotto}'>${prodotto.nome}<br></a></span>
-								<span class="prodSpan">${prodotto.marca}</span><br>
-								
-								<span class="prezzoSpan">&euro; ${prodotto.prezzoConIva}</span>
-				
-							</div>
-									
-						</div>		
-					
-					</c:forEach>
-					
-				</div>
-					
-					
-				<div class="altro">
-						<!-- <a href='${pageContext.request.contextPath}/Ricerca?param=ven'>Visualizza altro</a>
-						<form action='${pageContext.request.contextPath}/Ricerca' method="get">
-							 <input type="hidden" name="param" value="ven">
-						 	 <button class="cta-button">Visualizza altro</button>
-						</form>
-				</div>
-					
-					
-				
-			
-			</div>-->
 		
 		
 				
@@ -83,8 +36,6 @@
 		</div>
 		
 		
-		
-		<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
 		
 		
 	</body>

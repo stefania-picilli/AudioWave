@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.logging.Logger;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -19,6 +20,7 @@ import model.dto.OrdineBean;
 public class OrdineDAO {
 	
 	private static DataSource ds;
+	private static final Logger logger = Logger.getLogger(OrdineDAO.class.getName());
 
 	static {
 		try {
@@ -28,7 +30,7 @@ public class OrdineDAO {
 			ds = (DataSource) envCtx.lookup("jdbc/AudioWave");
 
 		} catch (NamingException e) {
-			System.out.println("Error:" + e.getMessage());
+			logger.warning(e.getMessage() + "\n" + e.getStackTrace());
 		}
 	}
 

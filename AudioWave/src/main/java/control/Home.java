@@ -36,24 +36,11 @@ public class Home extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		// TODO Auto-generated method stub
 		
-		try {
-		
-			CategoriaDAO categoriaDAO = new CategoriaDAO();
-			ProdottoDAO prodottoDAO;
-		
-			List<CategoriaBean> categorie = (List<CategoriaBean>) categoriaDAO.doRetrieveAll();
-    	
 			
-			RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/home.jsp");
-			dis.forward(request, response);
+		RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/home.jsp");
+		dis.forward(request, response);
 			
-			
-		}catch(SQLException e) {
-			
-			System.out.println(e.getMessage());
-			return;
-			
-		}
+	
 	
 		
 	}

@@ -6,12 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.logging.Logger;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import control.Ricerca;
 import model.dto.CategoriaBean;
 
 
@@ -20,6 +22,7 @@ public class CategoriaDAO {
 	
 	
 	private static DataSource ds;
+	private static final Logger logger = Logger.getLogger(CategoriaDAO.class.getName());
 
 	static {
 		try {
@@ -29,7 +32,7 @@ public class CategoriaDAO {
 			ds = (DataSource) envCtx.lookup("jdbc/AudioWave");
 
 		} catch (NamingException e) {
-			System.out.println("Error:" + e.getMessage());
+			logger.warning(e.getMessage() + "\n" + e.getStackTrace());
 		}
 	}
 	

@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,9 +24,11 @@ import helpers.InputFilter;
  */
 @WebServlet("/Ricerca")
 public class Ricerca extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
-       
+	private static final Logger logger = Logger.getLogger(Ricerca.class.getName());
     
+	
     public Ricerca() {
         super();
         
@@ -80,8 +83,8 @@ public class Ricerca extends HttpServlet {
 		
 		}catch(SQLException e) {
 			
-			response.sendError(500);			
-			System.out.println(e.getMessage());
+			response.sendError(500);	
+			logger.warning(e.getMessage() + "\n" + e.getStackTrace());
 			
 		}
 		
@@ -99,7 +102,7 @@ public class Ricerca extends HttpServlet {
 		String[] array = search.split(" ");
 		
 		List<ProdottoBean> list = new LinkedList<ProdottoBean>();
-		List<ProdottoBean> listTemp = new LinkedList<ProdottoBean>();
+		List<ProdottoBean> listTemp = null;
 		
 		
 		for(int i = 0; i < array.length; i++) {
@@ -121,7 +124,7 @@ public class Ricerca extends HttpServlet {
 	
 	private static void addItems(List<ProdottoBean> list, List<ProdottoBean> listTemp) {
 		
-		if(listTemp.size() == 0 || listTemp == null)
+		if(listTemp == null || listTemp.size() == 0)
 			return;
 		
 		int j = 0;

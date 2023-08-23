@@ -2,6 +2,7 @@ package control;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -18,6 +19,8 @@ import model.dto.CategoriaBean;
 @WebListener
 public class MyContextListener implements ServletContextListener {
 
+	private static final Logger logger = Logger.getLogger(MyContextListener.class.getName());
+
 	
     public void contextInitialized(ServletContextEvent sce)  { 
          
@@ -31,9 +34,7 @@ public class MyContextListener implements ServletContextListener {
     	
     	}catch(SQLException e) {
     		
-    		//GESTIRE ECCEZIONE
-    		
-    		System.out.println(e.getMessage());
+    		logger.warning(e.getMessage() + "\n" + e.getStackTrace());
     		return;
     	}
 		
@@ -41,7 +42,7 @@ public class MyContextListener implements ServletContextListener {
 
     public void contextDestroyed(ServletContextEvent sce)  { 
         
-    	System.out.println("Destroyed: " + sce.getServletContext().getServerInfo());
+    	logger.info("Destroyed: " + sce.getServletContext().getServerInfo());
     	
     }
     

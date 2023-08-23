@@ -3,12 +3,17 @@ package helpers;
 public class InputFilter {
 
 	
+	private InputFilter() {
+		
+		
+	}
+	
 	public static String filter(String input) {
 		
 		if(input == null)
 			return null;
 		
-		StringBuffer filtered = new StringBuffer(input.length());
+		StringBuilder filtered = new StringBuilder(input.length());
 		
 		char c;
 		
