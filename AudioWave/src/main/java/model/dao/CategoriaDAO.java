@@ -13,14 +13,13 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import control.Ricerca;
 import model.dto.CategoriaBean;
 
 
 
 public class CategoriaDAO {
 	
-	
+	public final static String TABLE_NAME = "Categoria";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(CategoriaDAO.class.getName());
 
@@ -35,8 +34,7 @@ public class CategoriaDAO {
 			logger.warning(e.getMessage() + "\n" + e.getStackTrace());
 		}
 	}
-	
-	public final static String TABLE_NAME = "Categoria";
+
 	
 
 	public void doSave(CategoriaBean categoria) throws SQLException{
@@ -159,7 +157,7 @@ public class CategoriaDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		Collection<CategoriaBean> accounts = new LinkedList<CategoriaBean>();
+		Collection<CategoriaBean> accounts = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + CategoriaDAO.TABLE_NAME;
 

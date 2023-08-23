@@ -17,6 +17,7 @@ import model.dto.UtenteBean;
 
 public class UtenteDAO {
 
+	public final static String TABLE_NAME = "Utente";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(UtenteDAO.class.getName());
 
@@ -33,7 +34,7 @@ public class UtenteDAO {
 	}
 	
 	
-	public final static String TABLE_NAME = "Utente";
+	
 
 	public void doSave(UtenteBean account) throws SQLException{
 		
@@ -215,7 +216,7 @@ public class UtenteDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		Collection<UtenteBean> accounts = new LinkedList<UtenteBean>();
+		Collection<UtenteBean> accounts = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + UtenteDAO.TABLE_NAME;
 

@@ -17,7 +17,7 @@ import model.dto.SpedizioneBean;
 
 public class SpedizioneDAO {
 
-	
+	public final static String TABLE_NAME = "Spedizione";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(SpedizioneDAO.class.getName());
 
@@ -33,8 +33,7 @@ public class SpedizioneDAO {
 		}
 	}
 	
-	public final static String TABLE_NAME = "Spedizione";
-
+	
 	public void doSave(SpedizioneBean spedizione) throws SQLException{
 		
 		Connection con = null;
@@ -213,7 +212,7 @@ public class SpedizioneDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		Collection<SpedizioneBean> accounts = new LinkedList<SpedizioneBean>();
+		Collection<SpedizioneBean> accounts = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + SpedizioneDAO.TABLE_NAME;
 

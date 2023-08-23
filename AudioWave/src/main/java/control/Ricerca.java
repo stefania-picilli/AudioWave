@@ -101,7 +101,7 @@ public class Ricerca extends HttpServlet {
 		
 		String[] array = search.split(" ");
 		
-		List<ProdottoBean> list = new LinkedList<ProdottoBean>();
+		List<ProdottoBean> list = new LinkedList<>();
 		List<ProdottoBean> listTemp = null;
 		
 		

@@ -19,6 +19,7 @@ import model.dto.OrdineBean;
 
 public class OrdineDAO {
 	
+	public final static String TABLE_NAME = "Ordine";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(OrdineDAO.class.getName());
 
@@ -34,8 +35,7 @@ public class OrdineDAO {
 		}
 	}
 
-	public final static String TABLE_NAME = "Ordine";
-
+	
 	public int doSave(OrdineBean ordine) throws SQLException{
 		
 		Connection con = null;
@@ -184,7 +184,7 @@ public class OrdineDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		Collection<OrdineBean> accounts = new LinkedList<OrdineBean>();
+		Collection<OrdineBean> accounts = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + OrdineDAO.TABLE_NAME + " WHERE email = ?";
 
@@ -237,7 +237,7 @@ public class OrdineDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		Collection<OrdineBean> accounts = new LinkedList<OrdineBean>();
+		Collection<OrdineBean> accounts = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + OrdineDAO.TABLE_NAME;
 
@@ -288,8 +288,6 @@ public class OrdineDAO {
 		
 		Connection con = null;
 		PreparedStatement ps = null;
-
-		OrdineBean bean = new OrdineBean();
 
 		String selectSQL = "SELECT MIN(data) as data FROM " + OrdineDAO.TABLE_NAME;
 		String data = "";

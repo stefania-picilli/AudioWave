@@ -17,6 +17,7 @@ import model.dto.ProdottoBean;
 
 public class ProdottoDAO {
 
+	public final static String TABLE_NAME = "Prodotto";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(ProdottoDAO.class.getName());
 
@@ -33,7 +34,7 @@ public class ProdottoDAO {
 	}
 	
 	
-	public final static String TABLE_NAME = "Prodotto";
+	
 
 	public void doSave(ProdottoBean prodotto) throws SQLException{
 		
@@ -177,7 +178,7 @@ public class ProdottoDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
-		Collection<ProdottoBean> prodotti = new LinkedList<ProdottoBean>();
+		Collection<ProdottoBean> prodotti = new LinkedList<>();
 
 		
 		String selectSQL = "SELECT * FROM " + ProdottoDAO.TABLE_NAME + 
@@ -213,7 +214,7 @@ public class ProdottoDAO {
 				
 			}
 			
-			if(prodotti.size() == 0)
+			if(prodotti.isEmpty())
 				prodotti = null;
 			
 
@@ -241,7 +242,7 @@ public class ProdottoDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		Collection<ProdottoBean> prodotti = new LinkedList<ProdottoBean>();
+		Collection<ProdottoBean> prodotti = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + ProdottoDAO.TABLE_NAME + " AS P, " + CategoriaDAO.TABLE_NAME + " AS C" +
 						   " WHERE P.categoriaID = C.ID AND C.nome = ?";
@@ -274,7 +275,7 @@ public class ProdottoDAO {
 			}
 			
 
-			if(prodotti.size() == 0)
+			if(prodotti.isEmpty())
 				prodotti = null;
 
 		} finally {
@@ -382,7 +383,7 @@ public class ProdottoDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		Collection<ProdottoBean> prodotti = new LinkedList<ProdottoBean>();
+		Collection<ProdottoBean> prodotti = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + ProdottoDAO.TABLE_NAME;
 

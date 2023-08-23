@@ -35,7 +35,7 @@ public class MyContextListener implements ServletContextListener {
     	}catch(SQLException e) {
     		
     		logger.warning(e.getMessage() + "\n" + e.getStackTrace());
-    		return;
+   
     	}
 		
     }

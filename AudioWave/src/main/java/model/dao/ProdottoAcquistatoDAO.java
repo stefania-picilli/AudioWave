@@ -18,6 +18,7 @@ import model.dto.ProdottoAcquistatoBean;
 
 public class ProdottoAcquistatoDAO {
 
+	public final static String TABLE_NAME = "ProdottoAcquistato";
 	private static DataSource ds;
 	private static final Logger logger = Logger.getLogger(ProdottoAcquistatoDAO.class.getName());
 
@@ -33,7 +34,6 @@ public class ProdottoAcquistatoDAO {
 		}
 	}
 	
-	public final static String TABLE_NAME = "ProdottoAcquistato";
 
 	public void doSave(ProdottoAcquistatoBean prodotto) throws SQLException{
 		
@@ -170,7 +170,7 @@ public class ProdottoAcquistatoDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		Collection<ProdottoAcquistatoBean> accounts = new LinkedList<ProdottoAcquistatoBean>();
+		Collection<ProdottoAcquistatoBean> accounts = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + ProdottoAcquistatoDAO.TABLE_NAME + " WHERE numeroOrdine = ?;";
 
@@ -224,7 +224,7 @@ public class ProdottoAcquistatoDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		Collection<ProdottoAcquistatoBean> accounts = new LinkedList<ProdottoAcquistatoBean>();
+		Collection<ProdottoAcquistatoBean> accounts = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + ProdottoAcquistatoDAO.TABLE_NAME;
 

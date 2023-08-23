@@ -92,7 +92,6 @@ public class Prodotto extends HttpServlet {
 			
 			response.sendError(500);
 			logger.warning(e.getMessage() + "\n" + e.getStackTrace());
-			return;	
 			
 		}
 		

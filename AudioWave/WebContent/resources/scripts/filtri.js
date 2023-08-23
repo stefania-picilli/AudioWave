@@ -17,9 +17,6 @@ $(document).ready(function(){
 		prezzoA = Number(prezzoA);
 		
 		
-		/*console.log("categoriaID=" + categoriaID);
-		console.log("prezzoDa=" + prezzoDa + ",prezzoA=" + prezzoA);*/
-		
 		$(".prodotto").each(function(){
 			
 			let itemCategoria = $(this).find(".categoria-hidd").text();
@@ -29,9 +26,6 @@ $(document).ready(function(){
 			
 			if(categoriaID == null){
 				
-				
-				//console.log("si");
-				
 				if(itemPrezzo >= prezzoDa && itemPrezzo <= prezzoA){
 					$(this).show();
 				}else{
@@ -40,18 +34,10 @@ $(document).ready(function(){
 				
 			}else{
 				
-				//console.log("no");
-				
 				if(((itemCategoria == categoriaID) || (categoriaID == "Tutte")) && (itemPrezzo >= prezzoDa && itemPrezzo <= prezzoA)){
 					$(this).show();
-					/*console.log("itemPrezzo >= prezzoDa=" + (itemPrezzo >= prezzoDa) + "itemPrezzo <= prezzoA=" + (itemPrezzo <= prezzoA));
-					console.log(itemPrezzo + " >= " + prezzoDa + " = " + (itemPrezzo >= prezzoDa) + ", " + itemPrezzo + " <= " +  prezzoA + "=" + (itemPrezzo <= prezzoA));
-					console.log("primo. itemCategoria=" + itemCategoria + ", itemPrezzo=" + itemPrezzo + " prezzoDa=" + prezzoDa + ",prezzoA=" + prezzoA);*/
 				}else{
 					$(this).hide();
-					/*console.log("itemPrezzo maggiore di prezzoDa=" + (itemPrezzo >= prezzoDa) + "itemPrezzo minore di prezzoA=" + (itemPrezzo <= prezzoA));
-					console.log(itemPrezzo + " >= " + prezzoDa + " = " + (itemPrezzo >= prezzoDa) + ", " + itemPrezzo + " <= " +  prezzoA + "=" + (itemPrezzo <= prezzoA));
-					console.log("secondo. itemCategoria=" + itemCategoria + ", itemPrezzo=" + itemPrezzo + " prezzoDa=" + prezzoDa + ",prezzoA=" + prezzoA);*/
 				}
 				
 				
