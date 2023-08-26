@@ -117,6 +117,7 @@
 		
 		
 		<script src="resources/scripts/jquery.js"></script>
+		<script src="resources/scripts/carrello.js"></script>
 		
 		
 	</body>

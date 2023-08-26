@@ -96,7 +96,7 @@ body{
 	border-style: solid;
 	border-width: 1px;
 	border-color: #B5CFEE;
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	background-color: #FFFEFE;
 	
 }
@@ -116,7 +116,7 @@ body{
 }
 
 
-.reverse-button, .cta-button:hover{ /*es utilizzo, messaggio carrello, hover, header*/
+.reverse-button, .cta-button:hover{ 
 	
 	border: solid;
 	border-color: #2D86F6;
@@ -130,6 +130,13 @@ body{
 	
 }
 
+.disabled-button{
+	
+	border: none; 
+	background-color: #BFC7C2;
+	color: #FFFFFF;
+	
+}
 
 .action-icon{
 	

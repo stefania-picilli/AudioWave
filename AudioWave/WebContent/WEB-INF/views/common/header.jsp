@@ -57,7 +57,8 @@
 					<div id="pulsanti">
 					
 						<div id="cart" class="pulsante">
-							<a href='${pageContext.request.contextPath}/Carrello'><i class="fa fa-cart-shopping action-icon"></i></a>
+							<a href='${pageContext.request.contextPath}/Carrello'>Carrello</a>
+							<!--<a href='${pageContext.request.contextPath}/Carrello'><i class="fa fa-cart-shopping action-icon"></i></a>-->
 						</div>
 						
 						<div id="user" class="pulsante">

@@ -7,6 +7,11 @@
 	width: 100%;
 	overflow: hidden;
 	padding: 20px 0px; 
+	display: none;
+	
+	position: fixed;
+  	bottom: 0;
+	right: 0;
 	
 }
 
@@ -301,19 +306,20 @@
 	
 	.mess-btn-wrap{
 	
-		width: 100%;
+		width: 50%;
 		float: none;
 		
+		margin: auto;
 		margin-top: 20px;
 		
-		height: auto;
+		/*height: auto;
 		overflow: hidden;
 		
-		display: flex;
+		/*display: flex;
 		justify-content: center;
 		align-items: center;
 		
-		flex-direction: column;
+		flex-direction: column;*/
 			
 	}
 		
@@ -321,12 +327,24 @@
 	.message-btn{
 	
 		margin: 5px 0px;
+		width: 100%;
+	
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	
+	}
+	
+	.message-btn form{
+	
+		width: 100%;
 	
 	}
 	
 	.message-btn button{
 		
-		padding: 8px 60px;
+		padding: 8px auto;
+		width: 100%;
 		
 	}
 		

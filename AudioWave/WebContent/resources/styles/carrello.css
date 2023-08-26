@@ -1,0 +1,306 @@
+@charset "ISO-8859-1";
+
+
+h1{
+	
+	margin: 20px 0px 60px 0px;
+	
+}
+
+
+#center{
+	
+	overflow: hidden;
+	
+}
+
+
+
+#prodotti{
+	
+	width: 60%;
+	float: left;
+	
+	margin: 0px;
+	
+}
+
+#prodotti .line{
+	
+	margin-bottom: 40px; 
+	
+}
+
+.prodotto{
+	
+	width: 100%;
+	overflow: hidden;
+	
+	margin: 12px 0px;
+	
+}
+
+
+.img{
+	
+	width: 40%;
+	float: left;
+	overflow: hidden;
+	
+}
+
+.img img{
+
+	max-width: 100%;
+	height: auto;
+	
+}
+
+
+
+.info-prod{
+	
+	width: 60%;
+	float: right;
+	
+	
+}
+
+.info-prod h3{
+	margin: 20px 0px 0px 0px; 
+}
+
+
+.info-prod .p3{
+	margin: 0px 0px 20px 0px; 
+}
+
+
+.bottom-info{
+	
+	width: 100%;
+	overflow: hidden;
+	
+	margin-top: 40px;
+	margin-bottom: 20px;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	
+}
+
+.prezzo{
+	
+	width: 50%;
+	
+}
+
+
+.pulsanti{
+	
+	width: 50%;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.pulsanti-wrap{
+	
+	width: 70%;
+	
+}
+
+.quantita{
+	
+	width: 100%;
+	
+	margin: 8px 0px;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+
+
+
+.quantita button{
+	
+	width: 35%;
+	padding: 12px 0px;
+	
+	border-radius: 10px;
+	
+}
+
+
+
+.rimuovi{
+	
+	width: 100%;
+	
+	
+}
+
+.rimuovi button{
+	
+	width: 100%;
+	padding: 12px 0px;
+	
+	border-radius: 10px;
+	
+}
+
+
+
+
+
+
+#totale{
+	
+	width: 30%;
+	float: right;
+	
+	margin: 0px;
+	padding: 40px;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#totale-wrap{
+	
+	width: 95%;
+	
+}
+
+#totale .line{
+	
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	
+}
+
+#totale table{
+	
+	width: 100%;
+	
+}
+
+
+#totale td:first-child{
+	
+	text-align: left;
+	
+}
+
+#totale td:last-child{
+	
+	text-align: right;
+	
+}
+
+#totale .p2, #totale h4{
+	
+	margin: 2px 0px;
+	
+}
+
+#acquista-action{
+	
+	margin-top: 50px;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#acquista-action form{
+	
+	width: 100%;
+	
+}
+#acquista-action input{
+	
+	padding: 15px 0px;
+	width: 100%;
+	border-radius: 10px;
+	
+}
+
+
+@media screen and (max-width: 1400px){
+	
+	
+	#totale{
+	
+		float: none;
+		width: 100%;
+		
+		margin-top: 80px;
+	
+	}
+	
+	#totale-wrap{
+	
+		width: 70%;
+	
+	}
+	
+	#prodotti{
+		float: none;
+		width: 100%;
+	}
+	
+	
+	.img{
+		width: 35%;
+	}
+	
+	
+	
+}
+
+@media screen and (max-width: 900px){
+	
+		
+	#totale-wrap{
+	
+		width: 90%;
+	
+	}
+	
+	.img{
+	
+		float: none;
+		width: 100%;
+		margin: 0px;
+	
+	}
+
+	
+	.info-prod{
+	
+		float: none;
+		width: 100%;
+		padding: 18px;
+		margin: 0px;
+	
+	}
+	
+	.pulsanti-wrap{
+	
+		width: 90%;
+		
+	}
+	
+
+}
+
