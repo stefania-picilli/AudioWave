@@ -5,11 +5,6 @@ public class ProdottoNelCarrelloBean {
 	private ProdottoBean prodotto;
 	private int quantita;
 	
-	public ProdottoNelCarrelloBean() {
-		
-		
-	}
-
 	public ProdottoBean getProdotto() {
 		return prodotto;
 	}

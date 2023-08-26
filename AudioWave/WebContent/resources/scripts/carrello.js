@@ -29,7 +29,7 @@
 		function addFromProd(codice){
 				
 				$.ajaxSetup({timeout: 10000});
-				var cxt = "/AudioWave";
+				let cxt = "/AudioWave";
 				
 				$.post(cxt + "/Carrello", {"add": codice}, function(data, status){
 					
@@ -38,7 +38,7 @@
 					  	$('.message').fadeOut();
 					}
 					
-					var array = data.messaggi;
+					let array = data.messaggi;
 					
 					if(array.length == 0){
 						
@@ -74,25 +74,23 @@
 		function add(codice){
 				
 				$.ajaxSetup({timeout: 10000});
-				var cxt = "/AudioWave";
+				let cxt = "/AudioWave";
 				
 				$.post(cxt + "/Carrello", {"add": codice}, function(data, status){
 					
 					$("#cellaSubTot").html("&euro; " + data.subTotale);
 					$("#cellaTot").html("&euro; " + data.totale);
 					
-					var nuovaQuant = parseInt($("#" + codice + " .spanQnt").html()) + data.quantita;
+					let nuovaQuant = parseInt($("#" + codice + " .spanQnt").html()) + data.quantita;
 					$("#" + codice + " .spanQnt").html(nuovaQuant);
 					
 					controlloPulsante(codice);
 					
 					$("#messaggi").empty();
 					
-					for(var i = 0; i < data.messaggi.length; i++)
-						$("#messaggi").append("<p>" + data.messaggi[i] + "</p>");
+					for(let messaggio of data.messaggi)
+						$("#messaggi").append("<p>" + messaggio + "</p>");
 				
-						
-					
 					
 				});
 				
@@ -102,22 +100,22 @@
 		function remove(codice){
 				
 				$.ajaxSetup({timeout: 10000});
-				var cxt = "/AudioWave";
+				let cxt = "/AudioWave";
 				
 				$.post(cxt + "/Carrello", {"remove": codice}, function(data, status){
 					
 					$("#cellaSubTot").html("&euro; " + data.subTotale);
 					$("#cellaTot").html("&euro; " + data.totale);
 					
-					var nuovaQuant = parseInt($("#" + codice + " .spanQnt").html()) + data.quantita;
+					let nuovaQuant = parseInt($("#" + codice + " .spanQnt").html()) + data.quantita;
 					$("#" + codice + " .spanQnt").html(nuovaQuant);
 					
 					controlloPulsante(codice);
 					
 					$("#messaggi").empty();
 					
-					for(var i = 0; i < data.messaggi.length; i++)
-						$("#messaggi").append("<p>" + data.messaggi[i] + "</p>");
+					for(let messaggio of data.messaggi)
+						$("#messaggi").append("<p>" + messaggio + "</p>");
 					
 					
 				});
@@ -129,7 +127,7 @@
 		function removeAll(codice){
 		
 			$.ajaxSetup({timeout: 10000});
-			var cxt = "/AudioWave";
+			let cxt = "/AudioWave";
 			
 			$.post(cxt + "/Carrello", {"removeAll": codice}, function(data, status){
 				
@@ -149,7 +147,7 @@
 			
 				$("#messaggi").empty();
 					
-				for(var i = 0; i < data.messaggi.length; i++)
+				for(let i = 0; i < data.messaggi.length; i++)
 					$("#messaggi").append("<p>" + data.messaggi[i] + "</p>");
 				
 			});

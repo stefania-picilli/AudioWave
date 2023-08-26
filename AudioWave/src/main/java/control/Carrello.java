@@ -49,20 +49,22 @@ public class Carrello extends HttpServlet {
 			HttpSession session = request.getSession();
 			CarrelloBean carrello = (CarrelloBean) session.getAttribute("carrello");
 			
+			String carrelloAttr = "carrello";
+			
 			//se carrello non esiste nella sessione, ne crea uno
 			if(carrello == null) {
 						
 				carrello = new CarrelloBean();
-				session.setAttribute("carrello", carrello);
+				session.setAttribute(carrelloAttr, carrello);
 						
 			}
 				
 			List<String> messaggi = controlloProdotti(carrello.getProdotti());
 			
-			session.setAttribute("carrello", carrello);	
+			session.setAttribute(carrelloAttr, carrello);	
 			request.setAttribute("totale", carrello.getTotale());
 			
-			if(messaggi.size() > 0)
+			if(!messaggi.isEmpty())
 				request.setAttribute("messaggi", messaggi);
 				
 			RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/carrello.jsp");
@@ -95,15 +97,17 @@ public class Carrello extends HttpServlet {
 			String remove = request.getParameter("remove");
 			String removeAll = request.getParameter("removeAll");
 			
+			String carrelloAttr = "carrello";
+			
 			HttpSession session = request.getSession();
 			System.out.println("Sessione ottenuta");
-			CarrelloBean carrello = (CarrelloBean) session.getAttribute("carrello");
+			CarrelloBean carrello = (CarrelloBean) session.getAttribute(carrelloAttr);
 			
 			//se carrello non esiste nella sessione, ne crea uno
 			if(carrello == null) {
 						
 				carrello = new CarrelloBean();
-				session.setAttribute("carrello", carrello);
+				session.setAttribute(carrelloAttr, carrello);
 						
 			}
 			
@@ -135,7 +139,7 @@ public class Carrello extends HttpServlet {
 					
 					System.out.println("Aggiunto a carrello");
 					
-					session.setAttribute("carrello", carrello);
+					session.setAttribute(carrelloAttr, carrello);
 				
 				}else {
 					
@@ -151,7 +155,7 @@ public class Carrello extends HttpServlet {
 				
 				if(carrello.remove(codice)) {
 					
-					session.setAttribute("carrello", carrello);
+					session.setAttribute(carrelloAttr, carrello);
 					quantita = -1;
 				
 				}else {
@@ -167,7 +171,7 @@ public class Carrello extends HttpServlet {
 				
 				if(carrello.removeAll(codice)) {
 				
-					session.setAttribute("carrello", carrello);
+					session.setAttribute(carrelloAttr, carrello);
 					
 				}else {
 					
@@ -235,10 +239,10 @@ public class Carrello extends HttpServlet {
 	
 	private List<String> controlloProdotti(List<ProdottoNelCarrelloBean> listProdotti) throws SQLException{
 		
-		List<String> messaggi = new LinkedList<String>();
+		List<String> messaggi = new LinkedList<>();
 		
-		String messaggioElim = "";
-		String messaggioDisp = "";
+		StringBuilder messaggioElim = new StringBuilder();
+		StringBuilder messaggioDisp = new StringBuilder();
 		
 		ProdottoDAO daoProd = new ProdottoDAO();
 		
@@ -251,7 +255,7 @@ public class Carrello extends HttpServlet {
 			if(prodottoDB == null) {
 				
 				//prodotto non trovato nel database
-				messaggioElim = "Uno o più prodotti potrebbero non essere più presenti sulla piattaforma";
+				messaggioElim.append("Uno o più prodotti potrebbero non essere più presenti sulla piattaforma");
 				listProdotti.remove(i);
 				continue;
 				
@@ -270,18 +274,18 @@ public class Carrello extends HttpServlet {
 					prodCarr.setQuantita(prodottoDB.getDisponibilita());
 				
 				
-				messaggioDisp += "\n" + prodottoDB.getNome();
+				messaggioDisp.append("\n" + prodottoDB.getNome());
 				
 			}
 			
 			
 		}
 		
-		if(!messaggioDisp.equals(""))
+		if(messaggioDisp.length() > 0)
 			messaggi.add("La disponibilita dei seguenti prodotti è diminuita (potrebbero non essere più presenti nel carrello):" +  messaggioDisp);
 			
-		if(!messaggioElim.equals(""))
-			messaggi.add(messaggioElim);
+		if(messaggioElim.length() > 0)
+			messaggi.add(messaggioElim + "");
 		
 		return messaggi;
 		

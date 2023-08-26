@@ -10,7 +10,7 @@ public class CarrelloBean {
 	
 	public CarrelloBean(){
 		
-		prodotti = new LinkedList<ProdottoNelCarrelloBean>();
+		prodotti = new LinkedList<>();
 		totale = 0;
 		
 	}
@@ -35,10 +35,7 @@ public class CarrelloBean {
 
 	public boolean isEmpty() {
 		
-		if(prodotti.size() == 0)
-			return true;
-		
-		return false;
+		return prodotti.isEmpty();
 		
 	}
 	
@@ -161,7 +158,7 @@ public class CarrelloBean {
 	
 	public void svuota() {
 		
-		prodotti = new LinkedList<ProdottoNelCarrelloBean>();
+		prodotti = new LinkedList<>();
 		totale = 0;
 		
 	}

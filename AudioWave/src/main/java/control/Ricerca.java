@@ -124,7 +124,7 @@ public class Ricerca extends HttpServlet {
 	
 	private static void addItems(List<ProdottoBean> list, List<ProdottoBean> listTemp) {
 		
-		if(listTemp == null || listTemp.size() == 0)
+		if(listTemp == null || listTemp.isEmpty())
 			return;
 		
 		int j = 0;
