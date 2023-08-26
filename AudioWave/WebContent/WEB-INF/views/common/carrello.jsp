@@ -5,7 +5,7 @@
 <%@ page import="model.dto.CarrelloBean" %> 
 <%@ page import="model.dto.ProdottoNelCarrelloBean" %> 
 <!DOCTYPE html>
-<html>
+<html lang="it">
 	<head>
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +37,7 @@
 				 		
 				 			<div class="img">
 				 			
-				 				<img src="${prodotto.prodotto.immagine}" height="200px">
+				 				<img src="${prodotto.prodotto.immagine}" alt="IMG" height="200px">
 				 				
 				 			</div>
 				 			
@@ -91,42 +91,37 @@
 			 	
 			 		<div id="totale" class="box">
 			 		
-			 			Carrello ancora vuoto
+			 			Il carrello è vuoto
 			 		
 			 		</div>
 			 	
 			 	<%}else{ %>
-			 
-				 	<div id="totale" class="box">
+			 	
+			 	
+			 		<div id="totale" class="box">
 				 		
 				 		<div id="totale-wrap">
-				 		
-					 		<table>
 					 		
-					 			<tr>
-					 				<td><p class="p2">Importo parziale:</p></td>
-					 				<td id="cellaSubTot"><p class="p2">&euro; ${carrello.totale}</p></td>
-					 			</tr>
+					 		<div class="line-wrap">
+					 			<p class="p2 left-item">Importo parziale:</p>
+					 			<p class="p2 right-item" id="cellaSubTot">&euro; ${carrello.totale}</p>
+					 		</div>
 					 		
-					 			<tr>
-					 				<td><p class="p2">Costo spedizione:</p></td>
-					 				<td><p class="p2">&euro; 5.00</p></td>
-					 			</tr>
+					 		<div class="line-wrap">
+					 			<p class="p2">Costo spedizione:</p>
+					 			<p class="p2">&euro; 5.00</p>
+					 		</div>
 					 		
 					 		
-					 		</table>
 					 		
 					 		<div class="line"></div>
 					 		
-					 		<table>
 					 		
-					 			<tr>
-					 				<td><h4>Importo totale:</h4></td>
-					 				<td id="cellaTot"><h4>&euro; ${carrello.totaleConSpedizione}</h4></td>
-					 			</tr>
+					 		<div class="line-wrap">
+					 			<h4>Importo totale:</h4>
+					 			<h4 id="cellaTot">&euro; ${carrello.totaleConSpedizione}</h4>
+					 		</div>
 					 		
-					 		</table>
-					 
 					 		
 						 	<div id="acquista-action">
 							 	<form method="GET" action="Ordine">
@@ -142,6 +137,7 @@
 				 		</div>
 				 		
 				 	</div>
+			 	
 			 
 			 	<%} %>
 			 

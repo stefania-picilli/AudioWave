@@ -78,8 +78,8 @@
 				
 				$.post(cxt + "/Carrello", {"add": codice}, function(data, status){
 					
-					$("#cellaSubTot").html("<p class='p2'>&euro; " + data.subTotale + "</p>");
-					$("#cellaTot").html("<h4>&euro; " + data.totale + "</h4>");
+					$("#cellaSubTot").html("&euro; " + data.subTotale);
+					$("#cellaTot").html("&euro; " + data.totale);
 					
 					var nuovaQuant = parseInt($("#" + codice + " .spanQnt").html()) + data.quantita;
 					$("#" + codice + " .spanQnt").html(nuovaQuant);
@@ -106,8 +106,8 @@
 				
 				$.post(cxt + "/Carrello", {"remove": codice}, function(data, status){
 					
-					$("#cellaSubTot").html("<p class='p2'>&euro; " + data.subTotale + "</p>");
-					$("#cellaTot").html("<h4>&euro; " + data.totale + "</h4>");
+					$("#cellaSubTot").html("&euro; " + data.subTotale);
+					$("#cellaTot").html("&euro; " + data.totale);
 					
 					var nuovaQuant = parseInt($("#" + codice + " .spanQnt").html()) + data.quantita;
 					$("#" + codice + " .spanQnt").html(nuovaQuant);

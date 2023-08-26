@@ -1,5 +1,11 @@
 @charset "ISO-8859-1";
 
+caption{
+	
+	display: none;
+	
+}
+
 
 h1{
 	
@@ -193,18 +199,32 @@ h1{
 	
 }
 
+#totale .line-wrap{
+	
+	width: 100%;
+	overflow: hidden;
+	
+}
 
-#totale td:first-child{
+.left-item, .line-wrap p:first-child, .line-wrap h4:first-child{
+	
+	overflow: hidden;
 	
 	text-align: left;
+	width: 60%;
+	float: left;
 	
 }
 
-#totale td:last-child{
+.right-item, .line-wrap p:last-child, .line-wrap h4:last-child{
+	
+	overflow: hidden;
 	
 	text-align: right;
-	
+	width: 40%;
+	float: right;	
 }
+
 
 #totale .p2, #totale h4{
 	

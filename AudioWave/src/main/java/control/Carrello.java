@@ -145,7 +145,7 @@ public class Carrello extends HttpServlet {
 				}
 					
 				
-			}else if(remove != null && remove != ""){
+			}else if(remove != null && !remove.equals("")){
 				
 				int codice = Integer.parseInt(remove);
 				
@@ -161,7 +161,7 @@ public class Carrello extends HttpServlet {
 					
 				}
 				
-			}else if(removeAll != null && removeAll != "") {
+			}else if(removeAll != null && !removeAll.equals("")) {
 				
 				int codice = Integer.parseInt(removeAll);
 				
@@ -277,10 +277,10 @@ public class Carrello extends HttpServlet {
 			
 		}
 		
-		if(messaggioDisp != "")
+		if(!messaggioDisp.equals(""))
 			messaggi.add("La disponibilita dei seguenti prodotti è diminuita (potrebbero non essere più presenti nel carrello):" +  messaggioDisp);
 			
-		if(messaggioElim != "")
+		if(!messaggioElim.equals(""))
 			messaggi.add(messaggioElim);
 		
 		return messaggi;
