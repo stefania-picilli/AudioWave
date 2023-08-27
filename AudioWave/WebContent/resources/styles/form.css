@@ -1,0 +1,153 @@
+@charset "ISO-8859-1";
+
+
+#form-container{
+	
+	width: 50%;
+	
+	padding: 60px 0px;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#form-wrap{
+	
+	width: 60%;
+	
+	padding: 20px 0px;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#form-data{
+	
+	width: 100%;
+	
+}
+
+
+#info-form{
+	
+	margin: 0px 0px 70px 0px;
+	
+}
+
+#info-form h1, #info-form p{
+	
+	margin: 0px;
+	text-align: center;
+	
+}
+
+
+.form-item{
+	
+	margin: 18px 0px;
+
+	padding: 0px;	
+	width: 100%;
+
+}
+
+
+
+.form-item input[type=text], .form-item input[type=password], .form-item input[type=number], .form-item input[type=date], .form-item select{
+	
+	
+	margin: 2px 0px;
+	padding: 15px 15px;
+	
+	width: 100%;
+	
+	
+}
+
+
+.form-action input[type=submit]{
+	
+	width: 100%;
+	
+	padding: 18px 0px;
+	margin: 50px 0px 0px 0px;
+	
+	border-radius: 10px;
+	
+}
+
+
+#reg-mess{
+	
+	text-align: center;
+	
+}
+
+
+.valid-input{
+	
+	border-color: green;
+	
+}
+
+
+.invalid-input{ 
+	
+	border-color: red;
+	
+}
+
+
+.error-message{
+	
+	color: red;
+	
+}
+
+
+
+
+@media screen and (max-width: 1300px){
+	
+	#form-container{
+		width: 70%;
+	}
+	
+	
+	#form-wrap{
+		width: 70%;
+	}
+	
+}
+
+
+@media screen and (max-width: 950px){
+	
+	#form-container{
+		width: 90%;
+	}
+	
+	
+	#form-wrap{
+		width: 80%;
+	}
+	
+}
+
+
+@media screen and (max-width: 600px){
+	
+	#form-container{
+		width: 100%;
+	}
+	
+	
+	#form-wrap{
+		width: 85%;
+	}
+	
+	
+}
+

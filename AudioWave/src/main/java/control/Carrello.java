@@ -29,6 +29,7 @@ import model.dto.ProdottoNelCarrelloBean;
 public class Carrello extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getLogger(Carrello.class.getName());
+	private static final String carrelloAttr = "carrello";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -46,10 +47,10 @@ public class Carrello extends HttpServlet {
 		
 		try {
 			
-			HttpSession session = request.getSession();
-			CarrelloBean carrello = (CarrelloBean) session.getAttribute("carrello");
 			
-			String carrelloAttr = "carrello";
+			HttpSession session = request.getSession();
+			CarrelloBean carrello = (CarrelloBean) session.getAttribute(carrelloAttr);
+			
 			
 			//se carrello non esiste nella sessione, ne crea uno
 			if(carrello == null) {
@@ -97,7 +98,6 @@ public class Carrello extends HttpServlet {
 			String remove = request.getParameter("remove");
 			String removeAll = request.getParameter("removeAll");
 			
-			String carrelloAttr = "carrello";
 			
 			HttpSession session = request.getSession();
 			System.out.println("Sessione ottenuta");

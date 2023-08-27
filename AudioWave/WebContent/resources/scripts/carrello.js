@@ -147,8 +147,9 @@
 			
 				$("#messaggi").empty();
 					
-				for(let i = 0; i < data.messaggi.length; i++)
-					$("#messaggi").append("<p>" + data.messaggi[i] + "</p>");
+				
+				for(let messaggio of data.messaggi)
+						$("#messaggi").append("<p>" + messaggio + "</p>");
 				
 			});
 			
