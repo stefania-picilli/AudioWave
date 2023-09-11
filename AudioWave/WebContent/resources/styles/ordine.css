@@ -1,0 +1,213 @@
+@charset "ISO-8859-1";
+
+
+
+#ordine-top{
+	
+	width: 100%;
+	text-align: left;
+	
+	margin-bottom: 50px;
+	
+}
+
+#ordine-top p{
+	
+	margin: 0px;
+	
+}
+
+#ordine-top h1{
+	
+	margin: 24px 0px 10px 0px;
+	
+}
+
+#ordine-center{
+	
+	width: 100%;
+	
+}
+
+
+#input-box{
+	
+	width: 60%;
+	float: left;
+	
+	padding: 20px 0px 40px 0px;
+	
+}
+
+#form-data{
+	
+	width: 70%;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+
+#totale{
+	
+	width: 30%;
+	float: right;
+	
+	margin: 0px;
+	padding: 40px;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#totale-wrap{
+	
+	width: 95%;
+	
+}
+
+#totale .line{
+	
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	
+}
+
+#totale table{
+	
+	width: 100%;
+	
+}
+
+#totale .line-wrap{
+	
+	width: 100%;
+	overflow: hidden;
+	
+}
+
+.left-item, .line-wrap p:first-child, .line-wrap h4:first-child{
+	
+	overflow: hidden;
+	
+	text-align: left;
+	width: 60%;
+	float: left;
+	
+}
+
+.right-item, .line-wrap p:last-child, .line-wrap h4:last-child{
+	
+	overflow: hidden;
+	
+	text-align: right;
+	width: 40%;
+	float: right;	
+}
+
+
+#totale .p2, #totale h4{
+	
+	margin: 2px 0px;
+	
+}
+
+#acquista-action{
+	
+	margin-top: 50px;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#acquista-action form{
+	
+	width: 100%;
+	
+}
+#acquista-action input{
+	
+	padding: 15px 0px;
+	width: 100%;
+	border-radius: 10px;
+	
+}
+
+
+
+
+@media screen and (max-width: 1400px){
+	
+	
+	#input-box{
+	
+		width: 60%;
+		
+	}
+	
+	#form-data{
+		
+		width: 80%;
+		
+	}
+	
+	#totale{
+	
+		width: 35%;
+		
+	}
+	
+	
+}
+
+
+@media screen and (max-width: 1100px){
+	
+	
+	#input-box{
+	
+		float: none;
+		
+	}
+
+
+	#totale{
+	
+		float: none;
+		margin-top: 50px;
+		
+		
+	}
+	
+	#ordine-top, #input-box, #totale{
+	
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	
+	}
+	
+	
+}
+
+@media screen and (max-width: 700px){
+	
+	#ordine-top, #input-box, #totale{
+	
+		width: 100%;
+	
+	}
+	
+	#form-data{
+		
+		width: 90%;
+		
+	}
+
+}

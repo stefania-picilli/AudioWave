@@ -106,7 +106,7 @@
 												
 								<div class="img">
 						
-									<img src="${prodotto.immagine}" alt="IMG" height=220px>
+									<img src="${prodotto.immagine}" alt="IMG">
 						
 								</div>
 					

@@ -7,8 +7,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="content/css/utente.css" type="text/css" >
-		<link rel="stylesheet" href="content/css/application.css" type="text/css" >
+		<link rel="stylesheet" href="resources/styles/utente.css" type="text/css" >
+		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Informazioni utente</title>
@@ -62,35 +62,6 @@
 					
 					</div>
 				
-					
-					<!--  <table>
-					
-						<tr>
-							<th>Nome</th>
-							<td>${account.nome}</td>
-						</tr>
-					
-						<tr>
-							<th>Cognome</th>
-							<td>${account.cognome}</td>
-						</tr>
-					
-					
-					</table>
-					
-					<table>
-					
-						<tr>
-							<th>Data di nascita</th>
-							<td>${account.dataNascita}</td>
-						</tr>
-					
-						<tr>
-							<th>Cellulare</th>
-							<td>${account.cellulare}</td>
-						</tr>
-					
-					</table> -->
 				
 				</div>
 				
