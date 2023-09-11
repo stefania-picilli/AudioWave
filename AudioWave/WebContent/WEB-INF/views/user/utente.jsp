@@ -19,7 +19,7 @@
 	
 		<div id="content">
 		
-			<div id="dettagli-utente" class="light-card">
+			<div id="dettagli-utente">
 			
 				<div id="nome-cognome">
 					<h1>${account.nome} ${account.cognome}</h1>
@@ -27,55 +27,40 @@
 				</div>
 				
 				<div id="info">
-				
-					<div class="half-info">
 					
-						<div class="left-item">
-						
-							<h3>Nome</h3>
-							<p class="card-item">${account.nome}</p>
-						
-						</div>
-						<div class="left-item">
-						
-							<h3>Cognome</h3>
-							<p class="card-item">${account.cognome}</p>
-						
-						</div>
-					
+					<div class="info-item">
+						<h3>Nome</h3>
+						<p class="box">${account.nome}</p>
 					</div>
 					
-					<div class="half-info">
-					
-						<div class="right-item">
-						
-							<h3>Data di nascita</h3>
-							<p class="card-item">${account.dataNascita}</p>
-						
-						</div>
-						<div class="right-item">
-						
-							<h3>Cellulare</h3>
-							<p class="card-item">${account.cellulare}</p>
-						
-						</div>
-					
+					<div class="info-item">
+						<h3>Cognome</h3>
+						<p class="box">${account.cognome}</p>
 					</div>
-				
+					
+					<div class="info-item">
+						<h3>Data di nascita</h3>
+						<p class="box">${account.dataNascita}</p>
+					</div>
+					
+					<div class="info-item">
+						<h3>Cellulare</h3>
+						<p class="box">${account.cellulare}</p>
+					</div>
 				
 				</div>
 				
 				
 				<div id="azioni">
-			
+				
 					<form action="Logout" method="GET">
-			
+				
 						<input type="hidden" name="action" value="logout">
 						<input type="submit" value="Logout" class="cta-button">
-			
-					</form>
 				
-			
+					</form>
+					
+				
 				</div>
 			
 			</div>	
@@ -95,19 +80,19 @@
 				
 						<table>
 					
-							<tr>
+							<tr class="colored-box">
 							
-								<th>Data ordine</th>
+								<th>Data</th>
 								<th>Indirizzo</th>
-								<th>Stato ordine</th>
-								<th>Costo totale</th>
+								<th>Stato</th>
+								<th>Importo</th>
 							
 							</tr>
 					
 					
 							<c:forEach  items="${ordini}" var="ordine">
 							
-								<tr>
+								<tr class="box">
 							
 										<td><a href="DettagliOrdine?action=visualizza&num=${ordine.numeroOrdine}">${ordine.data}</a></td>
 										<td>${ordine.indirizzo}</td>
@@ -126,6 +111,7 @@
 				</div>
 			
 			</div>
+			
 		
 		</div>
 		

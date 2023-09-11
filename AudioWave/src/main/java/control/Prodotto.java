@@ -61,7 +61,7 @@ public class Prodotto extends HttpServlet {
 			String disponibilita = "";
 			String colore = "";
 			
-			if(disp >= 10) { 
+			if(disp >= 5) { 
 				
 				disponibilita = "Disponibile";
 				colore = "green-text";

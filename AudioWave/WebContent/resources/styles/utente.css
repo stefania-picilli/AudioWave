@@ -1,0 +1,179 @@
+@charset "ISO-8859-1";
+
+
+#dettagli-utente{
+	
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#nome-cognome{
+	
+	width: 100%;
+	text-align: center;
+	
+}
+
+#nome-cognome p{
+	
+	margin-top: 0px;
+	
+}
+
+#nome-cognome h1{
+	
+	margin-bottom: 4px;
+	
+}
+
+
+#info{
+	
+	width: 100%;
+	margin: 45px 0px 0px 0px;
+	
+}
+
+.info-item h3{
+	
+	margin: 2px 0px;
+	
+}
+
+.info-item p{
+	
+	width: 100%;
+	padding: 13px 18px;
+	margin: 4px 0px;
+	
+}
+
+.info-item{
+	
+	width: 100%;
+	margin: 22px 0px;
+	
+	
+}
+
+
+#azioni{
+	
+	width: 100%;
+	
+	margin: 50px 0px 20px 0px;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#azioni form{
+	
+	width: 40%;
+	
+}
+
+
+#azioni input{
+	
+	width: 100%;
+	padding: 15px 0px;
+	border-radius: 10px;
+	
+}
+
+
+
+
+#ordini{
+
+	margin: 75px 0px;
+	
+	
+}
+
+#tab-ordini{
+	
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	
+}
+
+
+#ordini table{
+	
+	width: 100%;
+	margin: 0px;
+	border-collapse: separate;
+    border-spacing: 0 7px;
+	
+}
+
+
+#ordini td{
+	
+	width: 20%;
+	text-align: center;
+	
+	padding: 14px;
+	
+	border-bottom: 1px solid  #E3DBDB;
+	border-top: 1px solid  #E3DBDB;
+	
+}
+
+#ordini th{
+	
+	text-align: center;
+	padding: 18px 20px;
+	
+	
+	border-bottom: 1px solid  #E3DBDB;
+	border-top: 1px solid  #E3DBDB;
+	
+}
+
+#ordini td:first-child, #ordini th:first-child {
+  border-radius: 10px 0 0 10px;
+  border-left: 1px solid  #E3DBDB;
+}
+
+
+#ordini td:last-child, #ordini th:last-child {
+  border-radius: 0 10px 10px 0;
+  border-right: 1px solid  #E3DBDB;
+}
+
+
+
+
+@media screen and (max-width: 1200px){
+	
+	#azioni form{
+	
+		width: 60%;
+		
+	}
+	
+}
+
+
+@media screen and (max-width: 780px){
+	
+	
+	#dettagli-utente{
+	
+		width: 100%;
+	
+	}
+	
+	
+	
+	
+}
+
