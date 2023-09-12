@@ -55,7 +55,6 @@ public class Registrazione extends HttpServlet {
 		String cognome = request.getParameter("cognome");
 		String nascita = request.getParameter("nascita");
 		
-		//System.out.println("Data nascita=" + nascita);
 		
 		String cellulare = request.getParameter("cellulare");
 		
@@ -78,7 +77,7 @@ public class Registrazione extends HttpServlet {
 				
 			}
 			
-			System.out.println("Creazione bean");
+			//System.out.println("Creazione bean");
 			UtenteBean account = new UtenteBean();
 			account.setEmail(email);
 			account.setPassword(password);
@@ -88,13 +87,13 @@ public class Registrazione extends HttpServlet {
 			account.setDataNascita(nascita);
 			account.setCellulare(cellulare);
 			
-			System.out.println("Salvataggio bean");
+			//System.out.println("Salvataggio bean");
 			UtenteDAO dao = new UtenteDAO();
 			dao.doSave(account);
 			
-			System.out.println("Bean salvato");
+			//System.out.println("Bean salvato");
 			
-			System.out.println("Path=" + path);
+			//System.out.println("Path=" + path);
 			
 			response.sendRedirect(path);
 			

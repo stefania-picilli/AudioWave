@@ -199,7 +199,7 @@ public class Carrello extends HttpServlet {
 		
 		}catch(SQLException e) {
 		
-			//response.sendError(500);
+			response.sendError(500);
 			logger.warning(e.getMessage() + "\n" + e.getStackTrace());
 	
 		}

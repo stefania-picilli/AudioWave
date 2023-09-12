@@ -93,9 +93,7 @@ public class DettagliOrdine extends HttpServlet {
 				
 				request.setAttribute("impostaIVA", (double) Math.round((impostaIVA - 5) * 100) / 100);
 				request.setAttribute("imponibile", (double) Math.round(imponibile * 100) / 100);
-				//request.setAttribute("nome-utente", account.getNome() + " " + account.getCognome());
 				request.setAttribute("account", account);
-				//System.out.println("NOME = " + account.getNome() + " " + account.getCognome());
 				request.setAttribute("totaleParziale", ordine.getCostoTotale() - 5);
 				
 				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/user/fattura.jsp");

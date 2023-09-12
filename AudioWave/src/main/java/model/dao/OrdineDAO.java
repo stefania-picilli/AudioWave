@@ -48,7 +48,6 @@ public class OrdineDAO {
 		try {
 			
 			con = ds.getConnection();
-			//con.setAutoCommit(false);
 			
 			ps = con.prepareStatement(insertSQL);
 			

@@ -62,20 +62,18 @@ public class Ordine extends HttpServlet {
 		try {
 		
 		
-			//riceve dati ordine
 			String indirizzo = request.getParameter("indirizzo");
 			String numeroCarta = request.getParameter("numero");
 			String intestatario = request.getParameter("intestatario");
 			String scadenza = request.getParameter("scadenza");
 			String cvv = request.getParameter("cvv");
-			//String totale = request.getParameter("totale");
 			
 			
 			HttpSession session = request.getSession();
 			UtenteBean account = (UtenteBean) session.getAttribute("account");
 			CarrelloBean carrello = (CarrelloBean) session.getAttribute("carrello");
 			
-			System.out.println("Controllo carrello");
+			//System.out.println("Controllo carrello");
 			
 			if(carrello == null || carrello.isEmpty()) {
 				inviaEsito(false, "Ops, non è stato possibile portare a termine l'ordine: non sono presenti prodotti nel carrello", request, response);
@@ -84,14 +82,14 @@ public class Ordine extends HttpServlet {
 			
 			List<ProdottoNelCarrelloBean> listProdotti = carrello.getProdotti();
 			
-			System.out.println("Controllo dati utente");
+			//System.out.println("Controllo dati utente");
 			
 			if(!datiValidi(indirizzo, numeroCarta, intestatario, scadenza, cvv)) {
 				inviaEsito(false, "Ops, non è stato possibile portare a termine l'ordine: dati inviati non validi", request, response);
 				return;
 			}
 			
-			System.out.println("Controlli superati");
+			//System.out.println("Controlli superati");
 			
 			ProdottoDAO daoProd = new ProdottoDAO();
 			

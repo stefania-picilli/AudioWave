@@ -45,7 +45,6 @@ public class UserFilter implements Filter {
 		
 		
 		HttpServletRequest hRequest = (HttpServletRequest) request;  
-		HttpServletResponse hResponse = (HttpServletResponse) response;  
 		
 		HttpSession session = hRequest.getSession(true);
 		UtenteBean account = (UtenteBean) session.getAttribute("account");
