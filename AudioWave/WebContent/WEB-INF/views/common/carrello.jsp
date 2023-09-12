@@ -36,9 +36,7 @@
 				 		<div class="prodotto box" id="${prodotto.prodotto.codiceProdotto}">
 				 		
 				 			<div class="img">
-				 			
 				 				<img src="${prodotto.prodotto.immagine}" alt="IMG" height="200px">
-				 				
 				 			</div>
 				 			
 				 			<div class="info-prod">

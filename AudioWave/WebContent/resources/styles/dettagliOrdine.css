@@ -1,0 +1,257 @@
+@charset "ISO-8859-1";
+
+
+h1{
+	
+	margin: 15px 0px 80px 0px;
+	text-align: center;
+	
+}
+
+#prodotti{
+	
+	width: 65%;
+	margin: 40px auto;
+	
+}
+
+.prodotto{
+	
+	width: 100%;
+	overflow: hidden;
+	
+	margin: 12px 0px;
+	
+}
+
+.prodotto a{
+	
+	text-decoration: none;
+	color: #222526;
+	
+}
+
+
+#prodotti .img{
+	
+	width: 40%;
+	float: left;
+	overflow: hidden;
+	
+}
+
+#prodotti .img img{
+
+	
+	display: block;
+	object-fit: contain;
+    max-width: 400px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    margin:auto;
+	
+}
+
+
+
+.info-prod{
+	
+	width: 60%;
+	float: right;
+	
+	
+}
+
+.info-prod h3{
+	margin: 20px 0px 0px 0px; 
+}
+
+
+.info-prod .p3{
+	margin: 0px 0px 20px 0px; 
+}
+
+
+.bottom-info{
+	
+	width: 100%;
+	overflow: hidden;
+	
+	margin-top: 40px;
+	margin-bottom: 20px;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	
+}
+
+.prezzo{
+	
+	width: 50%;
+	
+}
+
+.quantita{
+	
+	width: 50%;
+	text-align: right;
+	margin-right: 25px;
+	
+}
+
+.quantita p{
+	
+	margin: 20px 0px 0px;
+	
+}
+
+
+
+#info-wrap{
+	
+	
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+
+#info-ordine, #info-spedizione{
+	
+	margin: 90px 0px;
+	
+}
+
+#info-ordine h2, #info-spedizione h2{
+	
+	text-align: center;
+	
+}
+
+
+.info-item h3{
+	
+	margin: 2px 0px;
+	
+}
+
+.info-item p{
+	
+	width: 100%;
+	padding: 13px 18px;
+	margin: 4px 0px;
+	
+}
+
+.info-item{
+	
+	width: 100%;
+	margin: 22px 0px;
+	
+	
+}
+
+
+
+#fattura{
+	
+	width: 100%;
+	
+	margin: 50px 0px;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#fattura form{
+	
+	width: 40%;
+	
+}
+
+
+#fattura input{
+	
+	width: 100%;
+	padding: 17px 0px;
+	border-radius: 10px;
+	
+}
+
+
+
+
+@media screen and (max-width: 1300px){
+	
+	#prodotti{
+		width: 90%;
+	}
+	
+	
+	#prodotti .img{
+		width: 35%;
+	}
+	
+	#info-wrap{
+
+		width: 80%;
+
+	}
+		
+	
+}
+
+
+@media screen and (max-width: 880px){
+	
+	#prodotti{
+		width: 95%;
+	}
+	
+	#prodotti .img{
+	
+		float: none;
+		width: 100%;
+		margin: 0px;
+	
+	}
+
+	
+	.info-prod{
+	
+		float: none;
+		width: 100%;
+		padding: 18px;
+		margin: 0px;
+	
+	}
+	
+	.pulsanti-wrap{
+	
+		width: 90%;
+		
+	}
+	
+	
+	#info-wrap{
+
+		width: 95%;
+
+	}
+	
+	
+	#fattura form{
+	
+		width: 60%;
+		
+	}
+	
+}
+
+	
+

@@ -54,7 +54,7 @@ h1{
 }
 
 
-.img{
+#prodotti .img{
 	
 	width: 40%;
 	float: left;
@@ -62,10 +62,7 @@ h1{
 	
 }
 
-.img img{
-
-	/*max-width: 100%;
-	height: auto;*/
+#prodotti .img img{
 	
 	display: block;
 	object-fit: contain;
@@ -295,7 +292,7 @@ h1{
 	}
 	
 	
-	.img{
+	#prodotti .img{
 		width: 35%;
 	}
 	
@@ -312,7 +309,7 @@ h1{
 	
 	}
 	
-	.img{
+	#prodotti .img{
 	
 		float: none;
 		width: 100%;
