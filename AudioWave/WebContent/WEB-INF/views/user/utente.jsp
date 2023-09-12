@@ -5,7 +5,7 @@
 <%@ page import="java.util.List" %>   
 <%@ page import="model.dto.OrdineBean" %>  
 <!DOCTYPE html>
-<html>
+<html lang="it">
 	<head>
 		<link rel="stylesheet" href="resources/styles/utente.css" type="text/css" >
 		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
@@ -79,6 +79,7 @@
 					<%}else{ %>
 				
 						<table>
+							<caption>Info ordini</caption>
 					
 							<tr class="colored-box">
 							

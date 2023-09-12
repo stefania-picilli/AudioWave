@@ -35,7 +35,7 @@ public class UserFilter implements Filter {
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
-		
+		/*Non sono necessarie operazioni di chiusura*/
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class UserFilter implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		
+		/*Non sono necessarie operazioni di inizializzazione*/
 	}
 
 }

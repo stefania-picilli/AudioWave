@@ -2,9 +2,10 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 	<head>
 		<link rel="stylesheet" href="resources/styles/fattura.css" type="text/css" >
+		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Fattura</title>
@@ -17,13 +18,16 @@
 			
 				<img src="resources/imgages/logo.jpg" alt="logo" height="70px"></img>
 				
-				<h1>FATTURA</h1>
+				<h1>Fattura num. ${ordine.numeroOrdine}</h1>
 			
 			</div>
 			
 			<div class="table-tab">
 			
 				<table>
+					<caption>Info fattura</caption>
+				
+				
 				
 					<tr>
 					
@@ -50,6 +54,7 @@
 			<div class="table-tab">
 			
 				<table>
+					<caption>Info prodotti</caption>
 				
 					<tr>
 						
@@ -85,6 +90,8 @@
 			<div id="last-table">
 			
 				<table>
+					<caption>Info importo</caption>
+				
 				
 					<tr>
 					

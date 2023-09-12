@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 	<head>
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="resources/styles/form.css" type="text/css" >
 		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<title>Effettua il login</title>
 	</head>
 	
@@ -84,7 +85,7 @@
 		</div>
 		
 	
-		<script src="https://kit.fontawesome.com/2cee596a25.js" ></script>
+		
 
 	</body>
 	
