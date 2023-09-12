@@ -55,7 +55,7 @@
 						
 						<div class="filtro-item" id="double-item">
 						
-							<div class="item">
+							<div class="item" id="left-item">
 									
 								<p class="p3">Da: &euro; </p>
 								<div class="input-item">
@@ -64,7 +64,7 @@
 									
 							</div>
 								
-							<div class="item">
+							<div class="item" id="right-item">
 									
 								<p class="p3">A: &euro; </p>
 								<div class="input-item">

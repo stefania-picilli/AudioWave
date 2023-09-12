@@ -210,6 +210,8 @@
   	justify-items: center;
  	align-content: space-evenly;
   	align-items: center;
+  	
+  	grid-auto-rows: 1fr;
 	
 }
 
@@ -258,6 +260,8 @@ a {
 	/*width: 23%;*/
 	width: 100%;
 	/*float: left;*/
+	
+	/*height: 100%;*/ /*aumenta altezza di tutti i prodotti, ma serve flexbox per fissare prezzo in basso */
 	
 	
 }
@@ -320,7 +324,7 @@ h3{
 	
 	#filtro-action{
 	
-		width: 15%;
+		width: 20%;
 	
 	}
 	
@@ -335,6 +339,90 @@ h3{
 
 @media screen and (max-width: 900px){
 	
+	
+	
+	/*#filtri{
+	
+		width: 80%;
+	
+	}*/
+	
+	
+	/*#item-group{
+	
+		float: none;
+		width: 100%;
+	
+	}
+	
+	#single-item, #double-item, #filtro-action{
+	
+		float: none;
+		width: 100%;
+		
+		margin: 20px 0px;
+		
+		overflow: hidden;
+	
+	}
+	
+	
+	#double-item{
+	
+		display: flex;
+  		justify-content: space-between;
+	
+	}
+	
+	#double-item #right-item{
+	
+		display: flex;
+ 		justify-content: flex-end;
+	
+	}*/
+	
+	
+	
+	#item-group {
+	
+	    width: 100%;
+	    margin: 20px 0px;
+	
+	}
+	
+	
+	#single-item, #single-item .item{
+	
+		display: flex;
+ 		justify-content: flex-end;
+	
+	}
+		
+	
+	#filtro-action{
+	
+	
+		display: flex;
+		align-items: center;
+	    justify-content: flex-start;
+	    
+	    
+	    float: none;
+		width: 100%;
+		
+		margin: 20px 0px;
+		
+		/*overflow: hidden;*/
+	
+	}
+	
+	#filtro-action button{
+	
+		width: 100%;
+		padding: 10px 0px;
+	
+	}
+	
 	.tab-prodotti{
 	
 		grid-template-columns: 45% 45%;
@@ -346,9 +434,76 @@ h3{
 
 @media screen and (max-width: 700px){
 	
+	#filtri{
+	
+		width: 100%;
+	
+	}
+	
+	
+	#item-group{
+	
+		float: none;
+		width: 100%;
+	
+	}
+	
+	#single-item, #single-item .item{
+	
+		display: block;
+	
+	}
+	
+	#single-item, #double-item, #filtro-action{
+	
+		float: none;
+		width: 100%;
+		
+		margin: 20px 0px;
+		
+		overflow: hidden;
+	
+	}
+	
+	
+	#double-item{
+	
+		display: flex;
+  		justify-content: space-between;
+	
+	}
+	
+	#double-item #right-item, #double-item #left-item{
+	
+		display: flex;
+ 		justify-content: flex-end;
+	
+	}
+
+	
+	#double-item .item {
+    	
+    	width: 45%;
+    
+	}
+	
+	#single-item .item{
+		display: flex;
+	}
+	
+	.filtro-item .p3{
+		flex-shrink: 0;
+	}
+	
+	.filtro-item .input-item{
+		flex-grow: 1
+	}
+	
+	
+	
 	.tab-prodotti{
 	
-		grid-template-columns: 90%;
+		grid-template-columns: 100%;
 		justify-content: space-around;
 	
 	}
