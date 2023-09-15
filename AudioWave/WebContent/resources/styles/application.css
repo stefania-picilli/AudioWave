@@ -10,6 +10,8 @@ header{
 	border-bottom-width: 1px;
 	border-bottom-color: #E3DBDB;
 	
+	box-sizing: border-box;
+	
 }
 
 
@@ -132,6 +134,34 @@ body{
 	 
 	background-color: #FFFEFE;
 	color: #2D86F6;
+	
+	cursor:pointer;
+	transition-duration: 0.4s;
+	
+}
+
+.reverse-red-button, .red-button:hover{
+	
+	border: solid;
+	border-color: #F6692D;
+	border-width: 1px;
+	 
+	background-color: #FFFEFE;
+	color: #F6692D;
+	
+	cursor: pointer;
+	transition-duration: 0.4s;
+	
+}
+
+.red-button, .reverse-red-button:hover{
+	
+	border: solid;
+	border-color: #F6692D;
+	border-width: 1px;
+	
+	background-color: #F6692D;
+	color: #FFFEFE;
 	
 	cursor:pointer;
 	transition-duration: 0.4s;

@@ -36,14 +36,14 @@
 									<p class="p3">Categoria: </p>
 									
 									<div class="input-item">
+									
 										<select name="categoria" id="categoria-fil" class="box p2">
-												
 											<option value="Tutte" class="p2">Tutte</option>
 											<c:forEach  items="${categorie}" var="categoria">
 												<option value="${categoria.id}" class="p2">${categoria.nome}</option>
 											</c:forEach>
-												
 										</select>
+										
 									</div>
 									
 								</div>
@@ -78,9 +78,7 @@
 					</div>
 						
 					<div id="filtro-action">
-					
 						<button class="cta-button b1" onclick="filtraProd()">Applica</button>
-					
 					</div>
 				
 				</div>
@@ -105,9 +103,7 @@
 								<div class="hidden-info prezzo-hidd">${prodotto.prezzoConIva}</div>
 												
 								<div class="img">
-						
 									<img src="${prodotto.immagine}" alt="IMG">
-						
 								</div>
 					
 								<div class="info">

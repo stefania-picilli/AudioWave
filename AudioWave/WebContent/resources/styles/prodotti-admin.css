@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+
+.prodotto .azioni{
+	
+	width: 95%;
+	margin: 14px auto 8px auto;
+	
+}
+
+
+.prodotto .azioni form/*, #prod-action form*/{
+	
+	width: 100%;
+	
+	margin: 8px 0px;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+.prodotto .azioni input/*, #prod-action input*/{
+	
+	width: 100%;
+	padding: 14px 0px;
+	border-radius: 10px;
+	
+}

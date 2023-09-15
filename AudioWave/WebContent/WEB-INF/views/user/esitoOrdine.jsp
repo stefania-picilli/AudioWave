@@ -52,7 +52,7 @@
 					<div id="esito-info">
 					
 						<h1>Ordine non effettuato</h1>
-						<p>Ops, non è stato possibile portare a termine l'ordine</p>
+						<p>${message}</p>
 					
 					</div>
 					

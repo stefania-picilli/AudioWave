@@ -60,11 +60,12 @@ public class Login extends HttpServlet {
 			System.out.println("IF = Credenziali valide");
 			System.out.println("Bean utente recuperato=" + account);
 			
-			/*if(account.getRuolo().equals("admin") && pathRedirect.contains("Utente"))
-				pathRedirect = request.getContextPath() + "/Amministratore?action=v-prodotti";*/
 			
+			// se a fare il login tramite il pulsante utente è l'admin, redirect alla admin home 
 			
-			//AGGIUNGERE CONTROLLO ADMIN: se a fare il login è admin, redirect alla admin home 
+			if(account.getRuolo().equals("admin") && pathRedirect.contains("Utente"))
+				pathRedirect = request.getContextPath() + "/Amministratore?action=v-prodotti";
+			
 			
 			request.getSession().setAttribute("account", account);
 			response.sendRedirect(pathRedirect);

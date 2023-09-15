@@ -50,3 +50,27 @@ $(document).ready(function(){
 		
 	}
 	
+	
+	function filtraOrdini(){
+		
+		var utente = $('#utente-fil').find(":selected").val();
+		
+		var dataDa = Date.parse($('#data-da').val());
+		var dataA = Date.parse($('#data-a').val());
+		
+		$(".ordine-row").each(function(){
+			
+			var itemUtente = $(this).find(".utente-ord").html();
+			var itemData =  Date.parse($(this).find(".data-ord a").html());
+			
+			
+			if((utente === itemUtente || utente == "Tutti") && (itemData >= dataDa && itemData <= dataA)){
+				$(this).show();
+			}else{
+				$(this).hide();
+			}
+			
+		});
+		
+	}
+	

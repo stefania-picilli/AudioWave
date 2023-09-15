@@ -8,6 +8,7 @@
 <html lang="it">
 	<head>
 		<link rel="stylesheet" href="resources/styles/prodotto.css" type="text/css" >
+		<link rel="stylesheet" href="resources/styles/prodotti-admin.css" type="text/css" >
 		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,52 +23,6 @@
 	
 	
 		<div id="content">
-		
-		
-			<div id="prod-aggiunto" class="message light-color-box">
-			
-				<div class="message-txt">
-					<h4>Hai aggiunto il prodotto:</h4>
-					<p class="p3">${prodotto.nome}</p>
-				</div>
-			
-				<div class="mess-btn-wrap">
-				
-					<div class="message-btn">
-
-						<form action='${pageContext.request.contextPath}/Carrello' method="get">
-							<button class="cta-button b2" value="Vai al carrello" >Vai al carrello</button>
-						</form>
-						
-					</div>
-					
-					<div class="message-btn">
-						<button class="reverse-button b2" onclick="eliminaMess()">Continua</button>
-					</div>
-				
-				</div>
-			
-			</div>
-			
-			
-			<div id="prod-non-aggiunto" class="message light-color-box">
-			
-				<div class="message-txt">
-				
-					<div>
-						<h4>Impossibile aggiungere il prodotto</h4>
-					</div>
-				</div>
-				
-				<div class="mess-btn-wrap">
-			
-					<div class="message-btn">
-						<button class="cta-button b2" onclick="eliminaMess()">Continua</button>
-					</div>
-			
-				</div>
-				
-			</div>
 		
 		
 			<div id="prodotto" >
@@ -96,8 +51,19 @@
 					
 				
 					<div id="prod-action">
-						<div class="item-btn" id="carrello-btn"><button onclick="addFromProd(${prodotto.codiceProdotto})" id="${prodotto.codiceProdotto}" class="reverse-button b1">Aggiungi al carrello</button></div>
-						<div class="item-btn" id="acquista-btn"><button id="${prodotto.codiceProdotto}" class="cta-button b1">Acquista</button></div>
+					
+						<form action="Amministratore" method="POST" class="item-btn">
+							<input type="hidden" name="action" value="r-prodotto">
+							<input type="hidden" name="codice" value="${prodotto.codiceProdotto}">
+							<input type="submit" value="Rimuovi" class="reverse-red-button b1">
+						</form>
+					
+						<form action="Amministratore" method="GET" class="item-btn">
+							<input type="hidden" name="action" value="m-prodotto">
+							<input type="hidden" name="codice" value="${prodotto.codiceProdotto}">
+							<input type="submit" value="Modifica" class="cta-button b1">
+						</form>
+					
 					</div>
 				
 				</div>

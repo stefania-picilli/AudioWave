@@ -22,10 +22,10 @@
 				<div id="form-wrap">
 			
 			
-				<div id="info-form">
-					<h1>Registrati</h1>
-					<p class="p1">Inserisci le tue informazioni</p>
-				</div>
+					<div id="info-form">
+						<h1>Registrati</h1>
+						<p class="p1">Inserisci le tue informazioni</p>
+					</div>
 		
 					<div id="form-data">
 		
