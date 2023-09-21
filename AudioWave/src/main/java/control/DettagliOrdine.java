@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import model.dao.OrdineDAO;
 import model.dao.ProdottoAcquistatoDAO;
 import model.dao.SpedizioneDAO;
+import model.dto.CarrelloBean;
 import model.dto.OrdineBean;
 import model.dto.ProdottoAcquistatoBean;
 import model.dto.SpedizioneBean;
@@ -95,6 +96,7 @@ public class DettagliOrdine extends HttpServlet {
 				request.setAttribute("imponibile", (double) Math.round(imponibile * 100) / 100);
 				request.setAttribute("account", account);
 				request.setAttribute("totaleParziale", ordine.getCostoTotale() - 5);
+				request.setAttribute("costoSpedizione", CarrelloBean.COSTO_SPEDIZIONE);
 				
 				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/user/fattura.jsp");
 				dis.forward(request, response);

@@ -34,12 +34,17 @@
 								
 									<p class="p3">Utente: </p>
 								
-									<select name="utente" id="utente-fil" class="box p2">
-										<option value="Tutti" class="p2">Tutti</option>
-										<c:forEach  items="${utenti}" var="utente">
-											<option value="${utente.email}" class="p2">${utente.email}</option>
-										</c:forEach>
-									</select>
+								
+									<div class="input-item">
+								
+										<select name="utente" id="utente-fil" class="box p2">
+											<option value="Tutti" class="p2">Tutti</option>
+											<c:forEach  items="${utenti}" var="utente">
+												<option value="${utente.email}" class="p2">${utente.email}</option>
+											</c:forEach>
+										</select>
+									
+									</div>
 								
 								</div>
 								
@@ -54,6 +59,9 @@
 										<input type="date" id="data-da" class="box p2" value="${da}">
 									</div>
 									
+								</div>
+									
+								<div class="item" id="right-item">
 									<p class="p3">A:</p>
 									<div class="input-item">
 										<input type="date" id="data-a" class="box p2" value="${a}">
@@ -75,7 +83,7 @@
 					</div>
 					
 					
-					
+					<div class="line"></div>
 					
 				
 					<div id="tab-ordini">

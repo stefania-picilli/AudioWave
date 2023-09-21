@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="resources/styles/form.css" type="text/css" > 
 		<link rel="stylesheet" href="resources/styles/dettagliOrdine.css" type="text/css" >
 		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Informazioni ordine</title>
@@ -91,6 +91,16 @@
 							<h3>Indirizzo</h3>
 							<p class="box">${ordine.indirizzo}</p>
 						</div>
+						
+						<div class="info-item">
+							<h3>Nome utente</h3>
+							<p class="box">${utente.cognome} ${utente.nome}</p>
+						</div>
+					
+						<div class="info-item">
+							<h3>E-mail utente</h3>
+							<p class="box">${utente.email}</p>
+						</div>
 					
 					</div>
 				
@@ -104,7 +114,7 @@
 					
 						<div id="info-form">
 							<h1>Spedizione</h1>
-							<p class="p1">L'ordine è stato spedito? Inserisci le informazioni riguardanti la spedizione</p>
+							<p class="p1">Inserisci le informazioni riguardanti la spedizione</p>
 						</div>
 						
 						
@@ -115,7 +125,7 @@
 								<div id="corriere" class="form-item">
 									
 									<label for="corriere" class="p3">Corriere:</label>
-									<input type="text" name="corriere" class="box">
+									<input type="text" name="corriere" placeholder="Corriere" class="box">
 									
 									<div></div>
 									

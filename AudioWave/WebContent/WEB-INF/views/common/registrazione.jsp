@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html lang="it">
 	<head>
-		<link rel="stylesheet" href="resources/styles/form.css" type="text/css" > 
 		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="resources/styles/form.css" type="text/css" > 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Registrati</title>
@@ -32,34 +32,14 @@
 						<form method="POST" action="Registrazione">
 				
 							<div id="auth-info" class="form-group">
-						
-								<div id="email" class="form-item">
 							
-									<label for="email">Email:</label>
-									<input type="text" name="email" id="email" placeholder="luca.bianchi@example.com" class="box">
-									
-									<div></div>
 							
-								</div>
-								
-								<div id="password" class="form-item">
-								
-									<label for="password">Password:</label>
-									<input type="password" name="password" id="password" class="box">
-									
-									<div></div>
-								
-								</div>
-						
-							</div>
-			
-					
-							<div class="form-group">
+								<div class="form-group">
 						
 								<div id="nome" class="form-item">
 								
 									<label for="nome">Nome:</label>
-									<input type="text" name="nome" placeholder="luca" class="box">
+									<input type="text" name="nome" placeholder="Luca" class="box">
 									
 									<div></div>
 								
@@ -75,7 +55,27 @@
 								</div>
 						
 							</div>
-					
+						
+								<div id="email" class="form-item">
+							
+									<label for="email">Email:</label>
+									<input type="text" name="email" id="email" placeholder="luca.bianchi@example.com" class="box">
+									
+									<div></div>
+							
+								</div>
+								
+								<div id="password" class="form-item">
+								
+									<label for="password">Password:</label>
+									<input type="password" name="password" id="password" placeholder="**********" class="box">
+									
+									<div></div>
+								
+								</div>
+						
+							</div>
+			
 					
 							<div class="form-group">
 					
@@ -92,7 +92,7 @@
 								<div id="cellulare" class="form-item">
 							
 									<label for="cellulare">Cellulare:</label>
-									<input type="text" name="cellulare" placeholder="+00 000 000 0000" class="box">
+									<input type="text" name="cellulare" placeholder="000 000 0000" class="box">
 									
 									<div></div>
 							
@@ -125,6 +125,9 @@
 
 		</div>
 		
+
+		<script src="resources/scripts/jquery.js"></script>
+		<script src="resources/scripts/form.js"></script>
 
 	</body>
 	

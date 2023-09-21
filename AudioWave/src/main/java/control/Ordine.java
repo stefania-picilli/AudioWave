@@ -3,6 +3,7 @@ package control;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -45,6 +46,19 @@ public class Ordine extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		CarrelloBean carrello = (CarrelloBean) session.getAttribute("carrello");
+		
+		//se carrello vuoto, pagina ordine non disponibile
+		if(carrello == null || carrello.isEmpty()) {
+			response.sendError(404);
+			return;
+		}
+		
+		request.setAttribute("parziale", carrello.getTotale());
+		request.setAttribute("costoSpedizione", CarrelloBean.COSTO_SPEDIZIONE);
+		request.setAttribute("totale", carrello.getTotaleConSpedizione());
 		
 		
 		RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/user/ordine.jsp");
@@ -200,8 +214,34 @@ public class Ordine extends HttpServlet {
 		if(intestatario == null || intestatario.equals(""))
 			return false;
 		
-		if(scadenza == null || scadenza.equals(""))
+		if(scadenza == null || scadenza.equals("")) 
 			return false;
+		else {
+			
+			//se scaduta ritorna false
+			System.out.println("Scadenza=" + scadenza);
+			
+			String[] scad = scadenza.split("/|-");
+			
+			int meseScad = Integer.parseInt(scad[0]);
+			System.out.println("mese=" + meseScad);
+			int annoScad = Integer.parseInt(scad[1]);
+			System.out.println("anno=" + annoScad);
+			
+			LocalDateTime localDate = LocalDateTime.now();
+			int annoAttuale = localDate.getYear() - 2000;
+			System.out.println("annoAttuale=" + annoAttuale);
+			int meseAttuale = localDate.getMonthValue();
+			System.out.println("meseAttuale=" + meseAttuale);
+			
+			/*if((annoAttuale < annoScad) || (annoAttuale == annoScad && meseAttuale <= meseScad))
+				return true;*/
+			
+			if((annoAttuale >= annoScad) && (annoAttuale != annoScad || meseAttuale > meseScad))
+				return false;
+			
+		}
+		
 		
 		if(cvv == null || cvv.length() != 3)
 			return false;

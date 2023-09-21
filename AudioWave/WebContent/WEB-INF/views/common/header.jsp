@@ -6,7 +6,7 @@
 <html lang="it">
 	<head>
 	
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
 		<link rel="stylesheet" href="resources/styles/header.css" type="text/css" >
 		<meta charset="ISO-8859-1">
@@ -20,14 +20,12 @@
 		
 		
 			<header>	
-			
-				<div id="left">
 				
 					<div id="logo">
 						<a href='${pageContext.request.contextPath}/Home'><img src="resources/images/logo-prova.jpg" alt="logo"  height="50px"></img></a>
 					</div>
 				
-					<nav>
+					<nav id="header-nav">
 						<ul>
 							<c:forEach  items="${categorie}" var="categoria">
 								<li>
@@ -38,10 +36,18 @@
 					</nav>
 					
 				
-				</div>
-			
-			
-				<div id="right">
+				
+					<div id="pulsanti-header">
+					
+						<div id="cart" class="pulsante">
+							<a href='${pageContext.request.contextPath}/Carrello'><i class="fa-solid fa-cart-shopping fa-3x action-icon"></i></a>
+						</div>
+						
+						<div id="user" class="pulsante">
+							<a href='${pageContext.request.contextPath}/Utente'><i class="fa fa-solid fa-user fa-3x action-icon"></i></a>
+						</div>
+						
+					</div>
 				
 				
 					<div id="barra-ricerca">
@@ -53,21 +59,6 @@
 					
 					</div>
 				
-				
-					<div id="pulsanti">
-					
-						<div id="cart" class="pulsante">
-							<a href='${pageContext.request.contextPath}/Carrello'>Carrello</a>
-							<!--<a href='${pageContext.request.contextPath}/Carrello'><i class="fa fa-cart-shopping action-icon"></i></a>-->
-						</div>
-						
-						<div id="user" class="pulsante">
-							<a href='${pageContext.request.contextPath}/Utente'><i class="fa fa-solid fa-user fa-3x action-icon"></i></a>
-						</div>
-						
-					</div>
-				
-				</div>
 			
 			
 			</header>

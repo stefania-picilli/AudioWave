@@ -8,6 +8,8 @@ public class CarrelloBean {
 	private List<ProdottoNelCarrelloBean> prodotti;
 	private double totale;
 	
+	public static final float COSTO_SPEDIZIONE = 5;
+	
 	public CarrelloBean(){
 		
 		prodotti = new LinkedList<>();
@@ -29,7 +31,7 @@ public class CarrelloBean {
 	
 	public double getTotaleConSpedizione() {
 		
-		return (double) Math.round((totale + 5) * 100) / 100;
+		return (double) Math.round((totale + COSTO_SPEDIZIONE) * 100) / 100;
 		
 	}
 

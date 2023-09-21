@@ -6,7 +6,7 @@
 	<head>
 		<link rel="stylesheet" href="resources/styles/form.css" type="text/css" > 
 		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Modifica prodotto</title>
@@ -28,7 +28,7 @@
 					
 					<div id="form-data">
 			
-						<form action="Amministratore" method="POST">
+						<form action="Amministratore" method="POST" enctype="multipart/form-data">
 							
 							<div id="nome-prod" class="form-item">
 								
@@ -39,7 +39,7 @@
 								
 							</div>
 							
-							<div id="produttore" class="form-item">
+							<div id="marca" class="form-item">
 								
 								<label for="marca" class="p3">Marca:</label>
 								<input type="text" name="marca" value="${prodotto.marca}" class="box">
@@ -51,7 +51,7 @@
 							<div id="descrizione" class="form-item">
 								
 								<label for="descrizione" class="p3">Descrizione prodotto:</label>
-								<input type="text" name="descrizione" value="${prodotto.descrizione}" class="box">
+								<textarea name="descrizione" rows="10" class="box">${prodotto.descrizione}</textarea>
 								
 								<div></div>
 								
@@ -61,7 +61,7 @@
 							<div id="immagine" class="form-item">
 								
 								<label for="immagine" class="p3">Immagine prodotto:</label>
-								<input type="text" name="immagine" value="${prodotto.immagine}" class="box">
+								<input type="file" name="immagine" value="${prodotto.immagine}" class="box">
 								
 								<div></div>
 								
@@ -93,7 +93,7 @@
 							
 							<div id="prezzo" class="form-item">
 								
-								<label for="prezzo" class="p3">Prezzo prodotto:</label>
+								<label for="prezzo" class="p3">Prezzo prodotto (in Euro):</label>
 								<input type="text" name="prezzo" value="${prodotto.prezzo}" class="box">
 								
 								<div></div>
@@ -102,7 +102,7 @@
 							
 							<div id="iva" class="form-item">
 								
-								<label for="iva" class="p3">IVA prodotto:</label>
+								<label for="iva" class="p3">IVA prodotto (%):</label>
 								<input type="text" name="iva" value="${prodotto.iva}" class="box">
 								
 								<div></div>

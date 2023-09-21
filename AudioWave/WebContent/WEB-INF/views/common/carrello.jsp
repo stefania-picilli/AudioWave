@@ -107,7 +107,7 @@
 					 		
 					 		<div class="line-wrap">
 					 			<p class="p2">Costo spedizione:</p>
-					 			<p class="p2">&euro; 5.00</p>
+					 			<p class="p2">&euro; ${costoSpedizione}</p>
 					 		</div>
 					 		
 					 		

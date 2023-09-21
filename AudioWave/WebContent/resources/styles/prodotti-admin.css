@@ -1,5 +1,42 @@
 @charset "ISO-8859-1";
 
+
+#nuovo-prod{
+	
+	width: 100%;
+	
+	
+}
+
+#nuovo-prod p{
+	
+	width: 60%;
+	text-align: center;
+	margin: 40px auto;
+	
+}
+
+#nuovo-prod form{
+	
+	width: 100%;
+	
+	margin: 40px 0px;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#nuovo-prod input{
+	
+	width: 20%;
+	padding: 14px 0px;
+	border-radius: 10px;
+	
+}
+
+
 .prodotto .azioni{
 	
 	width: 95%;
@@ -28,3 +65,45 @@
 	border-radius: 10px;
 	
 }
+
+
+@media screen and (max-width: 1200px){
+	
+	#nuovo-prod p{
+		width: 70%;
+	}
+	
+	#nuovo-prod input{
+		width: 25%;
+	}
+	
+	
+}
+
+
+@media screen and (max-width: 900px){
+	
+	#nuovo-prod p{
+		width: 75%;
+	}
+	
+	#nuovo-prod input{
+		width: 30%;
+	}
+	
+}
+
+
+@media screen and (max-width: 700px){
+	
+	#nuovo-prod p{
+		width: 90%;
+	}
+	
+	#nuovo-prod input{
+		width: 50%;
+	}
+	
+}
+
+

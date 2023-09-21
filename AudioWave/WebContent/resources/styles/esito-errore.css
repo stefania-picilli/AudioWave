@@ -1,0 +1,89 @@
+@charset "ISO-8859-1";
+
+
+#mess-img{
+	
+	width: 100%;	
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+#mess-img img{
+	
+	/*width: 65%;*/
+	width: 35%;
+	
+}
+
+#mess-info{
+	
+	margin: 50px 0px;
+	
+}
+
+#mess-info *{
+	
+	text-align: center;
+	margin: 10px 0px;
+	
+}
+
+
+#mess-btn{
+
+	margin: 60px;
+	
+
+}
+
+
+#mess-btn form{
+	
+	width: 100%;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#mess-btn input{
+
+	
+	border-radius: 10px;
+	padding: 18px 40px;
+
+}
+
+
+@media screen and (max-width: 1200px){
+	
+	#mess-img img{
+		width: 50%;
+	}
+	
+	
+	
+}
+
+
+@media screen and (max-width: 800px){
+	
+	#mess-img img{
+		width: 80%;
+	}
+
+}
+
+
+@media screen and (max-width: 600px){
+	
+	#mess-img img{
+		width: 100%;
+	}
+	
+}

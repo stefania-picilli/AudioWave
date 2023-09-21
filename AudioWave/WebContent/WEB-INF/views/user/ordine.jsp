@@ -36,7 +36,7 @@
 									<div id="indirizzo" class="form-item">
 										
 										<label for="indirizzo">Indirizzo:</label>
-										<input type="text" name="indirizzo" placeholder="Inserire Via/Corso/Piazza, Numero civico, CAP, Città, Provincia" class="box">
+										<input type="text" name="indirizzo" placeholder="Via/Corso/Piazza, Numero civico, CAP, Città, Provincia" class="box">
 										
 										<div></div>
 									
@@ -46,7 +46,7 @@
 									
 										<div id="indirizzo" class="form-item">
 											<label for="numero">Numero Carta:</label>
-											<input type="text" name="numero" placeholder="xxxxxxxxxxxxx" class="box">
+											<input type="text" name="numero" placeholder="**********" class="box">
 											
 											<div></div>
 											
@@ -62,7 +62,7 @@
 									
 										<div id="scadenza" class="form-item">
 											<label for="scadenza">Data di scadenza:</label>
-											<input type="text" name="scadenza" placeholder="mm/yy" class="box">
+											<input type="text" name="scadenza" placeholder="MM/YY" class="box">
 											
 											<div></div>
 											
@@ -70,7 +70,7 @@
 									
 										<div id="cvv" class="form-item">
 											<label for="cvv">CVV:</label>
-											<input type="text" name="cvv" placeholder="xxx" class="box">
+											<input type="text" name="cvv" placeholder="***" class="box">
 											
 											<div></div>
 											
@@ -105,12 +105,12 @@
 					 		
 					 		<div class="line-wrap">
 					 			<p class="p2 left-item">Importo parziale:</p>
-					 			<p class="p2 right-item" id="cellaSubTot">&euro; ----</p>
+					 			<p class="p2 right-item" id="cellaSubTot">&euro; ${parziale}</p>
 					 		</div>
 					 		
 					 		<div class="line-wrap">
 					 			<p class="p2">Costo spedizione:</p>
-					 			<p class="p2">&euro; ----</p>
+					 			<p class="p2">&euro; ${costoSpedizione}</p>
 					 		</div>
 					 		
 					 		
@@ -120,7 +120,7 @@
 					 		
 					 		<div class="line-wrap">
 					 			<h4>Importo totale:</h4>
-					 			<h4 id="cellaTot">&euro; ----</h4>
+					 			<h4 id="cellaTot">&euro; ${totale}</h4>
 					 		</div>
 					 		
 					 		
@@ -141,6 +141,9 @@
 		
 		</div>
 
+
+		<script src="resources/scripts/jquery.js"></script>
+		<script src="resources/scripts/form.js"></script>
 
 	</body>
 </html>

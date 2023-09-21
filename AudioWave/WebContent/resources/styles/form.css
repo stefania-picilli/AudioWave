@@ -55,7 +55,7 @@
 
 
 
-.form-item input[type=text], .form-item input[type=password], .form-item input[type=number], .form-item input[type=date], .form-item select{
+.form-item input[type=text], .form-item input[type=password], .form-item input[type=number], .form-item input[type=date], .form-item select, .form-item textarea{
 	
 	
 	margin: 2px 0px;
@@ -86,28 +86,9 @@
 }
 
 
-.valid-input{
-	
-	border-color: green;
-	
+textarea {
+  resize: vertical;
 }
-
-
-.invalid-input{ 
-	
-	border-color: red;
-	
-}
-
-
-.error-message{
-	
-	color: red;
-	
-}
-
-
-
 
 @media screen and (max-width: 1300px){
 	

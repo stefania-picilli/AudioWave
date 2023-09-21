@@ -30,6 +30,7 @@ public class Carrello extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getLogger(Carrello.class.getName());
 	private static final String carrelloAttr = "carrello";
+
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -64,6 +65,8 @@ public class Carrello extends HttpServlet {
 			
 			session.setAttribute(carrelloAttr, carrello);	
 			request.setAttribute("totale", carrello.getTotale());
+			
+			request.setAttribute("costoSpedizione", CarrelloBean.COSTO_SPEDIZIONE);
 			
 			if(!messaggi.isEmpty())
 				request.setAttribute("messaggi", messaggi);

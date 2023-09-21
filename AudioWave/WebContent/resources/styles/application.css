@@ -188,6 +188,12 @@ body{
 	
 }
 
+.warn-icon{
+	
+	color: red;
+	
+}
+
 
 .line{
 	
@@ -197,6 +203,59 @@ body{
 	background-color: #FFFEFE;
 	
 	
+}
+
+
+
+.valid-input{
+	
+	border-color: green;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 10px;
+	background-color: #FFFEFE;
+	
+}
+
+
+.invalid-input{ 
+	
+	border-color: red;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 10px;
+	background-color: #FFFEFE;
+	
+}
+
+
+.focus-input{
+	
+	border-color: #2D86F6;
+	
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 10px;
+	background-color: #FFFEFE;
+	
+	
+}
+
+.error-message{
+	
+	color: red;
+	
+}
+
+
+input:focus { 
+	outline: none !important;
+}
+
+textarea:focus { 
+	outline: none !important;
 }
 
 
@@ -354,4 +413,16 @@ caption{
 }
 
 
+
+
+@media screen and (max-width: 1000px){
+	
+	#content{
+	
+		margin-top: 170px;
+	
+	}
+	
+	
+}
 

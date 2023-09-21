@@ -16,7 +16,7 @@
 			
 			<div id="top">
 			
-				<img src="resources/imgages/logo.jpg" alt="logo" height="70px"></img>
+				<img src="resources/images/logo-prova.jpg" alt="logo" height="70px"></img>
 				
 				<h1>Fattura num. ${ordine.numeroOrdine}</h1>
 			
@@ -117,7 +117,7 @@
 					<tr>
 					
 						<th>Costo spedizione</th>
-						<td>&euro; 5.00</td>
+						<td>&euro; ${costoSpedizione}</td>
 					
 					</tr>
 				

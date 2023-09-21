@@ -1,18 +1,22 @@
 package control;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import model.dao.CategoriaDAO;
 import model.dao.OrdineDAO;
@@ -31,9 +35,13 @@ import model.dto.UtenteBean;
  * Servlet implementation class Amministratore
  */
 @WebServlet("/Amministratore")
+@MultipartConfig(fileSizeThreshold=1024*1024*2, // 2MB
+				maxFileSize=1024*1024*10,      // 10MB
+				maxRequestSize=1024*1024*50)   // 50MB
 public class Amministratore extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getLogger(Amministratore.class.getName());
+	private static String SAVE_DIR = "resources/images/";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -199,6 +207,9 @@ public class Amministratore extends HttpServlet {
 					
 				}
 				
+				String email = ordine.getEmail();
+				UtenteDAO utDAO = new UtenteDAO();
+				UtenteBean utente = utDAO.doRetrieveByKey(email);
 				
 				ProdottoAcquistatoDAO prodDAO = new ProdottoAcquistatoDAO();
 				List<ProdottoAcquistatoBean> prodotti = (List<ProdottoAcquistatoBean>) prodDAO.doRetrieveByOrdine(num);
@@ -208,6 +219,7 @@ public class Amministratore extends HttpServlet {
 				
 				request.setAttribute("prodotti", prodotti);
 				request.setAttribute("ordine", ordine);
+				request.setAttribute("utente", utente);
 				request.setAttribute("spedizione", spedizione);
 				
 				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/ordine.jsp");
@@ -240,7 +252,6 @@ public class Amministratore extends HttpServlet {
 			if(action.equals("c-prodotto")) {
 				
 				String nome = request.getParameter("nome");
-				String immagine = request.getParameter("immagine");
 				String marca = request.getParameter("marca");
 				String descrizione = request.getParameter("descrizione");
 				double prezzo = Double.parseDouble(request.getParameter("prezzo"));
@@ -249,10 +260,30 @@ public class Amministratore extends HttpServlet {
 				int categoria = Integer.parseInt(request.getParameter("categoria"));
 				String tag = request.getParameter("tag");
 				
+				// Get the file part from the request
+	            Part filePart = request.getPart("immagine");
+
+	            // Generate a unique file name
+	            String fileName = UUID.randomUUID().toString() + extractFileName(filePart);
+	            
+	            // Define the directory where the file will be stored
+	            String uploadDir = getServletContext().getRealPath(SAVE_DIR);
+
+	            // Create the directory if it doesn't exist
+	            File dir = new File(uploadDir);
+	            if (!dir.exists()) {
+	                dir.mkdirs();
+	            }
+
+	            // Save the file to the specified directory
+	            String filePath = uploadDir + File.separator + fileName;
+	            filePath = filePath.replace("\\", "/");
+	            filePart.write(filePath);
+				
 				
 				ProdottoBean prodotto = new ProdottoBean();
 				prodotto.setNome(nome);
-				prodotto.setImmagine(immagine);
+				prodotto.setImmagine(SAVE_DIR + fileName);
 				prodotto.setMarca(marca);
 				prodotto.setTag(tag);
 				prodotto.setDescrizione(descrizione);
@@ -271,7 +302,6 @@ public class Amministratore extends HttpServlet {
 				
 				String codice = request.getParameter("id");		
 				String nome = request.getParameter("nome");
-				String immagine = request.getParameter("immagine");
 				String marca = request.getParameter("marca");
 				String descrizione = request.getParameter("descrizione");
 				String prezzo = request.getParameter("prezzo");
@@ -280,12 +310,13 @@ public class Amministratore extends HttpServlet {
 				String categoria = request.getParameter("categoria");
 				String tag = request.getParameter("tag");
 				
+				
 				ProdottoDAO dao = new ProdottoDAO();
 				ProdottoBean prodotto = new ProdottoBean();
 				
 				prodotto.setCodiceProdotto(Integer.parseInt(codice));
 				prodotto.setNome(nome);
-				prodotto.setImmagine(immagine);
+				prodotto.setImmagine(null);
 				prodotto.setMarca(marca);
 				prodotto.setTag(tag);
 				prodotto.setDescrizione(descrizione);
@@ -294,6 +325,34 @@ public class Amministratore extends HttpServlet {
 				prodotto.setIva(Double.parseDouble(iva));
 				prodotto.setCategoriaID(Integer.parseInt(categoria));
 			
+				Part filePart = request.getPart("immagine");
+				
+				
+	            String fileName = extractFileName(filePart);
+				
+				if(fileName != null && !fileName.equals("")) {
+					
+					fileName = UUID.randomUUID().toString() + fileName;
+
+		            // Define the directory where the file will be stored
+		            String uploadDir = getServletContext().getRealPath(SAVE_DIR);
+
+		            // Create the directory if it doesn't exist
+		            File dir = new File(uploadDir);
+		            if (!dir.exists()) {
+		                dir.mkdirs();
+		            }
+
+		            // Save the file to the specified directory
+		            String filePath = uploadDir + File.separator + fileName;
+		            filePath = filePath.replace("\\", "/");
+		            filePart.write(filePath);
+		            
+		            prodotto.setImmagine(SAVE_DIR + fileName);
+					
+				}
+				
+				
 				dao.updateProdotto(prodotto);
 				
 				response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
@@ -381,4 +440,16 @@ public class Amministratore extends HttpServlet {
 		
 	}
 
+	
+	private String extractFileName(Part part) {
+        String contentDisp = part.getHeader("content-disposition");
+        String[] items = contentDisp.split(";");
+        for (String s : items) {
+            if (s.trim().startsWith("filename")) {
+                return s.substring(s.indexOf("=") + 2, s.length()-1);
+            }
+        }
+        return "";
+    }	
+	
 }
