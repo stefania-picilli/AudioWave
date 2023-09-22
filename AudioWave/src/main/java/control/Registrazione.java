@@ -27,14 +27,13 @@ public class Registrazione extends HttpServlet {
      */
     public Registrazione() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		
 		String path = request.getParameter("path");
 		request.setAttribute("path", path);
@@ -47,7 +46,7 @@ public class Registrazione extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -69,7 +68,6 @@ public class Registrazione extends HttpServlet {
 				
 				//mandare messaggio a register
 				request.setAttribute("messaggio", "Impossibile effettuare la registrazione, email già esistente.");
-				//inserire path o no?
 				request.setAttribute("path", path);
 				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/registrazione.jsp");
 				dis.forward(request, response);
@@ -77,7 +75,6 @@ public class Registrazione extends HttpServlet {
 				
 			}
 			
-			//System.out.println("Creazione bean");
 			UtenteBean account = new UtenteBean();
 			account.setEmail(email);
 			account.setPassword(password);
@@ -87,13 +84,8 @@ public class Registrazione extends HttpServlet {
 			account.setDataNascita(nascita);
 			account.setCellulare(cellulare);
 			
-			//System.out.println("Salvataggio bean");
 			UtenteDAO dao = new UtenteDAO();
 			dao.doSave(account);
-			
-			//System.out.println("Bean salvato");
-			
-			//System.out.println("Path=" + path);
 			
 			response.sendRedirect(path);
 			
@@ -112,10 +104,12 @@ public class Registrazione extends HttpServlet {
 		
 		UtenteDAO dao = new UtenteDAO();
 		
-		if((dao.doRetrieveByKey(email)) != null)
+		return (dao.doRetrieveByKey(email) != null);
+		
+		/*if((dao.doRetrieveByKey(email)) != null)
 			return true;
 		
-		return false;
+		return false;*/
 		
 			
 	}

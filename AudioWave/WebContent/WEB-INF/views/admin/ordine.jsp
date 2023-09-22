@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 	<head>
 		<link rel="stylesheet" href="resources/styles/form.css" type="text/css" > 
 		<link rel="stylesheet" href="resources/styles/dettagliOrdine.css" type="text/css" >

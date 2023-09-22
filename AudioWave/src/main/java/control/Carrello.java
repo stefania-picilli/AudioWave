@@ -29,7 +29,7 @@ import model.dto.ProdottoNelCarrelloBean;
 public class Carrello extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getLogger(Carrello.class.getName());
-	private static final String carrelloAttr = "carrello";
+	private static final String CARRELLO = "carrello";
 
        
     /**
@@ -50,20 +50,20 @@ public class Carrello extends HttpServlet {
 			
 			
 			HttpSession session = request.getSession();
-			CarrelloBean carrello = (CarrelloBean) session.getAttribute(carrelloAttr);
+			CarrelloBean carrello = (CarrelloBean) session.getAttribute(CARRELLO);
 			
 			
 			//se carrello non esiste nella sessione, ne crea uno
 			if(carrello == null) {
 						
 				carrello = new CarrelloBean();
-				session.setAttribute(carrelloAttr, carrello);
+				session.setAttribute(CARRELLO, carrello);
 						
 			}
 				
 			List<String> messaggi = controlloProdotti(carrello.getProdotti());
 			
-			session.setAttribute(carrelloAttr, carrello);	
+			session.setAttribute(CARRELLO, carrello);	
 			request.setAttribute("totale", carrello.getTotale());
 			
 			request.setAttribute("costoSpedizione", CarrelloBean.COSTO_SPEDIZIONE);
@@ -104,13 +104,13 @@ public class Carrello extends HttpServlet {
 			
 			HttpSession session = request.getSession();
 			System.out.println("Sessione ottenuta");
-			CarrelloBean carrello = (CarrelloBean) session.getAttribute(carrelloAttr);
+			CarrelloBean carrello = (CarrelloBean) session.getAttribute(CARRELLO);
 			
 			//se carrello non esiste nella sessione, ne crea uno
 			if(carrello == null) {
 						
 				carrello = new CarrelloBean();
-				session.setAttribute(carrelloAttr, carrello);
+				session.setAttribute(CARRELLO, carrello);
 						
 			}
 			
@@ -142,7 +142,7 @@ public class Carrello extends HttpServlet {
 					
 					System.out.println("Aggiunto a carrello");
 					
-					session.setAttribute(carrelloAttr, carrello);
+					session.setAttribute(CARRELLO, carrello);
 				
 				}else {
 					
@@ -158,7 +158,7 @@ public class Carrello extends HttpServlet {
 				
 				if(carrello.remove(codice)) {
 					
-					session.setAttribute(carrelloAttr, carrello);
+					session.setAttribute(CARRELLO, carrello);
 					quantita = -1;
 				
 				}else {
@@ -174,7 +174,7 @@ public class Carrello extends HttpServlet {
 				
 				if(carrello.removeAll(codice)) {
 				
-					session.setAttribute(carrelloAttr, carrello);
+					session.setAttribute(CARRELLO, carrello);
 					
 				}else {
 					

@@ -104,6 +104,12 @@
 	
 }
 
+#tab-ordini p{
+	
+	padding: 10px;
+	
+}
+
 
 #ordini table{
 	
@@ -151,6 +157,18 @@
 
 
 
+#ordini .box-hover td{
+	border-bottom: 1px solid #ACA6A6;
+	border-top: 1px solid #ACA6A6;
+}
+
+#ordini .box-hover td:first-child{
+	border-left: 1px solid #ACA6A6;
+}
+
+#ordini .box-hover td:last-child{
+	border-right: 1px solid #ACA6A6;
+}
 
 
 @media screen and (max-width: 1200px){

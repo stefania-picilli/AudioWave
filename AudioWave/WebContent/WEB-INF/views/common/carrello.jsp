@@ -22,7 +22,7 @@
 		 
 			 <div><h1>Il tuo carrello</h1></div>
 			 	
-			 <div id="messaggi"></div>
+			 <div id="messaggi" class="error-message"></div>
 			 
 		 
 			 <div id="center"> 

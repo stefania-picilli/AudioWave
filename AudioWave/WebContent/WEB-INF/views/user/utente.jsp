@@ -74,7 +74,7 @@
 				
 					<%if(request.getAttribute("ordini") == null){%>
 				
-						<p>Non sono ancora presenti ordini</p>
+						<p class="p2 box">Non sono ancora presenti ordini</p>
 				
 					<%}else{ %>
 				
@@ -93,9 +93,9 @@
 					
 							<c:forEach  items="${ordini}" var="ordine">
 							
-								<tr class="box">
+								<tr class="box" onclick="tableRowClickU(${ordine.numeroOrdine})">
 							
-										<td><a href="DettagliOrdine?action=visualizza&num=${ordine.numeroOrdine}">${ordine.data}</a></td>
+										<td>${ordine.data}</td>
 										<td>${ordine.indirizzo}</td>
 										<td>${ordine.statoOrdine}</td>
 										<td>&euro; ${ordine.costoTotale}</td>
@@ -116,6 +116,8 @@
 		
 		</div>
 		
+		<script src="resources/scripts/jquery.js"></script>
+		<script src="resources/scripts/table.js"></script>
 	
 	</body>
 </html>

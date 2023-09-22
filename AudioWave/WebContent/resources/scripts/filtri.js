@@ -32,15 +32,11 @@ $(document).ready(function(){
 					$(this).hide();
 				}
 				
+			}else if(((itemCategoria == categoriaID) || (categoriaID == "Tutte")) && (itemPrezzo >= prezzoDa && itemPrezzo <= prezzoA)){
+				$(this).show();
 			}else{
-				
-				if(((itemCategoria == categoriaID) || (categoriaID == "Tutte")) && (itemPrezzo >= prezzoDa && itemPrezzo <= prezzoA)){
-					$(this).show();
-				}else{
-					$(this).hide();
-				}
-				
-				
+				$(this).hide();
+			
 			}
 			
 			
@@ -53,16 +49,15 @@ $(document).ready(function(){
 	
 	function filtraOrdini(){
 		
-		var utente = $('#utente-fil').find(":selected").val();
+		let utente = $('#utente-fil').find(":selected").val();
 		
-		var dataDa = Date.parse($('#data-da').val());
-		var dataA = Date.parse($('#data-a').val());
+		let dataDa = Date.parse($('#data-da').val());
+		let dataA = Date.parse($('#data-a').val());
 		
 		$(".ordine-row").each(function(){
 			
-			var itemUtente = $(this).find(".utente-ord").html();
-			var itemData =  Date.parse($(this).find(".data-ord a").html());
-			
+			let itemUtente = $(this).find(".utente-ord").html();
+			let itemData =  Date.parse($(this).find(".data-ord").html());
 			
 			if((utente === itemUtente || utente == "Tutti") && (itemData >= dataDa && itemData <= dataA)){
 				$(this).show();

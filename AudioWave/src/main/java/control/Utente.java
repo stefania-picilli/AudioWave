@@ -23,7 +23,7 @@ import model.dto.UtenteBean;
 @WebServlet("/Utente")
 public class Utente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final Logger logger = Logger.getLogger(Ricerca.class.getName());
+	private static final Logger logger = Logger.getLogger(Utente.class.getName());
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -49,7 +49,7 @@ public class Utente extends HttpServlet {
 			List<OrdineBean> ordini = (List<OrdineBean>) ordDAO.doRetrieveByAccount(account.getEmail());
 			
 			//invia lista di ordini
-			if(ordini != null && ordini.size() != 0) {
+			if(ordini != null && !ordini.isEmpty()) {
 				//System.out.println("Ordini presenti");
 				request.setAttribute("ordini", ordini);
 		

@@ -221,6 +221,7 @@ header #logo img{
 	
 	#pulsanti-header{
 		order: 0;
+		width: 28%;
 	}
 	
 	#barra-ricerca{
@@ -241,7 +242,6 @@ header #logo img{
 	#barra-ricerca input{
 	
 		width: 85%;
-		margin: auto;
 		
 		padding: 10px 15px;
 		margin: 0px auto;
@@ -283,12 +283,6 @@ header #logo img{
 	}
 	
 	
-	#pulsanti-header{
-	
-		width: 28%;
-	
-	}
-
 
 	
 }

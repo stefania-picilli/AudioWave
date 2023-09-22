@@ -35,6 +35,7 @@ public class AdminFilter implements Filter {
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
+		/*Non sono necessarie operazioni di chiusura*/
 		
 	}
 
@@ -45,7 +46,6 @@ public class AdminFilter implements Filter {
 		
 
 		HttpServletRequest hRequest = (HttpServletRequest) request;  
-		HttpServletResponse hResponse = (HttpServletResponse) response;  
 		
 		HttpSession session = hRequest.getSession(true);
 		UtenteBean account = (UtenteBean) session.getAttribute("account");
@@ -73,7 +73,7 @@ public class AdminFilter implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		
+		/*Non sono necessarie operazioni di inizializzazione*/
 	}
 
 }

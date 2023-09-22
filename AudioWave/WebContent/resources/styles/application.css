@@ -92,6 +92,18 @@ body{
 	
 }
 
+.box-hover{
+	
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ACA6A6;
+	border-radius: 10px;
+	background-color: #FFFEFE;
+	
+	cursor:pointer;
+	
+}
+
 
 .light-color-box{
 	

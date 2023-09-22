@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 	<head>
 		<link rel="stylesheet" href="resources/styles/ricerca.css" type="text/css" >
 		<link rel="stylesheet" href="resources/styles/utente.css" type="text/css" >
@@ -91,7 +91,7 @@
 					
 						<%if(request.getAttribute("ordini") == null){%>
 					
-							<p>Non sono ancora presenti ordini</p>
+							<p class="p2 box">Non sono ancora presenti ordini</p>
 					
 						<%}else{ %>
 					
@@ -110,9 +110,9 @@
 						
 								<c:forEach  items="${ordini}" var="ordine">
 								
-									<tr class="ordine-row">
+									<tr class="ordine-row" onclick="tableRowClickA(${ordine.numeroOrdine})">
 								
-											<td class="data-ord"><a href="Amministratore?action=v-ordine&num=${ordine.numeroOrdine}">${ordine.data}</a></td>
+											<td class="data-ord">${ordine.data}</td>
 											<td class="utente-ord">${ordine.email}</td>
 											<td>${ordine.statoOrdine}</td>
 											<td>&euro; ${ordine.costoTotale}</td>
@@ -137,6 +137,7 @@
 		
 		<script src="resources/scripts/jquery.js"></script>
 		<script src="resources/scripts/filtri.js"></script>
+		<script src="resources/scripts/table.js"></script>
 
 	</body>
 </html>

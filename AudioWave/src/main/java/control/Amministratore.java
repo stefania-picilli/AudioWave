@@ -41,21 +41,20 @@ import model.dto.UtenteBean;
 public class Amministratore extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getLogger(Amministratore.class.getName());
-	private static String SAVE_DIR = "resources/images/";
+	private static final String SAVE_DIR = "resources/images/";
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public Amministratore() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
 		
 		try {
@@ -85,7 +84,6 @@ public class Amministratore extends HttpServlet {
 				ProdottoDAO daoP = new ProdottoDAO();
 				ProdottoBean prodotto = daoP.doRetrieveMaxPrezzo();
 				request.setAttribute("maxPrezzo", prodotto.getPrezzoConIva());
-				/*request.setAttribute("rimuovicat", 0);*/
 				
 				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/prodotti.jsp");
 				dis.forward(request, response);
@@ -95,6 +93,16 @@ public class Amministratore extends HttpServlet {
 				String codiceProdotto = request.getParameter("codice");
 				ProdottoDAO daoP = new ProdottoDAO();
 				ProdottoBean prodotto = daoP.doRetrieveByKey(codiceProdotto);
+				
+				if(prodotto == null) {
+					
+					request.setAttribute("admin", "1");
+					response.sendError(404);
+					return;
+					
+				}
+				
+				
 				request.setAttribute("prodotto", prodotto);
 				
 				
@@ -149,45 +157,23 @@ public class Amministratore extends HttpServlet {
 				
 			}else if(action.equals("v-ordini")) {
 				
-				//String utente = request.getParameter("utente");
-				String dataIniziale = request.getParameter("da");
-				String dataFinale = request.getParameter("a");
-				
-				/*String utenteQuery = "";
-				
-				if(utente != null && utente != "" && !utente.equals("Tutti"))
-					utenteQuery = utente;*/
-				
 				OrdineDAO daoO = new OrdineDAO();
-				String primaData = daoO.doRetrievePrimaData();
+				String dataIniziale = daoO.doRetrievePrimaData();
 				
 				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-				String dataOggi = simpleDateFormat.format(new Date());
-				
-			
-				if(dataIniziale == "" || dataIniziale == null || dataFinale == null || dataFinale == "") {
+				String dataFinale = simpleDateFormat.format(new Date());
 					
-					dataIniziale = primaData;
-					dataFinale = dataOggi;
-					
-				}
-			
 				List<OrdineBean> ordini = (List<OrdineBean>) daoO.doRetrieveAll();
-				//List<OrdineBean> ordini = (List<OrdineBean>) dao.doRetrieveByParameters(utenteQuery, dataIniziale, dataFinale, "data DESC");
-				
+	
+				if(ordini != null && ordini.size() != 0)
+					request.setAttribute("ordini", ordini);
 				
 				UtenteDAO daoAcc = new UtenteDAO();
-				List<UtenteBean> utenti = (List<UtenteBean>) daoAcc.doRetrieveAll(); //mettere ordinamento per email
+				List<UtenteBean> utenti = (List<UtenteBean>) daoAcc.doRetrieveAll(); 
 				
-				request.setAttribute("ordini", ordini);
 				request.setAttribute("utenti", utenti);
 				request.setAttribute("da", dataIniziale);
 				request.setAttribute("a", dataFinale);
-				
-				
-				/*if(utenteQuery == null || utenteQuery == "")
-					utenteQuery = "Tutti";
-				request.setAttribute("utenteScelto", utenteQuery);*/
 				
 				
 				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/ordini.jsp");
@@ -202,6 +188,7 @@ public class Amministratore extends HttpServlet {
 				
 				if(ordine == null) {
 					
+					request.setAttribute("admin", "1");
 					response.sendError(404);
 					return;
 					
@@ -229,8 +216,9 @@ public class Amministratore extends HttpServlet {
 			}
 			
 		
-		}catch(SQLException e) {
+		}catch(Exception e) {
 			
+			request.setAttribute("admin", "1");
 			response.sendError(500);
 			logger.warning(e.getMessage() + "\n" + e.getStackTrace());
 			
@@ -241,7 +229,7 @@ public class Amministratore extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		
 		try {
 		
@@ -390,49 +378,12 @@ public class Amministratore extends HttpServlet {
 				
 				response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
 				
-			}/*else if(action.equals("v-ordini")) {
-				
-				
-				String dataIniziale = request.getParameter("da");
-				String dataFinale = request.getParameter("a");
-				
-				
-				OrdineDAO daoO = new OrdineDAO();
-				String primaData = daoO.doRetrievePrimaData();
-				
-				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-				String dataOggi = simpleDateFormat.format(new Date());
-				
-			
-				if(dataIniziale == "" || dataIniziale == null || dataFinale == null || dataFinale == "") {
-					
-					dataIniziale = primaData;
-					dataFinale = dataOggi;
-					
-				}
-			
-				List<OrdineBean> ordini = (List<OrdineBean>) daoO.doRetrieveAll();
-				//List<OrdineBean> ordini = (List<OrdineBean>) dao.doRetrieveByParameters(utenteQuery, dataIniziale, dataFinale, "data DESC");
-				
-				
-				UtenteDAO daoAcc = new UtenteDAO();
-				List<UtenteBean> utenti = (List<UtenteBean>) daoAcc.doRetrieveAll(); //mettere ordinamento per email
-				
-				request.setAttribute("ordini", ordini);
-				request.setAttribute("utenti", utenti);
-				request.setAttribute("da", dataIniziale);
-				request.setAttribute("a", dataFinale);
-				
-				
-				
-				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/ordini.jsp");
-				dis.forward(request, response);
-				
-			}*/else
+			}else {
 				response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
-		
-		}catch(SQLException e) {
+			}
+		}catch(Exception e) {
 			
+			request.setAttribute("admin", "1");
 			response.sendError(500);
 			logger.warning(e.getMessage() + "\n" + e.getStackTrace());
 			

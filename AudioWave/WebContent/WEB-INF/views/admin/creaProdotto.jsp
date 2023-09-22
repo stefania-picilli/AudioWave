@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html lang="it">
 	<head>
 		<link rel="stylesheet" href="resources/styles/form.css" type="text/css" > 
 		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
@@ -72,7 +72,7 @@
 							<div id="tag" class="form-item">
 								
 								<label for="tag" class="p3">Tag prodotto:</label>
-								<input type="text" name="tag" value="${prodotto.tag}" placeholder="tag1, tag2, tag3, ..." class="box">
+								<textarea name="tag" rows="3" placeholder="tag1, tag2, tag3, ..." class="box"></textarea>
 								
 								<div></div>
 								
@@ -82,7 +82,7 @@
 							<div id="categoria" class="form-item">
 								
 								<label for="categoria" class="p3">Categoria prodotto:</label>
-								<select name="categoria" class="box" class="valid-input">
+								<select name="categoria" class="box" >
 								
 									<c:forEach  items="${categorie}" var="categoria">
 										<option value="${categoria.id}">${categoria.nome}</option>
@@ -143,7 +143,8 @@
 		</div>
 
 		
-
+		<script src="resources/scripts/jquery.js"></script>
+		<script src="resources/scripts/form.js"></script>
 		
 
 	</body>

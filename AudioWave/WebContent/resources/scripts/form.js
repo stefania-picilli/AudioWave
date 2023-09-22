@@ -7,8 +7,8 @@ $(document).ready(function(){
 		
 		//se tutte le classi sono 'valid-input' allora i dati vengono inviati al server
 		
-		var items = $(".form-item :input");
-		var valid = true;
+		let items = $(".form-item :input");
+		let valid = true;
 		
 		items.each(function(){
 			
@@ -23,8 +23,8 @@ $(document).ready(function(){
 	
 		});
 		
-		if(valid == false)
-			$("#form-error").html("I dati inseriti non sono validi");
+		if(!valid)
+			$("#form-error").html("<i class='fas fa-exclamation-triangle'></i> I dati inseriti non sono validi");
 		else
 			$("#form-error").html("");
 		
@@ -50,7 +50,7 @@ $(document).ready(function(){
 	
 	function invalidInput(item, errorMessage){
 		
-		divError = $(item).parent().children("div");
+		let divError = $(item).parent().children("div");
 		
 		$(item).removeClass("valid-input");
 		$(item).removeClass("box");
@@ -86,6 +86,19 @@ $(document).ready(function(){
 		
 	}
 	
+	function controlloImmagine(item, message){
+		
+		let filePath = $(item).val();
+        let allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+        
+        if (!allowedExtensions.exec(filePath))
+			invalidInput(item, message);
+		else
+			validInput(item);
+		
+	}
+	
+	
 	
 	/*Registrazione */
 	$("#email input").change(function(){
@@ -93,7 +106,7 @@ $(document).ready(function(){
 	});
 	
 	$("#password input").change(function(){ 
-		validateFormItem(this, /^(?=.*\d)(?=.*[!@#$%^&*\?\+-])(?=.*[a-z])(?=.*[A-Z]).{8,}$/, "La password deve contenere almeno 8 caratteri, almeno una lettera maiuscola e una lettera minuscola, almeno un numero e almeno un carattere speciale", true)
+		validateFormItem(this, /^(?=.*\d)(?=.*[!@#$%^&*?+-])(?=.*[a-z])(?=.*[A-Z]).{8,}$/, "La password deve contenere almeno 8 caratteri, almeno una lettera maiuscola e una lettera minuscola, almeno un numero e almeno un carattere speciale")
 	});
 	
 	$("#nascita input").change(function(){
@@ -115,21 +128,21 @@ $(document).ready(function(){
 	});
 	
 	$("#nome input").change(function(){
-		validateFormItem(this, /^[A-z ',\.-]+$/, "Inserire un nome valido. Il nome non pu&ograve; contenere numeri o caratteri speciali")
+		validateFormItem(this, /^[A-z ',.-]+$/, "Inserire un nome valido. Il nome non pu&ograve; contenere numeri o caratteri speciali")
 	});
 	
 	$("#cognome input").change(function(){
-		validateFormItem(this, /^[A-z ',\.-]+$/, "Inserire un cognome valido. Il cognome non pu&ograve; contenere numeri o caratteri speciali")
+		validateFormItem(this, /^[A-z ',.-]+$/, "Inserire un cognome valido. Il cognome non pu&ograve; contenere numeri o caratteri speciali")
 	});
 	
 	$("#cellulare input").change(function(){
-		validateFormItem(this, /^([0-9]{3})([-\.\s]?)([0-9]{3})([-\.\s]?)([0-9]{4})$/, "Inserire un numero di cellulare valido (formato: 000 000 0000)")
+		validateFormItem(this, /^([0-9]{3})([-.\s]?)([0-9]{3})([-.\s]?)([0-9]{4})$/, "Inserire un numero di cellulare valido (formato: 000 000 0000)")
 	});
 
 
 	/*Ordine utente*/
 	$("#indirizzo input").change(function(){
-		validateFormItem(this, /^[A-z0-9',\.-\s]+$/, "Inserire un indirizzo valido. L'indirizzo non pu&ograve; contenere caratteri speciali")
+		validateFormItem(this, /^[A-z0-9',.-\s]+$/, "Inserire un indirizzo valido. L'indirizzo non pu&ograve; contenere caratteri speciali")
 	});
 	
 	$("#carta input").change(function(){
@@ -137,10 +150,12 @@ $(document).ready(function(){
 	});
 	
 	$("#intestatario input").change(function(){
-		validateFormItem(this, /^[A-z\s',\.-]+$/, "Inserire un intestatario valido. Esso non pu&ograve; contenere numeri o caratteri speciali")
+		validateFormItem(this, /^[A-z\s',.-]+$/, "Inserire un intestatario valido. Esso non pu&ograve; contenere numeri o caratteri speciali")
 	});
 	
 	$("#scadenza input").change(function(){
+		
+		//?????
 		
 		if(!($(this).val().match(/^(0|1|\s)([0-9])([-|/])([0-9]{2})$/))){
 		
@@ -150,18 +165,6 @@ $(document).ready(function(){
 				
 			validInput(this);
 				
-				
-			/*Controllo da fare da servlet*/ 
-			/*var mese = parseInt($(this).val().substring(0, 2)); 
-			var anno = parseInt($(this).val().substring(3, 5)); 
-				
-			var date = new Date();
-				
-			if(anno >= (date.getFullYear() - 2000) && mese >= (date.getMonth() + 1))
-				validInput(this);
-			else
-				invalidInput(this, "Inserire una data valida (formato: mm/yy)");*/
-			
 		}
 		
 	});
@@ -173,11 +176,11 @@ $(document).ready(function(){
 	
 	/*CreaProdotto / ModificaProdotto */
 	$("#nome-prod input").change(function(){
-		validateFormItem(this, /^[A-z0-9',\.-\s]+$/, "Inserire un nome valido. Il nome del prodotto non pu&ograve; contenere caratteri speciali")
+		validateFormItem(this, /^[A-z0-9',.-\s]+$/, "Inserire un nome valido. Il nome del prodotto non pu&ograve; contenere caratteri speciali")
 	});
 	
 	$("#marca input").change(function(){
-		validateFormItem(this, /^[A-z0-9',\.-\s]+$/, "Inserire una marca valida. La marca non pu&ograve; contenere caratteri speciali")
+		validateFormItem(this, /^[A-z0-9',.-\s]+$/, "Inserire una marca valida. La marca non pu&ograve; contenere caratteri speciali")
 	});
 	
 	$("#descrizione textarea").change(function(){
@@ -185,11 +188,29 @@ $(document).ready(function(){
 	});
 	
 	$("#immagine input").change(function(){
-		validateFormItem(this, /^.{0,200}$/, "Da modificare")
+		
+		controlloImmagine(this, "Inserire un'immagine valida (formati accettati: jpg, jpeg, png)");
+        
 	});
 	
-	$("#tag input").change(function(){
-		validateFormItem(this, /^[A-z0-9',\.-\s]+$/, "Inserire lista di tag validi (formato: tag1, tag2, ...)")
+	$("#immagineMod input").change(function(){
+		
+		
+		if(this.files.length != 0){
+		
+			controlloImmagine(this, "Inserire un'immagine valida (formati accettati: jpg, jpeg, png)");
+		
+		}else 
+			validInput(this);
+        
+	});
+	
+	$("#tag textarea").change(function(){
+		validateFormItem(this, /^[A-z0-9',.-\s]+$/, "Inserire lista di tag validi (formato: tag1, tag2, ...)")
+	});
+	
+	$("#categoria select").change(function(){
+		validInput(this);
 	});
 	
 	$("#prezzo input").change(function(){
@@ -208,7 +229,7 @@ $(document).ready(function(){
 	
 	/*Ordine admin */
 	$("#corriere input").change(function(){
-		validateFormItem(this, /^[A-z0-9',\.-\s]+$/, "Inserire un corriere valido. Esso non pu&ograve; contenere caratteri speciali")
+		validateFormItem(this, /^[A-z0-9',.-\s]+$/, "Inserire un corriere valido. Esso non pu&ograve; contenere caratteri speciali")
 	});
 	
 	$("#data-partenza input").change(function(){

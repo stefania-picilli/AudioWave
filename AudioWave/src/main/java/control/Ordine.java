@@ -87,7 +87,6 @@ public class Ordine extends HttpServlet {
 			UtenteBean account = (UtenteBean) session.getAttribute("account");
 			CarrelloBean carrello = (CarrelloBean) session.getAttribute("carrello");
 			
-			//System.out.println("Controllo carrello");
 			
 			if(carrello == null || carrello.isEmpty()) {
 				inviaEsito(false, "Ops, non è stato possibile portare a termine l'ordine: non sono presenti prodotti nel carrello", request, response);
@@ -96,14 +95,10 @@ public class Ordine extends HttpServlet {
 			
 			List<ProdottoNelCarrelloBean> listProdotti = carrello.getProdotti();
 			
-			//System.out.println("Controllo dati utente");
-			
 			if(!datiValidi(indirizzo, numeroCarta, intestatario, scadenza, cvv)) {
 				inviaEsito(false, "Ops, non è stato possibile portare a termine l'ordine: dati inviati non validi", request, response);
 				return;
 			}
-			
-			//System.out.println("Controlli superati");
 			
 			ProdottoDAO daoProd = new ProdottoDAO();
 			
@@ -214,6 +209,9 @@ public class Ordine extends HttpServlet {
 		if(intestatario == null || intestatario.equals(""))
 			return false;
 		
+		if(cvv == null || cvv.length() != 3)
+			return false;
+		
 		if(scadenza == null || scadenza.equals("")) 
 			return false;
 		else {
@@ -234,17 +232,12 @@ public class Ordine extends HttpServlet {
 			int meseAttuale = localDate.getMonthValue();
 			System.out.println("meseAttuale=" + meseAttuale);
 			
-			/*if((annoAttuale < annoScad) || (annoAttuale == annoScad && meseAttuale <= meseScad))
-				return true;*/
 			
 			if((annoAttuale >= annoScad) && (annoAttuale != annoScad || meseAttuale > meseScad))
 				return false;
 			
 		}
 		
-		
-		if(cvv == null || cvv.length() != 3)
-			return false;
 		
 		
 		return true;
