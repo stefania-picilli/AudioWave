@@ -108,10 +108,14 @@
 					
 								<div class="info">
 										
-									<h3><a href='${pageContext.request.contextPath}/Prodotto?id=${prodotto.codiceProdotto}'>${prodotto.nome}</a></h3>
-									<p class="p3">${prodotto.marca}</p>
-									<h3>&euro; ${prodotto.prezzoConIva}</h3>
-						
+									<div class="top-info">
+										<h3><a href='${pageContext.request.contextPath}/Prodotto?id=${prodotto.codiceProdotto}'>${prodotto.nome}</a></h3>
+										<p class="p3">${prodotto.marca}</p>
+									</div>
+									
+									<div class="bottom-info">
+										<h3>&euro; ${prodotto.prezzoConIva}</h3>
+									</div>
 								</div>
 											
 							</div>
@@ -127,6 +131,8 @@
 		
 		</div>
 		
+
+		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 		<script src="resources/scripts/jquery.js"></script>
 		<script src="resources/scripts/filtri.js"></script>

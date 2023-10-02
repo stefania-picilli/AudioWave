@@ -223,7 +223,7 @@ a {
 	
 }
 
-.img img{
+.prodotto .img img{
 	
 	/*max-width: 100%;
 	height: auto;
@@ -247,21 +247,30 @@ a {
     width: auto;
     height: auto;
     margin:auto;
+    
+	
+}
+
+.prodotto .img{
+	
+	overflow: hidden;
 	
 }
 
 
 .prodotto{
 	
-	/*margin: 5px 10px;*/
-	
 	padding: 5px;
 	
-	/*width: 23%;*/
-	width: 100%;
-	/*float: left;*/
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	
-	/*height: 100%;*/ /*aumenta altezza di tutti i prodotti, ma serve flexbox per fissare prezzo in basso */
+	width: 100%;
+	
+	
+	height: 100%;
 	
 	
 }
@@ -271,9 +280,6 @@ a {
 	display: none;
 }
 
-.img{
-	overflow: hidden;
-}
 
 
 
@@ -281,9 +287,27 @@ a {
 .info{
 	text-align: left;
 	padding: 15px;
+	
+	flex-grow: 1;
+	
+	display: flex;
+	flex-direction: column;
+  	align-content: stretch;
 }
 
 
+
+
+.info .bottom-info{
+	
+	
+	display: flex;
+	align-items: flex-end;
+	
+	flex: 1;
+	
+	
+}
 
 h1{
 	
@@ -296,13 +320,12 @@ h3{
 	
 	margin-top: 10px;
 	margin-bottom: 0px;
-	
 }
 
 .p3{
 	
 	margin-top: 0px;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 	
 }
 

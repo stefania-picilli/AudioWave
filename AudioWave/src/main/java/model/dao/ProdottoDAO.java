@@ -294,6 +294,66 @@ public class ProdottoDAO {
 		
 	}
 	
+	public Collection<ProdottoBean> doRetrieveByRand(int limit) throws SQLException{
+		
+		
+		Connection con = null;
+		PreparedStatement ps = null;
+
+		Collection<ProdottoBean> prodotti = new LinkedList<>();
+
+		String selectSQL = "SELECT * FROM " + ProdottoDAO.TABLE_NAME +
+						   " ORDER BY RAND() " +
+						   "LIMIT ?";
+
+		try {
+			
+			con = ds.getConnection();
+			ps = con.prepareStatement(selectSQL);
+
+			ps.setInt(1, limit);
+			
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				
+				ProdottoBean bean = new ProdottoBean();
+
+				bean.setCodiceProdotto(rs.getInt("codiceProdotto"));
+				bean.setNome(rs.getString("nome"));
+				bean.setMarca(rs.getString("marca"));
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setTag(rs.getString("tag"));
+				bean.setImmagine(rs.getString("immagine"));
+				bean.setPrezzo(rs.getDouble("prezzo"));
+				bean.setDisponibilita(rs.getInt("disponibilita"));
+				bean.setIva(rs.getDouble("iva"));
+				bean.setCategoriaID(rs.getInt("categoriaID"));
+				
+				prodotti.add(bean);
+				
+			}
+			
+
+			if(prodotti.isEmpty())
+				prodotti = null;
+
+		} finally {
+			try {
+				if (ps != null)
+					ps.close();
+			} finally {
+				if (con != null)
+					con.close();
+			}
+		}
+		
+		return prodotti;
+		
+		
+		
+	}
+	
 	
 	public void decrementaDisp(int codiceProdotto, int quantita) throws SQLException{
 		

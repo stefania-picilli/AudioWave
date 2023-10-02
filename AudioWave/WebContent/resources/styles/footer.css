@@ -1,0 +1,94 @@
+@charset "ISO-8859-1";
+
+
+
+footer{
+	
+	display: flex;
+	justify-content: space-between;
+	
+	padding: 40px 0px;
+	margin: 60px 0px 0px 0px;
+	
+	color: #FFFEFE;
+	background-color: #222526;
+    
+}
+
+footer a{
+	
+	color: #FFFEFE;
+	text-decoration: none;
+	
+}
+
+.footer-item{
+	
+	width: 30%;
+	text-align: center;
+	
+}
+
+
+#contatti{
+	
+	margin: 25px 0px 0px 0px;
+	
+}
+
+#contatti .p3{
+	
+	margin: 0px 0px 12px 0px;
+	
+}
+
+#contatti i{
+	
+	margin: 0px 5px;
+	
+}
+
+
+
+@media screen and (max-width: 700px){
+	
+	footer{
+	
+		flex-direction: column;
+	
+	}
+	
+	.footer-item{
+	
+		width: 100%;
+	
+	}
+	
+	.footer-item .p2{
+	
+		margin: 16px 0px;
+	
+	}
+	
+	
+	#center{
+	
+		order: 1;
+	
+	}
+
+	#contatti{
+		
+		margin: 18px 0px 0px 0px;
+		
+	}
+	
+	#contatti .p3{
+	
+		margin: 0px 0px 8px 0px;
+		
+	}
+	
+	
+}
+

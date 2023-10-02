@@ -141,6 +141,7 @@
 		
 		</div>
 
+		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 		<script src="resources/scripts/jquery.js"></script>
 		<script src="resources/scripts/form.js"></script>
