@@ -46,22 +46,16 @@ public class AdminFilter implements Filter {
 		
 
 		HttpServletRequest hRequest = (HttpServletRequest) request;  
+		HttpServletResponse hResponse = (HttpServletResponse) response;  
 		
 		HttpSession session = hRequest.getSession(true);
 		UtenteBean account = (UtenteBean) session.getAttribute("account");
 		
 		if(account == null || !account.getRuolo().equals("admin")) {
 			
-			String path = hRequest.getRequestURL().toString() + "?" + hRequest.getQueryString();
-			hRequest.setAttribute("path", path);
-			
-			if(account != null && !account.getRuolo().equals("admin"))
-				hRequest.setAttribute("error", "Non possiedi l'autorizzazione per accedere a questa pagina");
-			
-			hRequest.setAttribute("type", "admin");
-			
-			RequestDispatcher dis = hRequest.getSession().getServletContext().getRequestDispatcher("/WEB-INF/views/common/login.jsp");
-			dis.forward(request, response);
+			//se l'admin non è già autenticato, si nasconde l'esistenza delle pagine admin
+			hResponse.sendError(404);
+			return;
 		
 		}else
 			// pass the request along the filter chain

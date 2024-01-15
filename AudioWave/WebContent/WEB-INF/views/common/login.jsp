@@ -56,9 +56,6 @@
 							<%} %>
 						
 							<div id="form-error" class="error-message"></div>
-						
-							<input type="hidden" name="path" value="<%= request.getAttribute("path") %>">
-							<input type="hidden" name="type" value="<%= request.getAttribute("type") %>">
 							
 							<div class="form-action">
 							
@@ -70,13 +67,11 @@
 						
 					</div>
 					
-					<%if(request.getAttribute("type").equals("user")){ %>
 					
-						<p  id="reg-mess" class="p2">
-							Non hai un account? <a href="${pageContext.request.contextPath}/Registrazione?path=<%= request.getAttribute("path") %>">Registrati</a> 
-						</p>
+					<p  id="reg-mess" class="p2">
+						Non hai un account? <a href="${pageContext.request.contextPath}/Registrazione?path=<%= request.getAttribute("path") %>">Registrati</a> 
+					</p>
 				
-					<%} %>
 			
 				</div>
 				

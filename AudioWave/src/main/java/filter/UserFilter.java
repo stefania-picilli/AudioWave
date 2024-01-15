@@ -53,24 +53,18 @@ public class UserFilter implements Filter {
 		
 		if(account == null || !account.getRuolo().equals("utente")) {
 			
-			//System.out.println("Prima della chiamata al dispacher");
-			
 			String path = "";
 			
 			if(hRequest.getQueryString() != null)
 				path = hRequest.getRequestURL().toString() + "?" + hRequest.getQueryString();
 			else
 				path = hRequest.getRequestURL().toString();
-			//System.out.println("Filtro, Path=" + path);
-			hRequest.setAttribute("path", path);
 			
-			/*if(account != null && !account.getRuolo().equals("utente"))
-				hRequest.setAttribute("error", "L'account admin non ha accesso alle funzioni utente");*/
 			
-			hRequest.setAttribute("type", "user");
+			session.setAttribute("path", path);
+			
 			
 			RequestDispatcher dis = hRequest.getSession().getServletContext().getRequestDispatcher("/WEB-INF/views/common/login.jsp");
-			//System.out.println("Dopo recupero dispacher=" + dis);
 			dis.forward(request, response);
 		
 		}else

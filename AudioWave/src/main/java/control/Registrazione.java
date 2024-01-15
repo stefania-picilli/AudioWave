@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.dao.UtenteDAO;
 import model.dto.UtenteBean;
@@ -34,9 +35,11 @@ public class Registrazione extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//?????????
+		//String path = request.getParameter("path");
+		//request.setAttribute("path", path);
 		
-		String path = request.getParameter("path");
-		request.setAttribute("path", path);
+		
 		RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/registrazione.jsp");
 		dis.forward(request, response);
 		
@@ -53,11 +56,11 @@ public class Registrazione extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
 		String nascita = request.getParameter("nascita");
-		
-		
 		String cellulare = request.getParameter("cellulare");
 		
-		String path = request.getParameter("path");
+		HttpSession session = request.getSession(true);
+		String path = (String) session.getAttribute("path");
+		
 		System.out.println("Path=" + path);
 		
 		try {
@@ -66,9 +69,7 @@ public class Registrazione extends HttpServlet {
 			
 			if(exists(email)) {
 				
-				//mandare messaggio a register
 				request.setAttribute("messaggio", "Impossibile effettuare la registrazione, email già esistente.");
-				request.setAttribute("path", path);
 				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/registrazione.jsp");
 				dis.forward(request, response);
 				return;
@@ -105,11 +106,6 @@ public class Registrazione extends HttpServlet {
 		UtenteDAO dao = new UtenteDAO();
 		
 		return (dao.doRetrieveByKey(email) != null);
-		
-		/*if((dao.doRetrieveByKey(email)) != null)
-			return true;
-		
-		return false;*/
 		
 			
 	}

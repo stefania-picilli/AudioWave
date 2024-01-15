@@ -108,7 +108,7 @@
 							
 							<div id="form-error" class="error-message"></div>
 			
-							<input type="hidden" name="path" value="<%= request.getAttribute("path") %>">
+							
 							
 							<div class="form-action">
 								<input type="submit" value="Registrati" class="cta-button b1">
