@@ -86,26 +86,30 @@
 						<div class="img">
 							<img src="resources/images/Cuffie.jpg" alt="IMG"></img>
 						</div>
-						<div>
-							<h1>Cuffie</h1>
-							<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
-							<div class="cat-bttn">
-								<button class="cta-button b1" onclick="document.location='${pageContext.request.contextPath}/Ricerca?categoria=Cuffie'">Scopri di più</button>
+						<div class="info-wrap">
+							<div class="info">
+								<h1>Cuffie</h1>
+								<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
+								<div class="cat-bttn">
+									<button class="cta-button b1" onclick="document.location='${pageContext.request.contextPath}/Ricerca?categoria=Cuffie'">Scopri di più</button>
+								</div>
 							</div>
 						</div>
 					</div>
 					
 					
 					<div class="categoria cat-right">
-						<div>
-							<h1>Auricolari</h1>
-							<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
-							<div class="cat-bttn">
-								<button class="cta-button b1" onclick="document.location='${pageContext.request.contextPath}/Ricerca?categoria=Auricolari'">Scopri di più</button>
-							</div>
-						</div>
 						<div class="img">
 							<img src="resources/images/Auricolari.jpg" alt="IMG"></img>
+						</div>
+						<div class="info-wrap">
+							<div class="info">
+								<h1>Auricolari</h1>
+								<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
+								<div class="cat-bttn">
+									<button class="cta-button b1" onclick="document.location='${pageContext.request.contextPath}/Ricerca?categoria=Auricolari'">Scopri di più</button>
+								</div>
+							</div>
 						</div>
 					</div>
 					
@@ -114,11 +118,13 @@
 						<div class="img">
 							<img src="resources/images/Speaker.jpg" alt="IMG"></img>
 						</div>
-						<div>
-							<h1>Speaker</h1>
-							<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
-							<div class="cat-bttn">
-								<button class="cta-button b1" onclick="document.location='${pageContext.request.contextPath}/Ricerca?categoria=Speaker'">Scopri di più</button>
+						<div class="info-wrap">
+							<div class="info">
+								<h1>Speaker</h1>
+								<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
+								<div class="cat-bttn">
+									<button class="cta-button b1" onclick="document.location='${pageContext.request.contextPath}/Ricerca?categoria=Speaker'">Scopri di più</button>
+								</div>
 							</div>
 						</div>
 					</div>

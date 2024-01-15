@@ -40,11 +40,11 @@
 					<div id="pulsanti-header">
 					
 						<div id="cart" class="pulsante">
-							<a href='${pageContext.request.contextPath}/Carrello'><i class="fa-solid fa-cart-shopping fa-3x action-icon"></i></a>
+							<a href='${pageContext.request.contextPath}/Carrello'><i class="fa-solid fa-cart-shopping fa-2xl action-icon"></i></a>
 						</div>
 						
 						<div id="user" class="pulsante">
-							<a href='${pageContext.request.contextPath}/Utente'><i class="fa fa-solid fa-user fa-3x action-icon"></i></a>
+							<a href='${pageContext.request.contextPath}/Utente'><i class="fa-solid fa-user fa-2xl action-icon"></i></a>
 						</div>
 						
 					</div>
