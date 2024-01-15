@@ -103,86 +103,6 @@
 
 
 
-
-
-
-/*#filtri{
-	
-	width: 100%;
-	overflow: auto;
-	
-	box-sizing: border-box;
-	
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	
-}
-
-#item-group{
-	
-	display: flex;
-	justify-content: flex-start;
-    align-items: center;
-    
-  	flex-grow: 2;
-  
-}
-
-
-.filtro-item{
-	
-	display: flex;
-	justify-content: center;
-    align-items: center;
-    
-    padding-right: 100px;
-	
-}
-
-
-/*.filtro-item > div{
-	
-	padding-right: 20px;
-	
-}
-
-.filtro-item input, .filtro-item select{
-	
-	padding: 10px 15px;
-	
-}
-
-#prezzo-da, #prezzo-a{
-	
-	width: 50%;
-	
-}
-
-
-.filtro-action{
-	
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	flex-grow: 1;
-	
-}
-
-
-.filtro-action button{
-	
-	padding: 10px 70px;
-	border-radius: 6px;
-	
-}
-
-
-
-*/
-
-
-
 .line{
 	
 	margin-top: 15px;
@@ -224,21 +144,6 @@ a {
 }
 
 .prodotto .img img{
-	
-	/*max-width: 100%;
-	height: auto;
-	
-	/*width:  200px;
-    height: 200px;
-    background-size: contain;
-    
-    display: block;
-	max-width:400px;
-	max-height:200px;
-	width: auto;
-	height: auto;
-	
-	margin:auto;*/
 	
 	display: block;
 	object-fit: contain;
@@ -363,49 +268,6 @@ h3{
 @media screen and (max-width: 900px){
 	
 	
-	
-	/*#filtri{
-	
-		width: 80%;
-	
-	}*/
-	
-	
-	/*#item-group{
-	
-		float: none;
-		width: 100%;
-	
-	}
-	
-	#single-item, #double-item, #filtro-action{
-	
-		float: none;
-		width: 100%;
-		
-		margin: 20px 0px;
-		
-		overflow: hidden;
-	
-	}
-	
-	
-	#double-item{
-	
-		display: flex;
-  		justify-content: space-between;
-	
-	}
-	
-	#double-item #right-item{
-	
-		display: flex;
- 		justify-content: flex-end;
-	
-	}*/
-	
-	
-	
 	#item-group {
 	
 	    width: 100%;
@@ -435,7 +297,6 @@ h3{
 		
 		margin: 20px 0px;
 		
-		/*overflow: hidden;*/
 	
 	}
 	

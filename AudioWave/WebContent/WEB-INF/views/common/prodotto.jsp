@@ -97,7 +97,6 @@
 				
 					<div id="prod-action">
 						<div class="item-btn" id="carrello-btn"><button onclick="addFromProd(${prodotto.codiceProdotto})" id="${prodotto.codiceProdotto}" class="cta-button b1">Aggiungi al carrello</button></div>
-						<!--<div class="item-btn" id="acquista-btn"><button id="${prodotto.codiceProdotto}" class="cta-button b1">Acquista</button></div>-->
 					</div>
 				
 				</div>

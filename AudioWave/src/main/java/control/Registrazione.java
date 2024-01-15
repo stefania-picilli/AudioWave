@@ -35,11 +35,6 @@ public class Registrazione extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//?????????
-		//String path = request.getParameter("path");
-		//request.setAttribute("path", path);
-		
-		
 		RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/registrazione.jsp");
 		dis.forward(request, response);
 		

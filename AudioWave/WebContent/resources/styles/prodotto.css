@@ -93,10 +93,6 @@
 
 #immagine img{
 	
-	/*max-width: 100%;
-	height: auto;*/
-	
-	
 	display: block;
 	object-fit: contain;
     max-width: 100%;
@@ -105,7 +101,6 @@
     height: auto;
     margin:auto;
     
-	
 	
 }
 

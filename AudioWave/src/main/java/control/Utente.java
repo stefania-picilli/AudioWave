@@ -50,7 +50,7 @@ public class Utente extends HttpServlet {
 			
 			//invia lista di ordini
 			if(ordini != null && !ordini.isEmpty()) {
-				//System.out.println("Ordini presenti");
+				
 				request.setAttribute("ordini", ordini);
 		
 			}

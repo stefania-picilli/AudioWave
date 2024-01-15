@@ -165,7 +165,7 @@ public class Amministratore extends HttpServlet {
 					
 				List<OrdineBean> ordini = (List<OrdineBean>) daoO.doRetrieveAll();
 	
-				if(ordini != null && ordini.size() != 0)
+				if(ordini != null && !ordini.isEmpty())
 					request.setAttribute("ordini", ordini);
 				
 				UtenteDAO daoAcc = new UtenteDAO();

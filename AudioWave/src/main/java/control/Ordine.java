@@ -219,7 +219,8 @@ public class Ordine extends HttpServlet {
 			//se scaduta ritorna false
 			System.out.println("Scadenza=" + scadenza);
 			
-			String[] scad = scadenza.split("/|-");
+			//String[] scad = scadenza.split("/|-");
+			String[] scad = scadenza.split("[/-]");
 			
 			int meseScad = Integer.parseInt(scad[0]);
 			System.out.println("mese=" + meseScad);

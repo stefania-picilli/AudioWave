@@ -36,7 +36,7 @@ $(document).ready(function(){
 	
 	function validInput(item){
 		
-		divError = $(item).parent().children("div");
+		let divError = $(item).parent().children("div");
 		
 		$(item).removeClass("invalid-input");
 		$(item).removeClass("box");

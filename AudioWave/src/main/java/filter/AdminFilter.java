@@ -55,7 +55,6 @@ public class AdminFilter implements Filter {
 			
 			//se l'admin non è già autenticato, si nasconde l'esistenza delle pagine admin
 			hResponse.sendError(404);
-			return;
 		
 		}else
 			// pass the request along the filter chain
