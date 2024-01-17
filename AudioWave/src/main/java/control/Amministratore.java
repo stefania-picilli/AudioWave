@@ -110,8 +110,8 @@ public class Amministratore extends HttpServlet {
 				String disponibilita = "";
 				String colore = "";
 				
-				
-				checkDisponibilita(disp, disponibilita, colore);
+				disponibilita = getDisponibilita(disp);
+				colore = getColore(disp);
 				
 				
 				/*
@@ -409,31 +409,33 @@ public class Amministratore extends HttpServlet {
     }	
 	
 	
-	private static void checkDisponibilita(int disp, String disponibilita, String colore) {
+	private static String getDisponibilita(int disp) {
 		
-		if(disp >= 5) { 
+		if(disp >= 5)
+			return "Disponibile";
+		else if(disp > 1) 
+			return "Solo " + disp +  " disponibili";
+		else if(disp == 1) 
+			return "Solo " + disp +  " disponibile";
+		else 
+			return "Non disponibile";
 			
-			disponibilita = "Disponibile";
-			colore = "green-text";
-			
-		}else if(disp > 1) {
-			
-			disponibilita = "Solo " + disp +  " disponibili";
-			colore = "yellow-text";
-			
-		}else if(disp == 1) {
-			
-			disponibilita = "Solo " + disp +  " disponibile";
-			colore = "yellow-text";
-		
-		}else {
-			
-			disponibilita = "Non disponibile";
-			colore = "red-text";
-			
-		}
 		
 	} 
+	
+	private static String getColore(int disp) {
+		
+		if(disp >= 5)
+			return "green-text";
+		else if(disp > 1) 
+			return "yellow-text";
+		else if(disp == 1) 
+			return "yellow-text";
+		else
+			return "red-text";
+		
+		
+	}
 	
 	
 }
