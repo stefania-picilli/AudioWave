@@ -110,6 +110,11 @@ public class Amministratore extends HttpServlet {
 				String disponibilita = "";
 				String colore = "";
 				
+				
+				checkDisponibilita(disp, disponibilita, colore);
+				
+				
+				/*
 				if(disp >= 5) { 
 					
 					disponibilita = "Disponibile";
@@ -130,7 +135,7 @@ public class Amministratore extends HttpServlet {
 					disponibilita = "Non disponibile";
 					colore = "red-text";
 					
-				}
+				}*/
 				
 				request.setAttribute("disponibilita", disponibilita);
 				request.setAttribute("colore", colore);
@@ -402,5 +407,33 @@ public class Amministratore extends HttpServlet {
         }
         return "";
     }	
+	
+	
+	private static void checkDisponibilita(int disp, String disponibilita, String colore) {
+		
+		if(disp >= 5) { 
+			
+			disponibilita = "Disponibile";
+			colore = "green-text";
+			
+		}else if(disp > 1) {
+			
+			disponibilita = "Solo " + disp +  " disponibili";
+			colore = "yellow-text";
+			
+		}else if(disp == 1) {
+			
+			disponibilita = "Solo " + disp +  " disponibile";
+			colore = "yellow-text";
+		
+		}else {
+			
+			disponibilita = "Non disponibile";
+			colore = "red-text";
+			
+		}
+		
+	} 
+	
 	
 }
