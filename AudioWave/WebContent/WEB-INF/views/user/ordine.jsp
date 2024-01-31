@@ -20,7 +20,7 @@
 				
 				<div id="ordine-top">
 					<h1>Dettagli ordine</h1>
-					<p>Inserisci i seguenti dati per completare l'ordine</p>
+					<p class="p1">Inserisci i seguenti dati per completare l'ordine</p>
 				</div>
 				
 				<div id="ordine-center">
@@ -35,8 +35,8 @@
 								
 									<div id="indirizzo" class="form-item">
 										
-										<label for="indirizzo">Indirizzo:</label>
-										<input type="text" name="indirizzo" placeholder="Via/Corso/Piazza, Numero civico, CAP, Città, Provincia" class="box">
+										<label for="indirizzo" class="p3">Indirizzo:</label>
+										<input type="text" name="indirizzo" placeholder="Via/Corso/Piazza, Numero civico, CAP, Città, Provincia" class="box p2">
 										
 										<div></div>
 									
@@ -45,32 +45,32 @@
 									<div id="carta" class="form-group">
 									
 										<div id="indirizzo" class="form-item">
-											<label for="numero">Numero Carta:</label>
-											<input type="text" name="numero" placeholder="**********" class="box">
+											<label for="numero" class="p3">Numero Carta:</label>
+											<input type="text" name="numero" placeholder="**********" class="box p2">
 											
 											<div></div>
 											
 										</div>
 									
 										<div id="intestatario" class="form-item">
-											<label for="intestatario">Intestatario:</label>
-											<input type="text" name="intestatario" placeholder="Luca Bianchi" class="box">
+											<label for="intestatario" class="p3">Intestatario:</label>
+											<input type="text" name="intestatario" placeholder="Luca Bianchi" class="box p2">
 											
 											<div></div>
 											
 										</div>
 									
 										<div id="scadenza" class="form-item">
-											<label for="scadenza">Data di scadenza:</label>
-											<input type="text" name="scadenza" placeholder="MM/YY" class="box">
+											<label for="scadenza" class="p3">Data di scadenza:</label>
+											<input type="text" name="scadenza" placeholder="MM/YY" class="box p2">
 											
 											<div></div>
 											
 										</div>
 									
 										<div id="cvv" class="form-item">
-											<label for="cvv">CVV:</label>
-											<input type="text" name="cvv" placeholder="***" class="box">
+											<label for="cvv" class="p3">CVV:</label>
+											<input type="text" name="cvv" placeholder="***" class="box p2">
 											
 											<div></div>
 											
@@ -104,13 +104,13 @@
 						<div id="totale-wrap">
 					 		
 					 		<div class="line-wrap">
-					 			<p class="p2 left-item">Importo parziale:</p>
-					 			<p class="p2 right-item" id="cellaSubTot">&euro; ${parziale}</p>
+					 			<p class="p3 left-item">Importo parziale:</p>
+					 			<p class="p3 right-item" id="cellaSubTot">&euro; ${parziale}</p>
 					 		</div>
 					 		
 					 		<div class="line-wrap">
-					 			<p class="p2">Costo spedizione:</p>
-					 			<p class="p2">&euro; ${costoSpedizione}</p>
+					 			<p class="p3">Costo spedizione:</p>
+					 			<p class="p3">&euro; ${costoSpedizione}</p>
 					 		</div>
 					 		
 					 		

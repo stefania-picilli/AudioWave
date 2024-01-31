@@ -3,9 +3,10 @@
 
 #form-container{
 	
-	width: 50%;
+	/*width: 50%;*/
+	width: 54%;
 	
-	padding: 60px 0px;
+	padding: 40px 0px;
 	
 	margin-left: auto;
 	margin-right: auto;
@@ -14,7 +15,8 @@
 
 #form-wrap{
 	
-	width: 60%;
+	/*width: 75%;*/
+	width: 70%;
 	
 	padding: 20px 0px;
 	
@@ -32,13 +34,13 @@
 
 #info-form{
 	
-	margin: 0px 0px 70px 0px;
+	margin: 0px 0px 60px 0px;
 	
 }
 
 #info-form h1, #info-form p{
 	
-	margin: 0px;
+	margin: 8px 0px;
 	text-align: center;
 	
 }
@@ -46,13 +48,18 @@
 
 .form-item{
 	
-	margin: 18px 0px;
+	margin: 15px 0px;
 
 	padding: 0px;	
 	width: 100%;
 
 }
 
+.form-item .p3{
+	
+	margin: 3px 5px;
+	
+}
 
 
 .form-item input[type=text], .form-item input[type=password], .form-item input[type=number], .form-item input[type=date], .form-item select, .form-item textarea, .form-item input[type=file]{
@@ -72,9 +79,9 @@
 	width: 100%;
 	
 	padding: 18px 0px;
-	margin: 50px 0px 0px 0px;
+	margin: 30px 0px 0px 0px;
 	
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	
 }
 
@@ -82,6 +89,7 @@
 #reg-mess{
 	
 	text-align: center;
+	margin: 30px 0px 10px 0px;
 	
 }
 
@@ -90,35 +98,42 @@ textarea {
   resize: vertical;
 }
 
+
+
 @media screen and (max-width: 1300px){
 	
 	#form-container{
-		width: 70%;
+		width: 63%;
 	}
 	
 	
-	#form-wrap{
-		width: 70%;
-	}
+	/*#form-wrap{
+		width: 75%;
+	}*/
+	
 	
 }
 
 
-@media screen and (max-width: 950px){
+@media screen and (max-width: 1000px){
+	
 	
 	#form-container{
-		width: 90%;
+		width: 75%;
 	}
 	
 	
-	#form-wrap{
-		width: 80%;
-	}
+	/*#form-wrap{
+		width: 75%;
+	}*/
+	
+	
+	
 	
 }
 
-
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
+	
 	
 	#form-container{
 		width: 100%;
@@ -128,6 +143,8 @@ textarea {
 	#form-wrap{
 		width: 85%;
 	}
+	
+	
 	
 	
 }

@@ -139,7 +139,7 @@
 				if($("#prodotti .prodotto").length == 0){
 					
 					$("#totale").empty();
-					$("#totale").html("Carrello ancora vuoto");
+					$("#totale").html("Il carrello &egrave; vuoto");
 					
 				}
 				

@@ -71,7 +71,7 @@ body{
 	width: 90%;*/
 	
 	max-width: 1300px;
-	width: 85%;
+	width: 90%;
 	
 	margin-left: auto;
 	margin-right: auto;
@@ -93,7 +93,7 @@ body{
 	border-style: solid;
 	border-width: 1px;
 	border-color: #CBCBCB;
-	border-radius: 10px;
+	border-radius: 18px;
 	background-color: #FFFFFF;
 	
 }
@@ -141,6 +141,8 @@ body{
 	cursor:pointer;
 	transition-duration: 0.4s;
 	
+	border-radius: 18px;
+	
 }
 
 
@@ -156,6 +158,8 @@ body{
 	cursor:pointer;
 	transition-duration: 0.4s;
 	
+	border-radius: 18px;
+	
 }
 
 .reverse-red-button, .red-button:hover{
@@ -169,6 +173,8 @@ body{
 	
 	cursor: pointer;
 	transition-duration: 0.4s;
+	
+	border-radius: 18px;
 	
 }
 
@@ -184,6 +190,8 @@ body{
 	cursor:pointer;
 	transition-duration: 0.4s;
 	
+	border-radius: 18px;
+	
 }
 
 .disabled-button{
@@ -191,6 +199,8 @@ body{
 	border: none; 
 	background-color: #BFC7C2;
 	color: #FFFFFF;
+	
+	border-radius: 18px;
 	
 }
 
@@ -343,7 +353,7 @@ h4{
 	/*font-family: 'Inter';*/
 	font-style: normal;
 	font-weight: 550;
-	font-size: 18px;
+	font-size: 19px;
 	/*line-height: 29px;*/
 	
 }
@@ -378,13 +388,15 @@ h5{
 	
 	/* p2 - Input */
 	
-	/*font-family: 'Inter';*/
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 20px;
+	font-size: 18px;
 	/*line-height: 29px;*/
 	
 }
+
+
 
 .p3{
 	
@@ -393,10 +405,24 @@ h5{
 	/*font-family: 'Inter';*/
 	font-style: normal;
 	font-weight: 200;
-	font-size: 20px;
+	font-size: 19px;
 	/*line-height: 27px;*/
 	
 }
+
+
+.p4{
+	
+	/* p1 - sub-paragraph */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 300;
+	font-size: 19px;
+	/*line-height: 34px;*/
+	
+}
+
 
 
 .b1{

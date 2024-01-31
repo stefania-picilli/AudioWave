@@ -101,13 +101,13 @@
 				 		<div id="totale-wrap">
 					 		
 					 		<div class="line-wrap">
-					 			<p class="p2 left-item">Importo parziale:</p>
-					 			<p class="p2 right-item" id="cellaSubTot">&euro; ${carrello.totale}</p>
+					 			<p class="p3 left-item">Importo parziale:</p>
+					 			<p class="p3 right-item" id="cellaSubTot">&euro; ${carrello.totale}</p>
 					 		</div>
 					 		
 					 		<div class="line-wrap">
-					 			<p class="p2">Costo spedizione:</p>
-					 			<p class="p2">&euro; ${costoSpedizione}</p>
+					 			<p class="p3">Costo spedizione:</p>
+					 			<p class="p3">&euro; ${costoSpedizione}</p>
 					 		</div>
 					 		
 					 		

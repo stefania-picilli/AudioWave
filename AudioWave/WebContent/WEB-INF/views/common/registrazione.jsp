@@ -38,8 +38,8 @@
 						
 								<div id="nome" class="form-item">
 								
-									<label for="nome">Nome:</label>
-									<input type="text" name="nome" placeholder="Luca" class="box">
+									<label for="nome" class="p3">Nome:</label>
+									<input type="text" name="nome" placeholder="Luca" class="box p2">
 									
 									<div></div>
 								
@@ -47,8 +47,8 @@
 								
 								<div id="cognome" class="form-item">
 								
-									<label for="cognome">Cognome:</label>
-									<input type="text" name="cognome" placeholder="Bianchi" class="box">
+									<label for="cognome" class="p3">Cognome:</label>
+									<input type="text" name="cognome" placeholder="Bianchi" class="box p2">
 									
 									<div></div>
 								
@@ -58,8 +58,8 @@
 						
 								<div id="email" class="form-item">
 							
-									<label for="email">Email:</label>
-									<input type="text" name="email" id="email" placeholder="luca.bianchi@example.com" class="box">
+									<label for="email" class="p3">Email:</label>
+									<input type="text" name="email" id="email" placeholder="luca.bianchi@example.com" class="box p2">
 									
 									<div></div>
 							
@@ -67,8 +67,8 @@
 								
 								<div id="password" class="form-item">
 								
-									<label for="password">Password:</label>
-									<input type="password" name="password" id="password" placeholder="**********" class="box">
+									<label for="password" class="p3">Password:</label>
+									<input type="password" name="password" id="password" placeholder="**********" class="box p2">
 									
 									<div></div>
 								
@@ -81,8 +81,8 @@
 					
 								<div id="nascita" class="form-item">
 							
-									<label for="nascita">Data di nascita:</label>
-									<input type="date" name="nascita" class="box">
+									<label for="nascita" class="p3">Data di nascita:</label>
+									<input type="date" name="nascita" class="box p2">
 									
 									<div></div>
 							
@@ -91,8 +91,8 @@
 							
 								<div id="cellulare" class="form-item">
 							
-									<label for="cellulare">Cellulare:</label>
-									<input type="text" name="cellulare" placeholder="000 000 0000" class="box">
+									<label for="cellulare" class="p3">Cellulare:</label>
+									<input type="text" name="cellulare" placeholder="000 000 0000" class="box p2">
 									
 									<div></div>
 							

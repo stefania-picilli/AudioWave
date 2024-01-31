@@ -127,7 +127,7 @@
 								<div id="data-partenza" class="form-item">
 									
 									<label for="data-partenza" class="p3">Data di partenza:</label>    <!-- Non può essere successiva alla data attuale, spedizione deve essere già partita -->
-									<input type="date" name="data-partenza" class="box">
+									<input type="date" name="data-partenza" class="box p2">
 									
 									<div></div>
 									
@@ -136,7 +136,7 @@
 								<div id="data-arrivo" class="form-item">
 									
 									<label for="data-arrivo" class="p3">Data stimata di arrivo:</label>
-									<input type="date" name="data-arrivo" class="box">
+									<input type="date" name="data-arrivo" class="box p2">
 									
 									<div></div>
 									
@@ -145,7 +145,7 @@
 								<div id="corriere" class="form-item">
 									
 									<label for="corriere" class="p3">Corriere:</label>
-									<input type="text" name="corriere" placeholder="Corriere" class="box">
+									<input type="text" name="corriere" placeholder="Corriere" class="box p2">
 									
 									<div></div>
 									
@@ -160,7 +160,7 @@
 								
 								<div class="form-action">
 								
-									<input type="submit" value="Aggiugi informazioni" class="cta-button">
+									<input type="submit" value="Aggiugi informazioni" class="cta-button b1">
 							
 								</div>
 							

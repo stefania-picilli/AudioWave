@@ -33,7 +33,7 @@
 						
 							<div class="form-item" id="email">
 								<label for="email" class="p3">Email:</label>
-								<input type="text" name="email" placeholder="luca.bianchi@example.com" class="box">
+								<input type="text" name="email" placeholder="luca.bianchi@example.com" class="box p2">
 								
 								<div></div>
 								
@@ -41,7 +41,7 @@
 							
 							<div class="form-item" id="password-log">
 								<label for="password"  class="p3">Password:</label>
-								<input type="password" name="password" placeholder="*********" class="box">
+								<input type="password" name="password" placeholder="*********" class="box p2">
 								
 								<div></div>
 							</div>
@@ -68,7 +68,7 @@
 					</div>
 					
 					
-					<p  id="reg-mess" class="p2">
+					<p  id="reg-mess" class="p3">
 						Non hai un account? <a href="${pageContext.request.contextPath}/Registrazione">Registrati</a> 
 					</p>
 				

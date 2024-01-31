@@ -23,7 +23,7 @@
 				
 					<div id="info-form">
 						<h1>Aggiungi prodotto</h1>
-						<p>Inserisci i dati del prodotto</p>
+						<p class="p1">Inserisci i dati del prodotto</p>
 					</div>
 					
 					
@@ -34,7 +34,7 @@
 							<div id="nome-prod" class="form-item">
 								
 								<label for="nome" class="p3">Nome prodotto:</label>
-								<input type="text" name="nome" placeholder="Nome" class="box">
+								<input type="text" name="nome" placeholder="Nome" class="box p2">
 								
 								<div></div>
 								
@@ -43,7 +43,7 @@
 							<div id="marca" class="form-item">
 								
 								<label for="marca" class="p3">Marca:</label>
-								<input type="text" name="marca" placeholder="Marca" class="box">
+								<input type="text" name="marca" placeholder="Marca" class="box p2">
 								
 								<div></div>
 								
@@ -52,7 +52,7 @@
 							<div id="descrizione" class="form-item">
 								
 								<label for="descrizione" class="p3">Descrizione prodotto:</label>
-								<textarea name="descrizione" rows="10"  placeholder="Descrizione" class="box"></textarea>
+								<textarea name="descrizione" rows="10"  placeholder="Descrizione" class="box p2"></textarea>
 								
 								<div></div>
 								
@@ -62,7 +62,7 @@
 							<div id="immagine" class="form-item">
 								
 								<label for="immagine" class="p3">Immagine prodotto:</label>
-								<input type="file" name="immagine" class="box">
+								<input type="file" name="immagine" class="box p2">
 								
 								<div></div>
 								
@@ -72,7 +72,7 @@
 							<div id="tag" class="form-item">
 								
 								<label for="tag" class="p3">Tag prodotto:</label>
-								<textarea name="tag" rows="3" placeholder="tag1, tag2, tag3, ..." class="box"></textarea>
+								<textarea name="tag" rows="3" placeholder="tag1, tag2, tag3, ..." class="box p2"></textarea>
 								
 								<div></div>
 								
@@ -82,7 +82,7 @@
 							<div id="categoria" class="form-item">
 								
 								<label for="categoria" class="p3">Categoria prodotto:</label>
-								<select name="categoria" class="box" >
+								<select name="categoria" class="box p2" >
 								
 									<c:forEach  items="${categorie}" var="categoria">
 										<option value="${categoria.id}">${categoria.nome}</option>
@@ -97,7 +97,7 @@
 							<div id="prezzo" class="form-item">
 								
 								<label for="prezzo" class="p3">Prezzo prodotto (in Euro):</label>
-								<input type="text" name="prezzo" placeholder="00.00" class="box">
+								<input type="text" name="prezzo" placeholder="00.00" class="box p2">
 								
 	 							<div></div>
 								
@@ -106,7 +106,7 @@
 							<div id="iva" class="form-item">
 								
 								<label for="iva" class="p3">IVA prodotto (%):</label>
-								<input type="text" name="iva" placeholder="00.00" class="box">
+								<input type="text" name="iva" placeholder="00.00" class="box p2">
 								
 								<div></div>
 								
@@ -115,7 +115,7 @@
 							<div id="disponibilita" class="form-item">
 								
 								<label for="disponibilita" class="p3">Disponibilità  prodotto:</label>
-								<input type="number" name="disponibilita" placeholder="00" min=0 class="box">
+								<input type="number" name="disponibilita" placeholder="00" min=0 class="box p2">
 								
 								<div></div>
 								
@@ -127,7 +127,7 @@
 							
 							<div class="form-action">
 							
-								<input type="submit" value="Aggiungi prodotto" class="cta-button">
+								<input type="submit" value="Aggiungi prodotto" class="cta-button b1">
 							
 							</div>
 						

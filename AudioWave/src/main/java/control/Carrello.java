@@ -133,7 +133,7 @@ public class Carrello extends HttpServlet {
 					
 					if(!carrello.add(prod)) {
 						
-						messaggi.add("Impossibile aggiungere prodotto, disponibilità non sufficiente");
+						messaggi.add("Impossibile aggiungere il prodotto, disponibilitÃ  non sufficiente");
 						quantita = 0;
 						
 					}else 
@@ -258,7 +258,7 @@ public class Carrello extends HttpServlet {
 			if(prodottoDB == null) {
 				
 				//prodotto non trovato nel database
-				messaggioElim.append("Uno o più prodotti potrebbero non essere più presenti sulla piattaforma");
+				messaggioElim.append("Uno o piï¿½ prodotti potrebbero non essere piï¿½ presenti sulla piattaforma");
 				listProdotti.remove(i);
 				continue;
 				
@@ -268,7 +268,7 @@ public class Carrello extends HttpServlet {
 			if(!prodottoDB.equals(prodCarr.getProdotto()))
 				prodCarr.setProdotto(prodottoDB);
 			
-			//controllo disponibilità
+			//controllo disponibilitï¿½
 			if(prodCarr.getQuantita() > prodottoDB.getDisponibilita()) {
 				
 				if(prodottoDB.getDisponibilita() <= 0)
@@ -285,7 +285,7 @@ public class Carrello extends HttpServlet {
 		}
 		
 		if(messaggioDisp.length() > 0)
-			messaggi.add("La disponibilita dei seguenti prodotti è diminuita (potrebbero non essere più presenti nel carrello):" +  messaggioDisp);
+			messaggi.add("La disponibilita dei seguenti prodotti ï¿½ diminuita (potrebbero non essere piï¿½ presenti nel carrello):" +  messaggioDisp);
 			
 		if(messaggioElim.length() > 0)
 			messaggi.add(messaggioElim + "");
