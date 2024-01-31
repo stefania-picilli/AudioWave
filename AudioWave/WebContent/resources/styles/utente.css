@@ -24,10 +24,16 @@
 
 #nome-cognome h1{
 	
-	margin-bottom: 4px;
+	margin: 4px;
 	
 }
 
+
+#nome-cognome h5{
+	
+	margin: 3px 0px;
+	
+}
 
 #info{
 	
@@ -36,13 +42,13 @@
 	
 }
 
-.info-item h3{
+.info-item .p3{
 	
-	margin: 2px 0px;
+	margin: 3px 5px;
 	
 }
 
-.info-item p{
+.info-item .p2{
 	
 	width: 100%;
 	padding: 13px 18px;

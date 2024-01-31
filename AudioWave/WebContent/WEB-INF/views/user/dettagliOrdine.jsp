@@ -60,6 +60,7 @@
 		
 			<div id="info-wrap">
 			
+			
 		
 				<div id="info-ordine">
 					
@@ -68,28 +69,28 @@
 					<div id="info-tab">
 						
 						<div class="info-item">
-							<h3>Stato</h3>
-							<p class="box">${ordine.statoOrdine}</p>
+							<p class="p3">Stato</p>
+							<p class="box p2">${ordine.statoOrdine}</p>
 						</div>
 							
 						<div class="info-item">
-							<h3>Importo</h3>
-							<p class="box">&euro; ${ordine.costoTotale}</p>
+							<p class="p3">Importo</p>
+							<p class="box p2">&euro; ${ordine.costoTotale}</p>
 						</div>
 						
 						<div class="info-item">
-							<h3>Data</h3>
-							<p class="box">${ordine.data}</p>
+							<p class="p3">Data</p>
+							<p class="box p2">${ordine.data}</p>
 						</div>
 							
 						<div class="info-item">
-							<h3>Indirizzo</h3>
-							<p class="box">${ordine.indirizzo}</p>
+							<p class="p3">Indirizzo</p>
+							<p class="box p2">${ordine.indirizzo}</p>
 						</div>
 							
 						<div class="info-item">
-							<h3>Metodo di pagamento</h3>
-							<p class="box">*****${ordine.metodoPagamento}</p>
+							<p class="p3">Metodo di pagamento</p>
+							<p class="box p2">*****${ordine.metodoPagamento}</p>
 						</div>
 						
 					</div>
@@ -100,7 +101,7 @@
 					
 							<input type="hidden" name="action" value="fattura">
 							<input type="hidden" name="num" value="${ordine.numeroOrdine}">
-							<input type="submit" value="Ottieni fattura" class="cta-button">
+							<input type="submit" value="Ottieni fattura" class="cta-button b2">
 						
 						</form>
 					
@@ -109,7 +110,7 @@
 				</div>
 				
 			
-				
+				<div class="line"></div>
 			
 				<div id="info-spedizione">
 				
@@ -118,22 +119,22 @@
 					<div id="info-tab" >
 					
 						<% if(request.getAttribute("spedizione") == null){ %>
-							<div class="info-item"><p class="box">L'ordine non è ancora stato spedito</p></div>
+							<div class="info-item"><p class="box p2">L'ordine non è ancora stato spedito</p></div>
 						<%}else{ %>
 					
 							<div class="info-item">
-								<h3>Data di partenza</h3>
-								<p class="box">${spedizione.dataPartenza}</p>
+								<p class="p3">Data di partenza</p>
+								<p class="box p2">${spedizione.dataPartenza}</p>
 							</div>
 								
 							<div class="info-item">
-								<h3>Data stimata di arrivo</h3>
-								<p class="box">${spedizione.dataArrivo}</p>
+								<p class="p3">Data stimata di arrivo</p>
+								<p class="box p2">${spedizione.dataArrivo}</p>
 							</div>
 							
 							<div class="info-item">
-								<h3>Corriere</h3>
-								<p class="box">${spedizione.corriere}</p>
+								<p class="p3">Corriere</p>
+								<p class="box p2">${spedizione.corriere}</p>
 							</div>
 					
 						<%} %>

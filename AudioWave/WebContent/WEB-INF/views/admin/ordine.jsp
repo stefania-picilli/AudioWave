@@ -73,40 +73,42 @@
 					<div id="info-tab">
 					
 						<div class="info-item">
-							<h3>Stato</h3>
-							<p class="box">${ordine.statoOrdine}</p>
+							<p class="p3">Stato</p>
+							<p class="box p2">${ordine.statoOrdine}</p>
 						</div>
 						
 						<div class="info-item">
-							<h3>Importo</h3>
-							<p class="box">&euro; ${ordine.costoTotale}</p>
+							<p class="p3">Importo</p>
+							<p class="box p2">&euro; ${ordine.costoTotale}</p>
 						</div>
 						
 						<div class="info-item">
-							<h3>Data</h3>
-							<p class="box">${ordine.data}</p>
+							<p class="p3">Data</p>
+							<p class="box p2">${ordine.data}</p>
 						</div>
 							
 						<div class="info-item">
-							<h3>Indirizzo</h3>
-							<p class="box">${ordine.indirizzo}</p>
+							<p class="p3">Indirizzo</p>
+							<p class="box p2">${ordine.indirizzo}</p>
 						</div>
 						
 						<div class="info-item">
-							<h3>Nome utente</h3>
-							<p class="box">${utente.cognome} ${utente.nome}</p>
+							<p class="p3">Nome utente</p>
+							<p class="box p2">${utente.cognome} ${utente.nome}</p>
 						</div>
 					
 						<div class="info-item">
-							<h3>E-mail utente</h3>
-							<p class="box">${utente.email}</p>
+							<p class="p3">E-mail utente</p>
+							<p class="box p2">${utente.email}</p>
 						</div>
 					
 					</div>
 				
 				</div>
 		
-		
+				
+				<div class="line"></div>
+				
 		
 				<%if(request.getAttribute("spedizione") == null){ %>
 					
@@ -122,15 +124,6 @@
 						
 							<form action="Amministratore" method="POST">
 							
-								<div id="corriere" class="form-item">
-									
-									<label for="corriere" class="p3">Corriere:</label>
-									<input type="text" name="corriere" placeholder="Corriere" class="box">
-									
-									<div></div>
-									
-								</div>
-							
 								<div id="data-partenza" class="form-item">
 									
 									<label for="data-partenza" class="p3">Data di partenza:</label>    <!-- Non può essere successiva alla data attuale, spedizione deve essere già partita -->
@@ -144,6 +137,15 @@
 									
 									<label for="data-arrivo" class="p3">Data stimata di arrivo:</label>
 									<input type="date" name="data-arrivo" class="box">
+									
+									<div></div>
+									
+								</div>
+								
+								<div id="corriere" class="form-item">
+									
+									<label for="corriere" class="p3">Corriere:</label>
+									<input type="text" name="corriere" placeholder="Corriere" class="box">
 									
 									<div></div>
 									
@@ -178,18 +180,18 @@
 						<div id="info-tab">
 						
 							<div class="info-item">
-								<h3>Data di partenza</h3>
-								<p class="box">${spedizione.dataPartenza}</p>
+								<p class="p3">Data di partenza</p>
+								<p class="box p2">${spedizione.dataPartenza}</p>
 							</div>
 							
 							<div class="info-item">
-								<h3>Data stimata di arrivo</h3>
-								<p class="box">${spedizione.dataArrivo}</p>
+								<p class="p3">Data stimata di arrivo</p>
+								<p class="box p2">${spedizione.dataArrivo}</p>
 							</div>
 							
 							<div class="info-item">
-								<h3>Corriere</h3>
-								<p class="box">${spedizione.corriere}</p>
+								<p class="p3">Corriere</p>
+								<p class="box p2">${spedizione.corriere}</p>
 							</div>
 								
 						

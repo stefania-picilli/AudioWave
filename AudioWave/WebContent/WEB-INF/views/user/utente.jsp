@@ -23,29 +23,29 @@
 			
 				<div id="nome-cognome">
 					<h1>${account.nome} ${account.cognome}</h1>
-					<p>${account.email}</p>
+					<h5>${account.email}</h5>
 				</div>
 				
 				<div id="info">
 					
 					<div class="info-item">
-						<h3>Nome</h3>
-						<p class="box">${account.nome}</p>
+						<p class="p3">Nome</p>
+						<p class="box p2">${account.nome}</p>
 					</div>
 					
 					<div class="info-item">
-						<h3>Cognome</h3>
-						<p class="box">${account.cognome}</p>
+						<p class="p3">Cognome</p>
+						<p class="box p2">${account.cognome}</p>
 					</div>
 					
 					<div class="info-item">
-						<h3>Data di nascita</h3>
-						<p class="box">${account.dataNascita}</p>
+						<p class="p3">Data di nascita</p>
+						<p class="box p2">${account.dataNascita}</p>
 					</div>
 					
 					<div class="info-item">
-						<h3>Cellulare</h3>
-						<p class="box">${account.cellulare}</p>
+						<p class="p3">Cellulare</p>
+						<p class="box p2">${account.cellulare}</p>
 					</div>
 				
 				</div>
@@ -56,7 +56,7 @@
 					<form action="Logout" method="GET">
 				
 						<input type="hidden" name="action" value="logout">
-						<input type="submit" value="Logout" class="cta-button">
+						<input type="submit" value="Logout" class="cta-button b2">
 				
 					</form>
 					

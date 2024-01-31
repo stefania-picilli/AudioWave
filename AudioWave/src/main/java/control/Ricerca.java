@@ -38,6 +38,9 @@ public class Ricerca extends HttpServlet {
 		
 		String search = InputFilter.filter(request.getParameter("search"));
 		String categoria = InputFilter.filter(request.getParameter("categoria"));
+		
+		//String search = request.getParameter("search");
+		//String categoria = request.getParameter("categoria");
 	
 		Collection<ProdottoBean> coll = null;
 		

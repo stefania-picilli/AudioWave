@@ -69,7 +69,7 @@
 					
 					
 					<p  id="reg-mess" class="p2">
-						Non hai un account? <a href="${pageContext.request.contextPath}/Registrazione?path=<%= request.getAttribute("path") %>">Registrati</a> 
+						Non hai un account? <a href="${pageContext.request.contextPath}/Registrazione">Registrati</a> 
 					</p>
 				
 			
