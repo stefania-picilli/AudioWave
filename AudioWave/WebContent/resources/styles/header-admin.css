@@ -85,7 +85,7 @@ header #logo img{
 	
 	width: 50%;
 	padding: 9px 0px;
-	border-radius: 10px;
+	border-radius: 18px;
 	
 }
 
@@ -118,7 +118,7 @@ header #logo img{
 	width: 90%;
 	padding: 10px 20px;
 	
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	
 }
 

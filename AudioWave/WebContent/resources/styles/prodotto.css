@@ -55,7 +55,7 @@
 
 .message-btn button{
 	
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	padding: 8px 65px;
 	
 }
@@ -153,7 +153,7 @@
 
 .item-btn button, .item-btn input{
 	
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	padding: 20px 60px;
 	width: 100%;
 	

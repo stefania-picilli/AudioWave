@@ -88,7 +88,7 @@
 	
 	width: 100%;
 	padding: 15px 0px;
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	
 }
 
@@ -151,13 +151,13 @@
 }
 
 #ordini td:first-child, #ordini th:first-child {
-  border-radius: 10px 0 0 10px;
+  border-radius: 18px 0 0 18px;
   border-left: 1px solid  #E3DBDB;
 }
 
 
 #ordini td:last-child, #ordini th:last-child {
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 18px 18px 0;
   border-right: 1px solid  #E3DBDB;
 }
 
