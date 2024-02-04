@@ -7,8 +7,10 @@ footer{
 	display: flex;
 	justify-content: space-between;
 	
-	padding: 40px 0px;
-	margin: 60px 0px 0px 0px;
+	/*justify-content: space-around;*/
+	
+	padding: 60px 0px;
+	margin: 70px 0px 0px 0px;
 	
 	color: #FFFFFF;
 	background-color: #171214;
@@ -32,29 +34,30 @@ footer a{
 
 #contatti{
 	
-	margin: 25px 0px 0px 0px;
+	margin: 23px 0px 0px 0px;
 	
 }
 
 #contatti .p3{
 	
-	margin: 0px 0px 12px 0px;
+	margin: 0px 0px 6px 0px;
 	
 }
 
 #contatti i{
 	
-	margin: 0px 5px;
+	margin: 0px 7px;
 	
 }
 
 
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 800px){
 	
 	footer{
 	
 		flex-direction: column;
+		padding: 20px 0px 48px 0px;
 	
 	}
 	
@@ -66,7 +69,7 @@ footer a{
 	
 	.footer-item .p2{
 	
-		margin: 16px 0px;
+		margin: 45px 0px 15px 0px;
 	
 	}
 	
@@ -79,7 +82,7 @@ footer a{
 
 	#contatti{
 		
-		margin: 18px 0px 0px 0px;
+		margin: 10px 0px 0px 0px;
 		
 	}
 	

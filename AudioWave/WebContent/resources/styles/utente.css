@@ -44,7 +44,7 @@
 
 .info-item .p3{
 	
-	margin: 3px 5px;
+	margin: 3px 8px;
 	
 }
 
@@ -59,7 +59,7 @@
 .info-item{
 	
 	width: 100%;
-	margin: 22px 0px;
+	margin: 18px 0px;
 	
 	
 }
@@ -134,8 +134,8 @@
 	
 	padding: 14px;
 	
-	border-bottom: 1px solid  #E3DBDB;
-	border-top: 1px solid  #E3DBDB;
+	border-bottom: 1px solid  #CBCBCB;
+	border-top: 1px solid  #CBCBCB;
 	
 }
 
@@ -145,35 +145,35 @@
 	padding: 18px 20px;
 	
 	
-	border-bottom: 1px solid  #E3DBDB;
-	border-top: 1px solid  #E3DBDB;
+	border-bottom: 1px solid  #CBCBCB;
+	border-top: 1px solid  #CBCBCB;
 	
 }
 
 #ordini td:first-child, #ordini th:first-child {
   border-radius: 18px 0 0 18px;
-  border-left: 1px solid  #E3DBDB;
+  border-left: 1px solid  #CBCBCB;
 }
 
 
 #ordini td:last-child, #ordini th:last-child {
   border-radius: 0 18px 18px 0;
-  border-right: 1px solid  #E3DBDB;
+  border-right: 1px solid  #CBCBCB;
 }
 
 
 
 #ordini .box-hover td{
-	border-bottom: 1px solid #ACA6A6;
-	border-top: 1px solid #ACA6A6;
+	border-bottom: 1px solid #979797;
+	border-top: 1px solid #979797;
 }
 
 #ordini .box-hover td:first-child{
-	border-left: 1px solid #ACA6A6;
+	border-left: 1px solid #979797;
 }
 
 #ordini .box-hover td:last-child{
-	border-right: 1px solid #ACA6A6;
+	border-right: 1px solid #979797;
 }
 
 

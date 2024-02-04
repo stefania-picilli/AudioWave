@@ -14,22 +14,25 @@
 	<body>
 	
 		<footer>
-	
+			
 			<div class="footer-item">
 				<p class="p2"><a href='${pageContext.request.contextPath}/Home'>Home</a></p>
 			</div>
-		
+			
 			<div id="center"  class="footer-item">
 				<p class="p2">Contatti:</p>
 				<div id="contatti">
-					<p class="p3">prova@email.com</p>
-					<p class="p3">+39 012 3456789</p>
-					<p class="p3"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-x-twitter"></i><i class="fa-brands fa-tiktok"></i></p>
+					<p class="p3">audiowave@gmail.com</p>
+					<p class="p3">+39 123 4567890</p>
 				</div>
 			</div>
 		
+		
 			<div class="footer-item">
-				<p class="p2"><a href='${pageContext.request.contextPath}/Home'>About us</a></p>
+				<p class="p2">Social:</p>
+				<div id="contatti">
+					<p class="p3"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-x-twitter"></i><i class="fa-brands fa-tiktok"></i></p>
+				</div>
 			</div>
 		
 		</footer>

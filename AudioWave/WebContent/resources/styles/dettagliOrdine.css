@@ -3,24 +3,33 @@
 
 h1{
 	
-	margin: 15px 0px 80px 0px;
+	margin: 15px 0px 75px 0px;
 	text-align: center;
 	
 }
 
 #prodotti{
 	
-	width: 65%;
+	width: 60%;
 	margin: 40px auto;
 	
 }
+
+
+#prodotti .line{
+	
+	margin: 28px 0px 18px 0px;
+	width: 100%;
+	
+}
+
 
 .prodotto{
 	
 	width: 100%;
 	overflow: hidden;
 	
-	margin: 12px 0px;
+	margin: 10px 0px;
 	
 }
 
@@ -122,22 +131,22 @@ h1{
 
 #info-ordine, #info-spedizione{
 	
-	margin: 100px 0px;
+	margin: 90px 0px;
 	
 	
 }
 
 #info-ordine h2, #info-spedizione h2{
 	
-	text-align: center;
-	margin-bottom: 50px;
+	text-align: left;
+	margin-bottom: 35px;
 	
 }
 
 
 .info-item .p3{
 	
-	margin: 3px 5px;
+	margin: 1px 5px;
 	
 }
 
@@ -145,14 +154,14 @@ h1{
 	
 	width: 100%;
 	padding: 13px 18px;
-	margin: 4px 0px;
+	margin: 1px 0px;
 	
 }
 
 .info-item{
 	
 	width: 100%;
-	margin: 22px 0px;
+	margin: 14px 0px;
 	
 	
 }
@@ -192,7 +201,7 @@ h1{
 @media screen and (max-width: 1300px){
 	
 	#prodotti{
-		width: 90%;
+		width: 80%;
 	}
 	
 	

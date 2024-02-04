@@ -21,6 +21,8 @@
 				
 			<div id="prodotti">
 			
+				<div class="line"></div>
+			
 				<c:forEach  items="${prodotti}" var="prodotto">
 						
 						<div class="prodotto box" >
@@ -110,7 +112,7 @@
 				</div>
 				
 			
-				<div class="line"></div>
+				<!--<div class="line"></div>-->
 			
 				<div id="info-spedizione">
 				

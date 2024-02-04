@@ -105,8 +105,7 @@
 
 .line{
 	
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin: 16px 0px 0px 0px;
 	width: 100%;
 	
 }
@@ -116,16 +115,16 @@
 	
 	width: 100%;
 	
-	margin: 10px 0px;
+	margin: 0px;
 	
-	padding: 20px 0px;
+	padding: 33px 0px;
 	
 	overflow: auto;
 	
 	display: grid;
 	grid-template-columns: 23% 23% 23% 23%;
-	column-gap: 2%;
-	row-gap: 20px;
+	column-gap: 1%;
+	row-gap: 33px;
 	justify-content: space-between;
   	justify-items: center;
  	align-content: space-evenly;
@@ -176,6 +175,8 @@ a {
 	
 	
 	height: 100%;
+	
+	overflow: hidden;
 	
 	
 }
@@ -268,6 +269,13 @@ h3{
 @media screen and (max-width: 900px){
 	
 	
+	.line{
+	
+		margin: 0px 0px 0px 0px;
+		
+	}
+	
+	
 	#item-group {
 	
 	    width: 100%;
@@ -303,7 +311,7 @@ h3{
 	#filtro-action button{
 	
 		width: 100%;
-		padding: 10px 0px;
+		padding: 13px 0px;
 	
 	}
 	
@@ -317,6 +325,7 @@ h3{
 
 
 @media screen and (max-width: 700px){
+	
 	
 	#filtri{
 	
@@ -348,7 +357,7 @@ h3{
 		overflow: hidden;
 	
 	}
-	
+
 	
 	#double-item{
 	

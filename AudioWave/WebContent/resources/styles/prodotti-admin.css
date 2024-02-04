@@ -1,9 +1,17 @@
 @charset "ISO-8859-1";
 
 
+h1{
+	
+	margin: 20px 0px 70px;
+	
+}
+
+
 #nuovo-prod{
 	
 	width: 100%;
+	margin: 0px 0px 90px 0px;
 	
 	
 }
@@ -12,7 +20,7 @@
 	
 	width: 60%;
 	text-align: center;
-	margin: 40px auto;
+	margin: 28px auto;
 	
 }
 
@@ -20,7 +28,7 @@
 	
 	width: 100%;
 	
-	margin: 40px 0px;
+	margin: 28px 0px;
 	
 	display: flex;
 	justify-content: center;

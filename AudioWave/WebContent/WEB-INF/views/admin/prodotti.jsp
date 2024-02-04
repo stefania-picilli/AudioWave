@@ -19,22 +19,24 @@
 		<div id="content">
 		
 		
-			<div class="line"></div>
+			<h1>Prodotti</h1>
+		
 		
 			<div id="nuovo-prod">
 			
-				<p class="p1">Hai un nuovo prodotto da aggiungere al catalogo? Inserisci le informazioni per permettere ai tuoi clienti di acquistarlo </p>
+				<div class="line"></div>
+			
+				<p class="p1">Hai un nuovo prodotto da aggiungere al catalogo? </p>
 				
 				<form action="Amministratore" method="GET">
 					<input type="hidden" name="action" value="c-prodotto">
 					<input type="submit" class="cta-button b2" value="Aggiungi prodotto">
 				</form>
 				
+				<div class="line"></div>
+				
 			</div>
-		
-			<div class="line"></div>
 			
-			<h1>Prodotti</h1>
 		
 			
 			<div id="filtri">

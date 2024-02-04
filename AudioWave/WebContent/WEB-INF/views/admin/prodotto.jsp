@@ -70,7 +70,6 @@
 			
 			</div>
 			
-			<div class="line"></div>
 			
 			<div id="descrizione">
 				

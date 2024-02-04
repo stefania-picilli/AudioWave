@@ -47,11 +47,17 @@ header nav ul li a:hover{
 }
 
 
+/*input:hover, select:hover, textarea:hover{
+	
+	border-color: #ACA6A6;
+	
+}*/
+
 
 body{
 	
 	background-color: #FFFFFF;
-	color: #171214;
+	color: #241E2D;
 	
 	min-height: 100vh;
 	
@@ -108,6 +114,8 @@ body{
 	
 	cursor:pointer;
 	
+	border-radius: 18px;
+	
 }
 
 
@@ -115,8 +123,10 @@ body{
 	
 	border-style: solid;
 	border-width: 1px;
-	border-color: #B5CFEE;
+	border-color: #ECF4FF;
 	background-color: #FFFFFF;
+	
+	border-radius: 18px;
 	
 }
 
@@ -126,6 +136,8 @@ body{
 	border-width: 1px;
 	border-color: #CBCBCB;
 	background-color: #ECF4FF;
+	
+	border-radius: 18px;
 	
 }
 
@@ -165,11 +177,11 @@ body{
 .reverse-red-button, .red-button:hover{
 	
 	border: solid;
-	border-color: #F6692D;
+	border-color: #F44336;
 	border-width: 1px;
 	 
 	background-color: #FFFFFF;
-	color: #F6692D;
+	color: #F44336;
 	
 	cursor: pointer;
 	transition-duration: 0.4s;
@@ -181,10 +193,10 @@ body{
 .red-button, .reverse-red-button:hover{
 	
 	border: solid;
-	border-color: #F6692D;
+	border-color: #F44336;
 	border-width: 1px;
 	
-	background-color: #F6692D;
+	background-color: #F44336;
 	color: #FFFFFF;
 	
 	cursor:pointer;
@@ -218,7 +230,7 @@ body{
 
 .warn-icon{
 	
-	color: red;
+	color: #F44336;
 	
 }
 
@@ -237,24 +249,28 @@ body{
 
 .valid-input{
 	
-	border-color: green;
+	border-color: #3B9C76;
 	
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 10px;
-	background-color: #FFFFFF;
+	background-color: #EDFFF8;
+	
+	border-radius: 18px;
 	
 }
 
 
 .invalid-input{ 
 	
-	border-color: red;
+	border-color: #F44336;
 	
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 10px;
-	background-color: #FFFFFF;
+	background-color: #FFF1F0;
+	
+	border-radius: 18px;
 	
 }
 
@@ -266,14 +282,16 @@ body{
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 10px;
-	background-color: #FFFFFF;
+	background-color: #ECF4FF;
+	
+	border-radius: 18px;
 	
 	
 }
 
 .error-message{
 	
-	color: red;
+	color: #F44336;
 	
 }
 
@@ -295,13 +313,13 @@ textarea:focus {
 
 .yellow-text{
 	
-	color: orange;
+	color: #B88C3E;
 	
 }
 
 .red-text{
 	
-	color: red;
+	color: #F44336;
 	
 }
 

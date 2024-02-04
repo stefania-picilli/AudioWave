@@ -23,6 +23,8 @@
 		
 			<div id="prodotti">
 			
+				<div class="line"></div>
+			
 				<div id="prodotti-tab">
 			
 					<c:forEach  items="${prodotti}" var="prodotto">
@@ -106,8 +108,6 @@
 				
 				</div>
 		
-				
-				<div class="line"></div>
 				
 		
 				<%if(request.getAttribute("spedizione") == null){ %>

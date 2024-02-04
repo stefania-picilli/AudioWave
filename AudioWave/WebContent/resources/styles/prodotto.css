@@ -122,7 +122,7 @@
 }
 
 #info-prod h2{
-	margin: 40px 0px;
+	margin: 55px 0px;
 }
 
 #info-prod p{
@@ -186,46 +186,23 @@
 @media screen and (max-width: 1300px){
 	
 	
-	#nome-div{
-		margin: 0px 0px 15px 0px;
-	}
-	
-	#nome-div h1, #nome-div h5{
-		margin: 0px 0px 0px 0px;
-	}
-	
 	#info-prod h2{
-		margin: 20px 0px;
+		margin: 45px 0px;
 	}
 	
 	#info-prod p{
 		
-		margin: 15px 0px;
+		margin: 20px 0px;
 		
 	}
 	
 	
 	#prod-action{
-		margin-top: 50px;
-	}
-	
-	#prodotto{
-		margin-bottom: 40px;
-	}
 		
-	
-	
-	#descrizione h2{
-	
-		margin: 30px 0px 15px 0px;
+		margin-top: 80px;
 		
 	}
 	
-	#descrizione p{
-		
-		margin: 15px 0px;
-		
-	}
 	
 	
 	.message-txt{
@@ -269,29 +246,36 @@
 		
 	}
 	
-
 	#nome-div{
-		margin: 15px 0px 20px 0px;
+		margin: 40px 0px 20px 0px;
 	}
 	
 	#nome-div h1, #nome-div h5{
-		margin: 0px 0px 0px 0px;
+		margin: 0px 0px 2px 0px;
 	}
 	
 	#info-prod h2{
-		margin: 20px 0px;
+		margin: 35px 0px;
 	}
 	
 	#info-prod p{
 		
-		margin: 20px 0px;
+		margin: 18px 0px;
 		
 	}
+
+
+	#prod-action{
 	
+		margin-top: 60px;
+		
+	}
+
+
 	
 	#prodotto{
 	
-		margin-bottom: 40px;
+		margin-bottom: 70px;
 		
 	}
 	
