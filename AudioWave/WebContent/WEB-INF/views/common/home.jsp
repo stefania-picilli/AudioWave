@@ -17,20 +17,28 @@
 
 		 <jsp:include page="header.jsp"/>
 		
-		
-		<div id="content">
-		
+		<div id="hero-wrap">
 		
 			<div id="hero">
-			
-				<h1>AudioWave</h1>
 				
-				<div class="img">
-					
+				<div id="left-hero">
+					<p class="h6">AudioWave</p>
+					<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
+				</div>
+				
+				<div id="right-hero">
+					<div id="hero-img">
+						<img src="resources/images/hero.png" alt="IMG">
+					</div>
 				</div>
 				
 			</div>
 		
+		</div>
+		
+		
+		
+		<div id="content">
 		
 		
 			<div id="prodotti">

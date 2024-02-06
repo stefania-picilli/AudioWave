@@ -22,7 +22,7 @@
 			<header>	
 				
 					<div id="logo">
-						<a href='${pageContext.request.contextPath}/Home'><img src="resources/images/logo-prova.jpg" alt="logo"  height="50px"></img></a>
+						<a href='${pageContext.request.contextPath}/Home'><img src="resources/images/logo.jpg" alt="logo"  height="50px"></img></a>
 					</div>
 				
 					<nav id="header-nav">

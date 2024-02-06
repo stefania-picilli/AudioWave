@@ -24,7 +24,7 @@
 		<div id="content">
 		
 		
-			<div id="prod-aggiunto" class="message light-color-box">
+			<div id="prod-aggiunto" class="message colored-box">
 			
 				<div class="message-txt">
 					<h4>Hai aggiunto il prodotto:</h4>
@@ -50,7 +50,7 @@
 			</div>
 			
 			
-			<div id="prod-non-aggiunto" class="message light-color-box">
+			<div id="prod-non-aggiunto" class="message colored-box">
 			
 				<div class="message-txt">
 				

@@ -134,7 +134,7 @@ body{
 	
 	border-style: solid;
 	border-width: 1px;
-	border-color: #CBCBCB;
+	border-color: #0372C6;
 	background-color: #ECF4FF;
 	
 	border-radius: 18px;
@@ -385,6 +385,19 @@ h5{
 	font-weight: 200;
 	font-size: 26px;
 	/*line-height: 39px;*/
+	
+}
+
+
+.h6{
+	
+	/* h6 - hero title */
+	
+	/*font-family: 'Inter';*/
+	font-style: normal;
+	font-weight: 900;
+	font-size: 80px;
+	/*line-height: 77px;*/
 	
 }
 
