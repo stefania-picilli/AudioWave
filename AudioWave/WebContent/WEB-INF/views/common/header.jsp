@@ -29,7 +29,7 @@
 						<ul>
 							<c:forEach  items="${categorie}" var="categoria">
 								<li>
-									<a href='${pageContext.request.contextPath}/Ricerca?categoria=${categoria.nome}'>${categoria.nome}</a>
+									<a href='${pageContext.request.contextPath}/Ricerca?categoria=${categoria.nome}' class="b2">${categoria.nome}</a>
 								</li>
 							</c:forEach>
 						</ul>
@@ -38,13 +38,13 @@
 				
 				
 					<div id="pulsanti-header">
-					
-						<div id="cart" class="pulsante">
-							<a href='${pageContext.request.contextPath}/Carrello'><i class="fa-solid fa-cart-shopping fa-2xl action-icon"></i></a>
-						</div>
 						
 						<div id="user" class="pulsante">
 							<a href='${pageContext.request.contextPath}/Utente'><i class="fa-solid fa-user fa-2xl action-icon"></i></a>
+						</div>
+						
+						<div id="cart" class="pulsante">
+							<a href='${pageContext.request.contextPath}/Carrello'><i class="fa-solid fa-cart-shopping fa-2xl action-icon"></i></a>
 						</div>
 						
 					</div>
@@ -53,7 +53,7 @@
 					<div id="barra-ricerca">
 				
 						<form action='${pageContext.request.contextPath}/Ricerca' method="get">
-							<input type="text" class="search-bar" name="search" placeholder="Cerca prodotti" size="60">
+							<input type="text" class="search-bar b2" name="search" placeholder="Cerca prodotti" size="60">
 							<i  class="fa fa-search search-icon grey-action-icon"></i>
 						</form>
 					

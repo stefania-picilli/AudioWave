@@ -8,7 +8,7 @@ header{
 	background-color: #FFFFFF;
 	color: #171214;
 	
-	/*border-bottom: solid;*/
+	border-bottom: solid;
 	border-bottom-width: 1px;
 	border-bottom-color: #CBCBCB;
 	
@@ -56,6 +56,9 @@ header nav ul li a:hover{
 
 body{
 	
+	
+	margin: 0px;
+	
 	background-color: #FFFFFF;
 	color: #241E2D;
 	
@@ -71,7 +74,7 @@ body{
 
 #content{
 	
-	margin-top: 100px;
+	margin-top: 120px;
 
 	/*max-width: 1500px;
 	width: 90%;*/
@@ -471,10 +474,10 @@ h5{
 .b2{
 	
 	/* b2 - secondary button */
-	/*font-family: 'Inter';*/
+	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 300;
-	font-size: 15px;
+	font-size: 16px;
 	/*line-height: 24px;*/
 	
 }

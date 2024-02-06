@@ -7,7 +7,7 @@ header{
 	top: 0;
 	right: 0;
 	
-	/*height: 80px;*/
+	box-sizing: border-box;
 	
 	display: flex;
     align-items: center;
@@ -18,7 +18,7 @@ header{
 header #logo{
 	
 	
-	width: 10%;
+	width: 4%;
 	margin: auto;
 	
 }
@@ -35,7 +35,7 @@ header #logo img{
 
 #header-nav{
 	
-	width: 33%;
+	width: 35%;
 	margin: auto;
 	
 }
@@ -69,9 +69,10 @@ header #logo img{
 
 #pulsanti-header{
 	
-	width: 17%;
+	width: 13%;
 	
-	padding: 15px 0px;
+	/*padding: 15px 0px;*/
+	padding: 0px;
 	
 	display: flex;
     align-items: center;
@@ -84,7 +85,14 @@ header #logo img{
 
 .pulsante{
 	
-	width: 45%;
+	width: 42%;
+	
+}
+
+
+.pulsante i{
+	
+	font-size: 30px;
 	
 }
 
@@ -110,11 +118,11 @@ header #logo img{
 	
 	width: 40%;
 	
-	padding: 20px 0px;
+	padding: 16px 0px;
 	
 	display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     
     
     order: 1;
@@ -123,15 +131,15 @@ header #logo img{
 
 #barra-ricerca form{
 	
-	width: 100%;
+	width: 70%;
 	
 }
 
 
 #barra-ricerca input{
 	
-	width: 90%;
-	padding: 10px 20px;
+	width: 85%;
+	padding: 10px 22px;
 	
 	border-radius: 18px;
 	
@@ -141,7 +149,8 @@ header #logo img{
     
     position: relative;
     z-index: 1;
-    left: -6%;
+    /*left: -6%;*/
+    left: -36px;
     top: 1px;
     cursor:pointer;
     width: 0;
@@ -152,57 +161,58 @@ header #logo img{
 
 
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1250px){
 	
 	
+	header #logo{
 	
-	.search-icon {
-    
-	    left: -9%;
-	   
+		width: 9%;
+		
 	}
 	
+	#header-nav{
 	
-	#pulsanti-header{
-	
-		width: 15%;
-	
+		width: 40%;
+		
 	}
 	
 	
 	#barra-ricerca{
 	
-		width: 45%;
-		padding: 15px 0px;
-	
+		width: 44%;
+		
 	}
+	
+	#barra-ricerca form{
+	
+		width: 80%;
+		
+	}
+	
 	
 	#barra-ricerca input{
-	
-		width: 85%;
-		padding: 10px 20px;
 		
-		/*border-radius: 10px;*/
+		width: 80%;
 		
 	}
 	
 	
-	#header-nav{
 	
-		width: 35%;
+	#pulsanti-header{
+		
+		width: 15%;
 		
 	}
 	
-	#header-nav ul{
-		
-		margin: 10px 5px;
-		padding: 10px 5px;
+	.pulsante{
+	
+		width: 45%;
 		
 	}
 	
 	#header-nav ul li a{
 		
-		padding: 10px 18px;
+		padding: 10px 19px;
 		
 	}
 		
@@ -212,7 +222,7 @@ header #logo img{
 
 
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 900px){
 	
 	
 	header{
@@ -221,7 +231,7 @@ header #logo img{
 	
 	#pulsanti-header{
 		order: 0;
-		width: 28%;
+		width: 26%;
 	}
 	
 	#barra-ricerca{
@@ -241,7 +251,7 @@ header #logo img{
 	
 	#barra-ricerca input{
 	
-		width: 85%;
+		width: 88%;
 		
 		padding: 10px 15px;
 		margin: 0px auto;
@@ -251,7 +261,7 @@ header #logo img{
 	
 	.search-icon {
     
-	    left: -10%;
+	    left: -63px;
 	   
 	}
 	
@@ -265,13 +275,13 @@ header #logo img{
 	
 	#header-nav{
 	
-		width: 52%;
+		width: 54%;
 		
 	}
 	
 	#header-nav ul li a{
 	
-		padding: 10px 10px;
+		padding: 10px 15px;
 		
 	}
 	
@@ -306,7 +316,7 @@ header #logo img{
 	
 	#header-nav ul li a{
 	
-		padding: 10px 15px;
+		padding: 10px 18px;
 		
 	}
 	
@@ -315,16 +325,29 @@ header #logo img{
 		margin: 10px 5px;
 		padding: 10px 5px;
 		
+		
 	}
 	
 	#barra-ricerca{
-		width: 65%;
+		width: 70%;
+		padding: 15px 0px;
+	}
+	
+	#barra-ricerca form{
+	
+		width: 95%;
+	
+	}
+	
+	.search-icon {
+    
+	    left: -35px;
+	   
 	}
 	
 	#pulsanti-header{
 		order: 2;
-		width: 35%;
-		padding: 15px 0px;
+		width: 28%;
 	}
 	
 	
