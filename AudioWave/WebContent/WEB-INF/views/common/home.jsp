@@ -142,8 +142,19 @@
 				</div>
 			
 			</div>	
+			
+			<div id="about-us">
+		
+				<h1>About us</h1>
+				
+				<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
+			
+			
+			</div>
+			
 		
 		</div>
+		
 		
 		
 		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>

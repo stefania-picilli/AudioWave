@@ -236,6 +236,7 @@ header #logo img{
 	
 	#barra-ricerca{
 		width: 100%;
+		padding: 7px 0px 10px 0px;
 	}
 
 
@@ -287,7 +288,7 @@ header #logo img{
 	
 	#header-nav ul{
 		
-		margin: 10px 5px;
+		margin: 10px 5px 8px 5px;
 		padding: 10px 0px;
 		
 	}
@@ -323,14 +324,13 @@ header #logo img{
 	#header-nav ul{
 		
 		margin: 10px 5px;
-		padding: 10px 5px;
+		/*padding: 10px 5px;*/
 		
 		
 	}
 	
 	#barra-ricerca{
 		width: 70%;
-		padding: 15px 0px;
 	}
 	
 	#barra-ricerca form{
