@@ -6,9 +6,9 @@
 <html lang="it">
 	<head>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
 		<link rel="stylesheet" href="resources/styles/home.css" type="text/css" >
 		<link rel="stylesheet" href="resources/styles/ricerca.css" type="text/css" >
-		<link rel="stylesheet" href="resources/styles/application.css" type="text/css" >
 		<meta charset="ISO-8859-1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Home Page</title>
@@ -41,10 +41,75 @@
 		<div id="content">
 		
 		
+			<div id="categorie">
+			
+				<h1>Categorie</h1>
+				
+				
+				<div id="categorie-wrap">
+				
+					<div class="categoria">
+				
+					
+						<div class="cat-img">
+							<a href="${pageContext.request.contextPath}/Ricerca?categoria=Cuffie">
+								<img src="resources/images/cuffie-icon.jpg" alt="IMG">
+							</a>
+						</div>
+						
+						<div class="cat-tit">
+							<h4><a href="${pageContext.request.contextPath}/Ricerca?categoria=Cuffie">Cuffie</a></h4>
+						</div>
+						
+				
+					
+					</div>
+					
+					
+					<div class="categoria">
+					
+						<div class="cat-img">
+							<a href="${pageContext.request.contextPath}/Ricerca?categoria=Auricolari">
+								<img src="resources/images/auricolari-icon.jpg" alt="IMG">
+							</a>
+						</div>
+						
+						<div class="cat-tit">
+							<h4><a href="${pageContext.request.contextPath}/Ricerca?categoria=Auricolari">Auricolari</a></h4>
+						</div>
+					
+					</div>
+					
+					
+					<div class="categoria">
+					
+						<div class="cat-img">
+							<a href="${pageContext.request.contextPath}/Ricerca?categoria=Speaker">
+								<img src="resources/images/speaker-icon.jpg" alt="IMG">
+							</a>
+						</div>
+						
+						<div class="cat-tit">
+							<h4><a href="${pageContext.request.contextPath}/Ricerca?categoria=Speaker">Speaker</a></h4>
+						</div>
+					
+					</div>
+					
+				
+				</div>
+			
+			
+			</div>
+		
+		
+			<div class="line"></div>
+		
+		
 			<div id="prodotti">
 			
 				<h1>Prodotti in evidenza</h1>
 				
+								
 				<div class="tab-prodotti">
 						 
 					 <c:forEach  items="${prodotti}" var="prodotto">
@@ -83,65 +148,8 @@
 			</div>
 		
 		
-			<div id="categorie">
 			
-				<h1>Dai un'occhiata alle categorie</h1>
-				
-				<div id="categorie-wrap">
-				
-				
-					<div class="categoria cat-left">
-						<div class="img">
-							<img src="resources/images/Cuffie.jpg" alt="IMG"></img>
-						</div>
-						<div class="info-wrap">
-							<div class="info">
-								<h1>Cuffie</h1>
-								<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
-								<div class="cat-bttn">
-									<button class="cta-button b1" onclick="document.location='${pageContext.request.contextPath}/Ricerca?categoria=Cuffie'">Scopri di più</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					
-					<div class="categoria cat-right">
-						<div class="img">
-							<img src="resources/images/Auricolari.jpg" alt="IMG"></img>
-						</div>
-						<div class="info-wrap">
-							<div class="info">
-								<h1>Auricolari</h1>
-								<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
-								<div class="cat-bttn">
-									<button class="cta-button b1" onclick="document.location='${pageContext.request.contextPath}/Ricerca?categoria=Auricolari'">Scopri di più</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					
-					<div class="categoria  cat-left">
-						<div class="img">
-							<img src="resources/images/Speaker.jpg" alt="IMG"></img>
-						</div>
-						<div class="info-wrap">
-							<div class="info">
-								<h1>Speaker</h1>
-								<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
-								<div class="cat-bttn">
-									<button class="cta-button b1" onclick="document.location='${pageContext.request.contextPath}/Ricerca?categoria=Speaker'">Scopri di più</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				
-				
-				
-				</div>
-			
-			</div>	
+			<div class="line"></div>
 			
 			<div id="about-us">
 		
