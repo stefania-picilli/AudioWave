@@ -28,6 +28,7 @@
 #right-hero, #left-hero{
 	
 	width: 48%;
+	overflow: hidden;
 	
 }
 

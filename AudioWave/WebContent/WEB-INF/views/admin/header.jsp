@@ -16,13 +16,13 @@
 		<header>
 		
 			<div id="logo">
-				<a href='${pageContext.request.contextPath}/Amministratore?action=v-prodotti'><img src="resources/images/logo-prova.jpg" alt="logo" height="50px"></img></a>
+				<a href='${pageContext.request.contextPath}/Amministratore?action=v-prodotti'><img src="resources/images/logo.jpg" alt="logo" height="50px"></img></a>
 			</div>	
 						
 			<nav id="header-nav">
 				<ul>
-					<li><a href='${pageContext.request.contextPath}/Amministratore?action=v-prodotti'>Prodotti</a></li>
-					<li><a href='${pageContext.request.contextPath}/Amministratore?action=v-ordini'>Ordini</a></li>
+					<li><a href='${pageContext.request.contextPath}/Amministratore?action=v-prodotti' class="b2">Prodotti</a></li>
+					<li><a href='${pageContext.request.contextPath}/Amministratore?action=v-ordini' class="b2">Ordini</a></li>
 				</ul>
 			</nav>
 					
@@ -34,7 +34,7 @@
 			<div id="barra-ricerca">
 				<form action='${pageContext.request.contextPath}/Ricerca' method="get">
 					<input type="hidden" name="admin" value="true">
-					<input type="text" name="search" class="search-bar" placeholder="Barra di ricerca" size="60">
+					<input type="text" name="search" class="search-bar b2" placeholder="Cerca prodotti" size="60">
 					<i  class="fa fa-search search-icon grey-action-icon"></i>
 				</form>
 			</div>
