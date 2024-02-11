@@ -23,7 +23,7 @@
 				
 				<div id="left-hero">
 					<p class="h6">AudioWave</p>
-					<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
+					<p class="p1">Scopri il suono perfetto: esplora la nostra selezione di cuffie, auricolari e speaker di alta qualità </p>
 				</div>
 				
 				<div id="right-hero">
@@ -155,7 +155,8 @@
 		
 				<h1>About us</h1>
 				
-				<p class="p1">Trova facilmente ciò che stai cercando esplorando le diverse categorie di prodotti audio disponibili nel nostro negozio</p>
+				<p class="p1">Da appassionati di musica a imprenditori nel settore audio, abbiamo fondato AudioWave con un obiettivo in mente: portare esperienze sonore straordinarie nelle vite dei nostri clienti.
+Con una vasta gamma di prodotti audio adatti a tutti i gusti e le esigenze, ci impegniamo a fornire un suono eccezionale a chiunque, ovunque. I nostri clienti sono al centro di ogni decisione che prendiamo.</p>
 			
 			
 			</div>
