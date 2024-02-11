@@ -150,7 +150,6 @@
 		
 		
 			
-			<div class="line"></div>
 			
 			<div id="about-us">
 		

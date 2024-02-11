@@ -74,7 +74,7 @@ body{
 
 #content{
 	
-	margin-top: 120px;
+	margin-top: 100px;
 
 	/*max-width: 1500px;
 	width: 90%;*/
@@ -493,11 +493,11 @@ caption{
 
 
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 900px){
 	
 	#content{
 	
-		margin-top: 170px;
+		margin-top: 150px;
 	
 	}
 	
