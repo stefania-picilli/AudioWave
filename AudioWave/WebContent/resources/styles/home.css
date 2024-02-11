@@ -3,7 +3,7 @@
 
 #hero-wrap{
 	
-	margin-top: 75px;
+	margin-top: 70px;
 	background-color: #ECF4FF;
 
 }
@@ -32,6 +32,21 @@
 	
 }
 
+
+#hero-button{
+	
+	margin: 60px 0px;	
+	
+}
+
+
+#hero-button button{
+	
+	padding: 18px 85px;
+	
+}
+
+
 #hero-img img{
 	
 	display: block;
@@ -47,7 +62,7 @@
 #hero .h6{
 	
 	
-	margin: 0px 0px 60px 0px;
+	margin: 0px 0px 50px 0px;
 	
 }
 

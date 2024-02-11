@@ -24,6 +24,7 @@
 				<div id="left-hero">
 					<p class="h6">AudioWave</p>
 					<p class="p1">Scopri il suono perfetto: esplora la nostra selezione di cuffie, auricolari e speaker di alta qualità </p>
+					<div id="hero-button"><button class="cta-button b1" onclick="location.href='${pageContext.request.contextPath}#prod-h'">Esplora prodotti</button></div>
 				</div>
 				
 				<div id="right-hero">
@@ -102,7 +103,7 @@
 			</div>
 		
 		
-			<div class="line"></div>
+			<div id="prod-h" class="line"></div>
 		
 		
 			<div id="prodotti">
