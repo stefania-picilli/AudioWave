@@ -89,20 +89,20 @@ public class Ordine extends HttpServlet {
 			
 			
 			if(carrello == null || carrello.isEmpty()) {
-				inviaEsito(false, "Ops, non è stato possibile portare a termine l'ordine: non sono presenti prodotti nel carrello", request, response);
+				inviaEsito(false, "Ops, non Ã¨ stato possibile portare a termine l'ordine: non sono presenti prodotti nel carrello", request, response);
 				return;
 			}
 			
 			List<ProdottoNelCarrelloBean> listProdotti = carrello.getProdotti();
 			
 			if(!datiValidi(indirizzo, numeroCarta, intestatario, scadenza, cvv)) {
-				inviaEsito(false, "Ops, non è stato possibile portare a termine l'ordine: dati inviati non validi", request, response);
+				inviaEsito(false, "Ops, non Ã¨ stato possibile portare a termine l'ordine: dati inviati non validi", request, response);
 				return;
 			}
 			
 			ProdottoDAO daoProd = new ProdottoDAO();
 			
-			//aggiornamento dati e controllo disponibilità dei bean presenti nel carrello
+			//aggiornamento dati e controllo disponibilitï¿½ dei bean presenti nel carrello
 			for(ProdottoNelCarrelloBean prodCarr : listProdotti) {
 					
 				ProdottoBean prodottoDB = daoProd.doRetrieveByKey(prodCarr.getProdotto().getCodiceProdotto() + "");
@@ -111,10 +111,10 @@ public class Ordine extends HttpServlet {
 				if(!prodottoDB.equals(prodCarr.getProdotto()))
 					prodCarr.setProdotto(prodottoDB);
 				
-				//controllo disponibilità
+				//controllo disponibilitï¿½
 				if(prodCarr.getQuantita() > prodottoDB.getDisponibilita()) {
 					
-					inviaEsito(false, "Ops, non è stato possibile portare a termine l'ordine: la disponibilità dei prodotti è cambiata", request, response);
+					inviaEsito(false, "Ops, non Ã¨ stato possibile portare a termine l'ordine: la disponibilitï¿½ dei prodotti ï¿½ cambiata", request, response);
 					return;
 					
 				}
@@ -171,7 +171,7 @@ public class Ordine extends HttpServlet {
 			carrello.svuota();
 			
 			
-			inviaEsito(true, "Il tuo ordine verrà presto preso in carico", request, response);
+			inviaEsito(true, "Il tuo ordine verrÃ  presto preso in carico", request, response);
 		
 		
 		}catch(SQLException e) {

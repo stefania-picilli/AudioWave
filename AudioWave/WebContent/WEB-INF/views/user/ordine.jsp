@@ -29,7 +29,7 @@
 					
 						<div id="form-data">
 					
-							<form action="Ordine" method="POST">
+							<form class="form-val" action="Ordine" method="POST">
 						
 								<div id="dettagli">
 								

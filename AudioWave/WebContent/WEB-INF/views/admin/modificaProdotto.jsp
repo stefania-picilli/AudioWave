@@ -28,7 +28,7 @@
 					
 					<div id="form-data">
 			
-						<form action="Amministratore" method="POST" enctype="multipart/form-data">
+						<form class="form-val" action="Amministratore" method="POST" enctype="multipart/form-data">
 							
 							<div id="nome-prod" class="form-item">
 								

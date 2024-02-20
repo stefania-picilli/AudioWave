@@ -31,7 +31,7 @@
 					
 						<form action="Login" method="POST" >
 						
-							<div class="form-item" id="email">
+							<div class="form-item form-item-login" id="email-log">
 								<label for="email" class="p3">Email:</label>
 								<input type="text" name="email" placeholder="luca.bianchi@example.com" class="box p2">
 								
@@ -39,7 +39,7 @@
 								
 							</div>
 							
-							<div class="form-item" id="password-log">
+							<div class="form-item form-item-login" id="password-log">
 								<label for="password"  class="p3">Password:</label>
 								<input type="password" name="password" placeholder="*********" class="box p2">
 								
@@ -81,6 +81,8 @@
 		
 		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 		
+		<script src="resources/scripts/jquery.js"></script>
+		<script src="resources/scripts/form.js"></script>
 
 	</body>
 	

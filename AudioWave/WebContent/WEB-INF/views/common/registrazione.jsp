@@ -29,7 +29,7 @@
 		
 					<div id="form-data">
 		
-						<form method="POST" action="Registrazione">
+						<form class="form-val" method="POST" action="Registrazione">
 				
 							<div id="auth-info" class="form-group">
 							

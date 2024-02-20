@@ -122,7 +122,7 @@
 						
 						<div id="form-data">
 						
-							<form action="Amministratore" method="POST">
+							<form class="form-val" action="Amministratore" method="POST">
 							
 								<div id="data-partenza" class="form-item">
 									

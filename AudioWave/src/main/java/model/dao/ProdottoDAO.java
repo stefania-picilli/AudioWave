@@ -191,7 +191,7 @@ public class ProdottoDAO {
 
 			ps.setString(1, search + "%");
 			ps.setString(2, search + "%");
-			ps.setString(3, "%" + search + "%");
+			ps.setString(3, "%" + search + ",%");
 			
 			rs = ps.executeQuery();
 

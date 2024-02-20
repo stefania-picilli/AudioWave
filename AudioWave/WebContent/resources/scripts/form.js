@@ -3,7 +3,7 @@
 
 $(document).ready(function(){
 	
-	$("#form-data form").submit(function(){
+	$("#form-data .form-val").submit(function(){
 		
 		//se tutte le classi sono 'valid-input' allora i dati vengono inviati al server
 		
@@ -267,11 +267,22 @@ $(document).ready(function(){
 		
 	});
 	
-	$(".form-item input, .form-item textarea").focusout(function(){
+	//login
+	$(".form-item-login input").focusout(function(){
+		
+		$(this).removeClass("focus-input");
+		$(this).addClass("box");
+		
+	});
+	
+	//altri form
+	$(".form-val .form-item input, .form-val .form-item textarea").focusout(function(){
 		
 		$(this).trigger("change");
 		
 	});
+	
+	
 	
 	
 })
