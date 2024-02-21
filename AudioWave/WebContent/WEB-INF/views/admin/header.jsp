@@ -32,8 +32,8 @@
 				
 				
 			<div id="barra-ricerca">
-				<form action='${pageContext.request.contextPath}/Ricerca' method="get">
-					<input type="hidden" name="admin" value="true">
+				<form action='${pageContext.request.contextPath}/Amministratore' method="get">
+					<input type="hidden" name="action" value="ricerca">
 					<input type="text" name="search" class="search-bar b2" placeholder="Cerca prodotti" size="60">
 					<button type="submit" class="search-icon"><i  class="fa fa-search grey-action-icon"></i></button>
 				</form>

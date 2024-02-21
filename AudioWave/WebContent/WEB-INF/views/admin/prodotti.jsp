@@ -19,7 +19,7 @@
 		<div id="content">
 		
 		
-			<h1>Prodotti</h1>
+			<h1>${title}</h1>
 		
 		
 			<div id="nuovo-prod">
@@ -106,62 +106,68 @@
 			<div class="line"></div>
 			
 			
-			<div class="tab-prodotti">
-						 
-				 <c:forEach  items="${prodotti}" var="prodotto">
-						 
-					<div class="prodotto box">
-						
-						<div class="hidden-info categoria-hidd">${prodotto.categoriaID}</div>
-						<div class="hidden-info prezzo-hidd">${prodotto.prezzoConIva}</div>
-											
-						<div class="img">
-							<img src="${prodotto.immagine}" alt="IMG">
-						</div>
-						
-						<div class="info">
-								
-							<div class="top-info">
-								<h3><a href='${pageContext.request.contextPath}/Amministratore?action=v-prodotto&codice=${prodotto.codiceProdotto}'>${prodotto.nome}</a></h3>	
-								<p class="p3">${prodotto.marca}</p>
+			<%if(request.getAttribute("prodotti") == null){ %>
+			
+				<div id="no-ris"><h2>Nessun risultato</h2></div>
+			
+			<%}else{ %>
+			
+				<div class="tab-prodotti">
+							 
+					 <c:forEach  items="${prodotti}" var="prodotto">
+							 
+						<div class="prodotto box">
+							
+							<div class="hidden-info categoria-hidd">${prodotto.categoriaID}</div>
+							<div class="hidden-info prezzo-hidd">${prodotto.prezzoConIva}</div>
+												
+							<div class="img">
+								<img src="${prodotto.immagine}" alt="IMG">
 							</div>
 							
-							<div class="bottom-info">
-								<h3>&euro; ${prodotto.prezzoConIva}</h3>
-							</div>				
+							<div class="info">
+									
+								<div class="top-info">
+									<h3><a href='${pageContext.request.contextPath}/Amministratore?action=v-prodotto&codice=${prodotto.codiceProdotto}'>${prodotto.nome}</a></h3>	
+									<p class="p3">${prodotto.marca}</p>
+								</div>
+								
+								<div class="bottom-info">
+									<h3>&euro; ${prodotto.prezzoConIva}</h3>
+								</div>				
+						
+							</div>
+							
+							
+							<div class="azioni">
+							
+								<form action="Amministratore" method="POST">
+								
+									<input type="hidden" name="action" value="r-prodotto">
+									<input type="hidden" name="codice" value="${prodotto.codiceProdotto}">
+									<input type="submit" value="Rimuovi" class="reverse-red-button b2">
+								
+								</form>
+							
+								<form action="Amministratore" method="GET">
+								
+									<input type="hidden" name="action" value="m-prodotto">
+									<input type="hidden" name="codice" value="${prodotto.codiceProdotto}">
+									<input type="submit" value="Modifica" class="cta-button b2">
+								
+								</form>
+								
+							
+							</div>
+											
+						</div>		
+							
+					</c:forEach>
+							
 					
-						</div>
-						
-						
-						<div class="azioni">
-						
-							<form action="Amministratore" method="POST">
-							
-								<input type="hidden" name="action" value="r-prodotto">
-								<input type="hidden" name="codice" value="${prodotto.codiceProdotto}">
-								<input type="submit" value="Rimuovi" class="reverse-red-button b2">
-							
-							</form>
-						
-							<form action="Amministratore" method="GET">
-							
-								<input type="hidden" name="action" value="m-prodotto">
-								<input type="hidden" name="codice" value="${prodotto.codiceProdotto}">
-								<input type="submit" value="Modifica" class="cta-button b2">
-							
-							</form>
-							
-						
-						</div>
-										
-					</div>		
-						
-				</c:forEach>
-						
-				
-			</div>
+				</div>
 		
-		
+		<%} %>
 			
 		</div>
 		

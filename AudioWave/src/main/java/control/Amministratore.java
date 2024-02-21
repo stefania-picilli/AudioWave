@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -18,6 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import helpers.InputFilter;
+import helpers.RicercaProdotti;
 import model.dao.CategoriaDAO;
 import model.dao.OrdineDAO;
 import model.dao.ProdottoAcquistatoDAO;
@@ -84,6 +87,8 @@ public class Amministratore extends HttpServlet {
 				ProdottoDAO daoP = new ProdottoDAO();
 				ProdottoBean prodotto = daoP.doRetrieveMaxPrezzo();
 				request.setAttribute("maxPrezzo", prodotto.getPrezzoConIva());
+				
+				request.setAttribute("title", "Prodotti");
 				
 				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/prodotti.jsp");
 				dis.forward(request, response);
@@ -215,6 +220,47 @@ public class Amministratore extends HttpServlet {
 				request.setAttribute("spedizione", spedizione);
 				
 				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/ordine.jsp");
+				dis.forward(request, response);
+				
+				
+			}else if(action.equals("ricerca")) {
+				
+				
+				
+				String search = InputFilter.filter(request.getParameter("search"));
+				
+				Collection<ProdottoBean> coll = null;
+				
+				if(search != null && !search.equals("")) {
+				
+					ProdottoDAO prodottoDAO = new ProdottoDAO();
+					coll = RicercaProdotti.search(prodottoDAO, search);
+					
+					request.setAttribute("title", "Risultati ricerca: " + search);
+				
+				}else {
+				
+					response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
+					return;
+					
+				}
+			
+			
+				List<ProdottoBean> list = (List<ProdottoBean>) coll;
+				
+				if(list == null || list.isEmpty())
+					list = null;
+				
+				request.setAttribute("prodotti", list);
+				request.setAttribute("maxPrezzo", RicercaProdotti.maxPrezzo(list));
+				
+				CategoriaDAO daoC = new CategoriaDAO();
+				List<CategoriaBean> categorie = (List<CategoriaBean>) daoC.doRetrieveAll();
+				request.setAttribute("categorie", categorie);
+				
+				RequestDispatcher dis;
+				dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/prodotti.jsp");
+				
 				dis.forward(request, response);
 				
 				

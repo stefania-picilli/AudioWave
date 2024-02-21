@@ -180,18 +180,20 @@ public class ProdottoDAO {
 
 		Collection<ProdottoBean> prodotti = new LinkedList<>();
 
-		
-		String selectSQL = "SELECT * FROM " + ProdottoDAO.TABLE_NAME + 
-						   " WHERE nome LIKE ? OR marca LIKE ? OR tag LIKE ?" + 
-						   	" ORDER BY codiceProdotto";
 
+		String selectSQL = "SELECT * FROM " + ProdottoDAO.TABLE_NAME + 
+				   " WHERE nome LIKE ? OR marca LIKE ? OR tag LIKE ?" + 
+				   	" ORDER BY codiceProdotto";
+		
 		try {
 			con = ds.getConnection();
 			ps = con.prepareStatement(selectSQL);
 
+			
 			ps.setString(1, search + "%");
 			ps.setString(2, search + "%");
 			ps.setString(3, "%" + search + ",%");
+			
 			
 			rs = ps.executeQuery();
 

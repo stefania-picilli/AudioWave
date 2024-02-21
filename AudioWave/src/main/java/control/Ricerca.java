@@ -3,7 +3,6 @@ package control;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -14,10 +13,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import helpers.InputFilter;
+import helpers.RicercaProdotti;
 import model.dao.ProdottoDAO;
 import model.dto.ProdottoBean;
-
-import helpers.InputFilter;
 
 /**
  * Servlet implementation class Ricerca
@@ -58,7 +57,7 @@ public class Ricerca extends HttpServlet {
 			}else if(search != null && !search.equals("")) {
 			
 				ProdottoDAO prodottoDAO = new ProdottoDAO();
-				coll = search(prodottoDAO, search);
+				coll = RicercaProdotti.search(prodottoDAO, search);
 				
 				request.setAttribute("title", "Risultati ricerca: " + search);
 			
@@ -77,7 +76,7 @@ public class Ricerca extends HttpServlet {
 			
 			request.setAttribute("prodotti", list);
 			
-			request.setAttribute("maxPrezzo", maxPrezzo(list));
+			request.setAttribute("maxPrezzo", RicercaProdotti.maxPrezzo(list));
 			
 			RequestDispatcher dis;
 			dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/ricerca.jsp");
@@ -100,8 +99,9 @@ public class Ricerca extends HttpServlet {
 	}
 
 	
-	private static Collection<ProdottoBean> search(ProdottoDAO prodottoDAO, String search) throws SQLException {
+	/*private static Collection<ProdottoBean> search(ProdottoDAO prodottoDAO, String search) throws SQLException {
 		
+		search = search.trim();
 		String[] array = search.split(" ");
 		
 		List<ProdottoBean> list = new LinkedList<>();
@@ -123,6 +123,8 @@ public class Ricerca extends HttpServlet {
 		
 		
 	}
+	
+	
 	
 	
 	private static void addItems(List<ProdottoBean> list, List<ProdottoBean> listTemp) {
@@ -173,7 +175,7 @@ public class Ricerca extends HttpServlet {
 			
 		return max;
 		
-	}
+	}*/
 	
 	
 }
