@@ -6,7 +6,7 @@
 	/*width: 50%;*/
 	width: 54%;
 	
-	padding: 40px 0px;
+	padding: 23px 0px;
 	
 	margin-left: auto;
 	margin-right: auto;
@@ -16,7 +16,7 @@
 #form-wrap{
 	
 	/*width: 75%;*/
-	width: 70%;
+	width: 73%;
 	
 	padding: 20px 0px;
 	
@@ -34,7 +34,7 @@
 
 #info-form{
 	
-	margin: 0px 0px 60px 0px;
+	margin: 0px 0px 58px 0px;
 	
 }
 
@@ -110,36 +110,36 @@ textarea {
 @media screen and (max-width: 1300px){
 	
 	#form-container{
-		width: 63%;
+		width: 65%;
 	}
 	
 	
-	/*#form-wrap{
-		width: 75%;
-	}*/
+	#form-wrap{
+		width: 78%;
+	}
 	
 	
 }
 
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 900px){
 	
 	
 	#form-container{
-		width: 75%;
+		width: 90%;
 	}
 	
 	
-	/*#form-wrap{
-		width: 75%;
-	}*/
+	#form-wrap{
+		width: 78%;
+	}
 	
 	
 	
 	
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 660px){
 	
 	
 	#form-container{
