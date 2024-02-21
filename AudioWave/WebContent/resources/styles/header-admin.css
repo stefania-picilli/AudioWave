@@ -154,17 +154,31 @@ header #logo img{
 
 .search-icon {
     
-    position: relative;
+   /* position: relative;
     z-index: 1;
-    /*left: -6%;*/
     left: -36px;
     top: 1px;
     cursor:pointer;
+    width: 0;*/
+    
+    position: relative;
+    z-index: 1;
+    left: -36px;
+    top: 0px;
+    cursor:pointer;
     width: 0;
+    
+    background: none;
+    padding: 0px;
+    border: none;
    
 }
 
-
+.search-icon i{
+	
+	font-size: medium;
+	
+}
 
 
 
