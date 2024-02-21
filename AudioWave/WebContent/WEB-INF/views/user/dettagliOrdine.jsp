@@ -112,7 +112,6 @@
 				</div>
 				
 			
-				<!--<div class="line"></div>-->
 			
 				<div id="info-spedizione">
 				

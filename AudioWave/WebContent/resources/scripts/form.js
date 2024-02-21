@@ -155,7 +155,6 @@ $(document).ready(function(){
 	
 	$("#scadenza input").change(function(){
 		
-		//?????
 		
 		if(!($(this).val().match(/^(0|1|\s)([0-9])([-|/])([0-9]{2})$/))){
 		
@@ -233,12 +232,6 @@ $(document).ready(function(){
 	});
 	
 	$("#data-partenza input").change(function(){
-		
-		/*if(!$(this).val()){
-			invalidInput(this, "Inserire una data di partenza valida. Essa non pu&ograve; essere succesiva alla data di arrivo");
-		}else
-			validInput(this);*/
-			
 			
 		let dataArr = $("#data-arrivo input").val(); 
 		let dataPart = $(this).val(); 

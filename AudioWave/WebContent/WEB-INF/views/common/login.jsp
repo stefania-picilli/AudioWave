@@ -55,7 +55,6 @@
 						
 							<%} %>
 						
-							<!--<div id="form-error" class="error-message"></div>-->
 							
 							<div class="form-action">
 							

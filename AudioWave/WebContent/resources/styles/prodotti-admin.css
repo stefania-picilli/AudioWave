@@ -40,7 +40,6 @@ h1{
 	
 	width: 20%;
 	padding: 14px 0px;
-	/*border-radius: 10px;*/
 	
 }
 
@@ -53,7 +52,7 @@ h1{
 }
 
 
-.prodotto .azioni form/*, #prod-action form*/{
+.prodotto .azioni form{
 	
 	width: 100%;
 	
@@ -66,11 +65,11 @@ h1{
 }
 
 
-.prodotto .azioni input/*, #prod-action input*/{
+.prodotto .azioni input{
 	
 	width: 100%;
 	padding: 14px 0px;
-	/*border-radius: 10px;*/
+	
 	
 }
 

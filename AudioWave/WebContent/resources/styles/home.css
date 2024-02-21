@@ -5,6 +5,7 @@
 	
 	margin-top: 70px;
 	background-color: #ECF4FF;
+	padding: 100px 0px;
 
 }
 
@@ -25,12 +26,6 @@
 
 }
 
-
-#hero-wrap{
-	
-	padding: 100px 0px;
-	
-}
 
 #left-hero{
 	
@@ -87,7 +82,6 @@
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	/*visibility: hidden;*/
 	
 }
 
@@ -136,8 +130,6 @@
 	
 	display: grid;
 	grid-template-columns: 30% 30% 30%;
-	/*column-gap: 1%;
-	row-gap: 33px;*/
 	justify-content: space-between;
   	justify-items: center;
  	align-content: space-evenly;
@@ -248,10 +240,7 @@
 		margin-top: 20px;
 	    max-height: 350px;
 	    
-	    /*height: 500px;
-	    width: 500px; 
-	    /*object-fit: none;*/
-		
+	   
 	}
 	
 	

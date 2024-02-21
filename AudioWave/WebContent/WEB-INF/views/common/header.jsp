@@ -55,7 +55,6 @@
 						<form action='${pageContext.request.contextPath}/Ricerca' method="get">
 							<input type="text" class="search-bar b2" name="search" placeholder="Cerca prodotti" size="60">
 							<button type="submit" class="search-icon"><i  class="fa fa-search grey-action-icon"></i></button>
-							<!-- <i  class="fa fa-search search-icon grey-action-icon"></i> --> 
 						</form>
 					
 					</div>

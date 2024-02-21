@@ -3,7 +3,6 @@
 
 #form-container{
 	
-	/*width: 50%;*/
 	width: 54%;
 	
 	padding: 23px 0px;
@@ -15,7 +14,6 @@
 
 #form-wrap{
 	
-	/*width: 75%;*/
 	width: 73%;
 	
 	padding: 20px 0px;
@@ -81,8 +79,7 @@
 	padding: 18px 0px;
 	margin: 15px 0px 0px 0px;
 	
-	/*border-radius: 10px;*/
-	
+
 }
 
 

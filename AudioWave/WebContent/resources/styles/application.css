@@ -47,13 +47,6 @@ header nav ul li a:hover{
 }
 
 
-/*input:hover, select:hover, textarea:hover{
-	
-	border-color: #ACA6A6;
-	
-}*/
-
-
 body{
 	
 	
@@ -75,9 +68,6 @@ body{
 #content{
 	
 	margin-top: 100px;
-
-	/*max-width: 1500px;
-	width: 90%;*/
 	
 	max-width: 1300px;
 	width: 90%;
@@ -112,7 +102,6 @@ body{
 	border-style: solid;
 	border-width: 1px;
 	border-color: #ACA6A6;
-	border-radius: 10px;
 	background-color: #FFFFFF;
 	
 	cursor:pointer;
@@ -256,7 +245,6 @@ body{
 	
 	border-style: solid;
 	border-width: 1px;
-	border-radius: 10px;
 	background-color: #EDFFF8;
 	
 	border-radius: 18px;
@@ -270,7 +258,6 @@ body{
 	
 	border-style: solid;
 	border-width: 1px;
-	border-radius: 10px;
 	background-color: #FFF1F0;
 	
 	border-radius: 18px;
@@ -284,7 +271,6 @@ body{
 	
 	border-style: solid;
 	border-width: 1px;
-	border-radius: 10px;
 	background-color: #ECF4FF;
 	
 	border-radius: 18px;
@@ -332,12 +318,10 @@ textarea:focus {
 h1{
 	
 	/* h1 - title */
-	
-	/*font-family: 'Inter';*/
+
 	font-style: normal;
 	font-weight: 900;
 	font-size: 42px;
-	/*line-height: 77px;*/
 	
 }
 
@@ -345,24 +329,20 @@ h1{
 h2{
 	
 	/* h2 - sub-title */
-	
-	/*font-family: 'Inter';*/
+
 	font-style: normal;
 	font-weight: 700;
 	font-size: 33px;
-	/*line-height: 58px;*/
-	
+
 }
 
 h3{
 	
 	/* h3 - product title */
-	
-	/*font-family: 'Inter';*/
+
 	font-style: normal;
 	font-weight: 400;
 	font-size: 28px;
-	/*line-height: 44px;*/
 	
 }
 
@@ -370,24 +350,20 @@ h3{
 h4{
 	
 	/* h4 - table title */
-	
-	/*font-family: 'Inter';*/
+
 	font-style: normal;
 	font-weight: 550;
 	font-size: 19px;
-	/*line-height: 29px;*/
 	
 }
 
 h5{
 	
 	/* h5 - light header */
-	
-	/*font-family: 'Inter';*/
+
 	font-style: normal;
 	font-weight: 200;
 	font-size: 26px;
-	/*line-height: 39px;*/
 	
 }
 
@@ -395,12 +371,10 @@ h5{
 .h6{
 	
 	/* h6 - hero title */
-	
-	/*font-family: 'Inter';*/
+
 	font-style: normal;
 	font-weight: 900;
 	font-size: 75px;
-	/*line-height: 77px;*/
 	
 }
 
@@ -408,12 +382,10 @@ h5{
 .p1{
 	
 	/* p1 - paragraph */
-	
-	/*font-family: 'Inter';*/
+
 	font-style: normal;
 	font-weight: 200;
 	font-size: 22px;
-	/*line-height: 34px;*/
 	
 }
 
@@ -426,7 +398,6 @@ h5{
 	font-style: normal;
 	font-weight: 400;
 	font-size: 18px;
-	/*line-height: 29px;*/
 	
 }
 
@@ -435,12 +406,10 @@ h5{
 .p3{
 	
 	/* p3 - Input label */
-	
-	/*font-family: 'Inter';*/
+
 	font-style: normal;
 	font-weight: 200;
 	font-size: 19px;
-	/*line-height: 27px;*/
 	
 }
 
@@ -448,12 +417,10 @@ h5{
 .p4{
 	
 	/* p1 - sub-paragraph */
-	
-	/*font-family: 'Inter';*/
+
 	font-style: normal;
 	font-weight: 300;
 	font-size: 19px;
-	/*line-height: 34px;*/
 	
 }
 
@@ -463,22 +430,20 @@ h5{
 	
 	/* b1 - primary button */
 	
-	/*font-family: 'Inter';*/
 	font-style: normal;
 	font-weight: 400;
 	font-size: 18px;
-	/*line-height: 29px;*/
 	
 }
 
 .b2{
 	
 	/* b2 - secondary button */
-	font-family: 'Inter';
+	
+	font-family: 'Inter', sans-serif;
 	font-style: normal;
 	font-weight: 300;
 	font-size: 16px;
-	/*line-height: 24px;*/
 	
 }
 

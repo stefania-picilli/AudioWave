@@ -119,28 +119,6 @@ public class Amministratore extends HttpServlet {
 				colore = getColore(disp);
 				
 				
-				/*
-				if(disp >= 5) { 
-					
-					disponibilita = "Disponibile";
-					colore = "green-text";
-					
-				}else if(disp > 1) {
-					
-					disponibilita = "Solo " + disp +  " disponibili";
-					colore = "yellow-text";
-					
-				}else if(disp == 1) {
-					
-					disponibilita = "Solo " + disp +  " disponibile";
-					colore = "yellow-text";
-				
-				}else {
-					
-					disponibilita = "Non disponibile";
-					colore = "red-text";
-					
-				}*/
 				
 				request.setAttribute("disponibilita", disponibilita);
 				request.setAttribute("colore", colore);
