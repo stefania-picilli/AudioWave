@@ -170,7 +170,7 @@ $(document).ready(function(){
 	});
 	
 	$("#cvv input").change(function(){
-		validateFormItem(this, /^[0-9]{3}$/, "Inserire un CVV valido. Il CVV deve contenere 3 cifre")
+		validateFormItem(this, /^[0-9]{3,4}$/, "Inserire un CVV valido. Il CVV deve contenere 3 o 4 cifre")
 	});
 	
 	
@@ -234,10 +234,22 @@ $(document).ready(function(){
 	
 	$("#data-partenza input").change(function(){
 		
-		if(!$(this).val()){
-			invalidInput(this, "Inserire una data di partenza valida");
+		/*if(!$(this).val()){
+			invalidInput(this, "Inserire una data di partenza valida. Essa non pu&ograve; essere succesiva alla data di arrivo");
 		}else
-			validInput(this);
+			validInput(this);*/
+			
+			
+		let dataArr = $("#data-arrivo input").val(); 
+		let dataPart = $(this).val(); 
+		
+		let message = "Inserire una data stimata di arrivo valida. Essa non pu&ograve; essere  succesiva alla data di arrivo";
+		
+		if(!$(this).val()){
+			invalidInput(this, message);
+		}else
+			controlloDate(dataPart, dataArr, this, message);
+			
 		
 	});
 	
