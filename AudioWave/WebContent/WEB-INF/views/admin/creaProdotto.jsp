@@ -69,15 +69,6 @@
 							</div>
 							
 							
-							<div id="tag" class="form-item">
-								
-								<label for="tag" class="p3">Tag prodotto:</label>
-								<textarea name="tag" rows="3" placeholder="tag1, tag2, tag3, ..." class="box p2"></textarea>
-								
-								<div></div>
-								
-							</div>
-							
 							
 							<div id="categoria" class="form-item">
 								

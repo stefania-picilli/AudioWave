@@ -123,13 +123,6 @@
 					 			<h4 id="cellaTot">&euro; ${totale}</h4>
 					 		</div>
 					 		
-					 		
-						 	<div id="acquista-action">
-							 	<form action="Ordine" method="POST">
-							 		<input type="submit" value="Procedi" class="cta-button b1">
-								</form>
-						 		
-					 		</div>
 				 		
 				 		
 				 		</div>
