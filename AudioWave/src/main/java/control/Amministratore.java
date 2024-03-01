@@ -275,7 +275,6 @@ public class Amministratore extends HttpServlet {
 				int disponibilita = Integer.parseInt(request.getParameter("disponibilita"));
 				double iva = Double.parseDouble(request.getParameter("iva"));
 				int categoria = Integer.parseInt(request.getParameter("categoria"));
-				String tag = request.getParameter("tag");
 				
 				// Get the file part from the request
 	            Part filePart = request.getPart("immagine");
@@ -302,7 +301,6 @@ public class Amministratore extends HttpServlet {
 				prodotto.setNome(nome);
 				prodotto.setImmagine(SAVE_DIR + fileName);
 				prodotto.setMarca(marca);
-				prodotto.setTag(tag);
 				prodotto.setDescrizione(descrizione);
 				prodotto.setPrezzo(prezzo);
 				prodotto.setDisponibilita(disponibilita);
@@ -325,7 +323,6 @@ public class Amministratore extends HttpServlet {
 				String disponibilita = request.getParameter("disponibilita");
 				String iva = request.getParameter("iva");
 				String categoria = request.getParameter("categoria");
-				String tag = request.getParameter("tag");
 				
 				
 				ProdottoDAO dao = new ProdottoDAO();
@@ -335,7 +332,6 @@ public class Amministratore extends HttpServlet {
 				prodotto.setNome(nome);
 				prodotto.setImmagine(null);
 				prodotto.setMarca(marca);
-				prodotto.setTag(tag);
 				prodotto.setDescrizione(descrizione);
 				prodotto.setPrezzo(Double.parseDouble(prezzo));
 				prodotto.setDisponibilita(Integer.parseInt(disponibilita));

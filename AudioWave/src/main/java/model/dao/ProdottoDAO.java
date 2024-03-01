@@ -42,7 +42,7 @@ public class ProdottoDAO {
 		PreparedStatement ps = null;
 
 		String insertSQL = "INSERT INTO " + ProdottoDAO.TABLE_NAME
-				+ " (nome, marca, descrizione, immagine, tag, prezzo, disponibilita, IVA, categoriaID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ " (nome, marca, descrizione, immagine, prezzo, disponibilita, IVA, categoriaID) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			
@@ -52,11 +52,10 @@ public class ProdottoDAO {
 			ps.setString(2, prodotto.getMarca());
 			ps.setString(3, prodotto.getDescrizione());
 			ps.setString(4, prodotto.getImmagine());
-			ps.setString(5, prodotto.getTag());
-			ps.setDouble(6, prodotto.getPrezzo());
-			ps.setInt(7, prodotto.getDisponibilita());
-			ps.setDouble(8, prodotto.getIva());
-			ps.setInt(9, prodotto.getCategoriaID());
+			ps.setDouble(5, prodotto.getPrezzo());
+			ps.setInt(6, prodotto.getDisponibilita());
+			ps.setDouble(7, prodotto.getIva());
+			ps.setInt(8, prodotto.getCategoriaID());
 			
 			
 			ps.executeUpdate();
@@ -141,7 +140,6 @@ public class ProdottoDAO {
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
 				bean.setImmagine(rs.getString("immagine"));
-				bean.setTag(rs.getString("tag"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));
 				bean.setIva(rs.getDouble("iva"));
@@ -179,20 +177,40 @@ public class ProdottoDAO {
 		ResultSet rs = null;
 
 		Collection<ProdottoBean> prodotti = new LinkedList<>();
-
-
+		
 		String selectSQL = "SELECT * FROM " + ProdottoDAO.TABLE_NAME + 
-				   " WHERE nome LIKE ? OR marca LIKE ? OR tag LIKE ?" + 
-				   	" ORDER BY codiceProdotto";
+				   " WHERE marca LIKE ? OR nome LIKE ? OR nome LIKE ? OR nome LIKE ? OR nome LIKE ?" + 
+				   " OR nome LIKE ? OR nome LIKE ? OR nome LIKE ? OR nome LIKE ? OR nome LIKE ?" + 
+				   " ORDER BY codiceProdotto";
 		
 		try {
 			con = ds.getConnection();
 			ps = con.prepareStatement(selectSQL);
 
+			//marca
+			ps.setString(1, search);
+
+			//nome
+			//nome completo
+			ps.setString(2, search);
+			//parola iniziale
+			ps.setString(3, search + " %");
+			//parola in mezzo
+			ps.setString(4, "% " + search + " %");
+			//parola finale
+			ps.setString(5, "% " + search);
 			
-			ps.setString(1, search + "%");
-			ps.setString(2, search + "%");
-			ps.setString(3, "%" + search + ",%");
+			//parola iniziale
+			ps.setString(6, search + "-%");
+			//parola in mezzo
+			ps.setString(7, "% " + search + "-%");
+			//parola in mezzo
+			ps.setString(8, "%-" + search + "-%");
+			//parola in mezzo
+			ps.setString(9, "%-" + search + " %");
+			//parola finale
+			ps.setString(10, "%-" + search);
+			
 			
 			
 			rs = ps.executeQuery();
@@ -205,7 +223,6 @@ public class ProdottoDAO {
 				bean.setNome(rs.getString("nome"));
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
-				bean.setTag(rs.getString("tag"));
 				bean.setImmagine(rs.getString("immagine"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));
@@ -265,7 +282,6 @@ public class ProdottoDAO {
 				bean.setNome(rs.getString("nome"));
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
-				bean.setTag(rs.getString("tag"));
 				bean.setImmagine(rs.getString("immagine"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));
@@ -325,7 +341,6 @@ public class ProdottoDAO {
 				bean.setNome(rs.getString("nome"));
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
-				bean.setTag(rs.getString("tag"));
 				bean.setImmagine(rs.getString("immagine"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));
@@ -405,13 +420,13 @@ public class ProdottoDAO {
 		if(prodotto.getImmagine() == null) {
 			
 			updateSQL =  "UPDATE " + ProdottoDAO.TABLE_NAME
-					+ " SET nome = ?, marca = ?, descrizione = ?, tag = ?, prezzo = ?, disponibilita = ?, iva = ?, categoriaID = ?"
+					+ " SET nome = ?, marca = ?, descrizione = ?, prezzo = ?, disponibilita = ?, iva = ?, categoriaID = ?"
 					+ " WHERE codiceProdotto = ?;";
 			
 		}else {
 
 			updateSQL =  "UPDATE " + ProdottoDAO.TABLE_NAME
-					+ " SET nome = ?, marca = ?, descrizione = ?, tag = ?, prezzo = ?, disponibilita = ?, iva = ?, categoriaID = ?, immagine = ?"
+					+ " SET nome = ?, marca = ?, descrizione = ?, prezzo = ?, disponibilita = ?, iva = ?, categoriaID = ?, immagine = ?"
 					+ " WHERE codiceProdotto = ?;";
 
 		}
@@ -424,17 +439,17 @@ public class ProdottoDAO {
 			ps.setString(1, prodotto.getNome());
 			ps.setString(2, prodotto.getMarca());
 			ps.setString(3, prodotto.getDescrizione());
-			ps.setString(4, prodotto.getTag());
-			ps.setDouble(5, prodotto.getPrezzo());
-			ps.setInt(6, prodotto.getDisponibilita());
-			ps.setDouble(7, prodotto.getIva());
-			ps.setInt(8, prodotto.getCategoriaID());
+			//ps.setString(4, prodotto.getTag());
+			ps.setDouble(4, prodotto.getPrezzo());
+			ps.setInt(5, prodotto.getDisponibilita());
+			ps.setDouble(6, prodotto.getIva());
+			ps.setInt(7, prodotto.getCategoriaID());
 			
 			if(prodotto.getImmagine() != null) {
-				ps.setString(9, prodotto.getImmagine());
-				ps.setInt(10, prodotto.getCodiceProdotto());
-			}else
+				ps.setString(8, prodotto.getImmagine());
 				ps.setInt(9, prodotto.getCodiceProdotto());
+			}else
+				ps.setInt(8, prodotto.getCodiceProdotto());
 			
 			ps.executeUpdate();
 
@@ -479,7 +494,6 @@ public class ProdottoDAO {
 				bean.setNome(rs.getString("nome"));
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
-				bean.setTag(rs.getString("tag"));
 				bean.setImmagine(rs.getString("immagine"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));
@@ -531,7 +545,6 @@ public class ProdottoDAO {
 				bean.setNome(rs.getString("nome"));
 				bean.setMarca(rs.getString("marca"));
 				bean.setDescrizione(rs.getString("descrizione"));
-				bean.setTag(rs.getString("tag"));
 				bean.setImmagine(rs.getString("immagine"));
 				bean.setPrezzo(rs.getDouble("prezzo"));
 				bean.setDisponibilita(rs.getInt("disponibilita"));

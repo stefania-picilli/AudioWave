@@ -204,9 +204,6 @@ $(document).ready(function(){
         
 	});
 	
-	$("#tag textarea").change(function(){
-		validateFormItem(this, /^[A-z0-9',.-\s]+$/, "Inserire lista di tag validi (formato: tag1, tag2, ...)")
-	});
 	
 	$("#categoria select").change(function(){
 		validInput(this);

@@ -8,7 +8,6 @@ public class ProdottoBean {
 	private String nome;
 	private String marca;
 	private String descrizione;
-	private String tag;
 	private String immagine;
 	private double prezzo;
 	private double iva;
@@ -39,13 +38,6 @@ public class ProdottoBean {
 		descrizione = str;
 		
 	}
-	
-	public void setTag(String str) {
-		
-		tag = str;
-		
-	}
-	
 	
 	public void setImmagine(String str) {
 		
@@ -103,11 +95,6 @@ public class ProdottoBean {
 		
 	}
 	
-	public String getTag() {
-		
-		return tag;
-		
-	}
 	
 	public String getImmagine() {
 		
@@ -147,14 +134,13 @@ public class ProdottoBean {
 	
 	public String toString() {
 		return "ProdottoBean [codiceProdotto=" + codiceProdotto + ", nome=" + nome + ", marca=" + marca
-				+ ", descrizione=" + descrizione + ", tag=" + tag + ", immagine=" + immagine + ", prezzo=" + prezzo
+				+ ", descrizione=" + descrizione + ", immagine=" + immagine + ", prezzo=" + prezzo
 				+ ", iva=" + iva + ", disponibilita=" + disponibilita + ", categoriaID=" + categoriaID + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(categoriaID, codiceProdotto, descrizione, disponibilita, immagine, iva, marca, nome, prezzo,
-				tag);
+		return Objects.hash(categoriaID, codiceProdotto, descrizione, disponibilita, immagine, iva, marca, nome, prezzo);
 	}
 
 	@Override
@@ -171,8 +157,7 @@ public class ProdottoBean {
 				&& Objects.equals(immagine, other.immagine)
 				&& Double.doubleToLongBits(iva) == Double.doubleToLongBits(other.iva)
 				&& Objects.equals(marca, other.marca) && Objects.equals(nome, other.nome)
-				&& Double.doubleToLongBits(prezzo) == Double.doubleToLongBits(other.prezzo)
-				&& Objects.equals(tag, other.tag);
+				&& Double.doubleToLongBits(prezzo) == Double.doubleToLongBits(other.prezzo);
 	}
 	
 	

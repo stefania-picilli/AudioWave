@@ -13,11 +13,17 @@ public class RicercaProdotti {
 	public static Collection<ProdottoBean> search(ProdottoDAO prodottoDAO, String search) throws SQLException {
 		
 		search = search.trim();
-		String[] array = search.split(" ");
-		
 		List<ProdottoBean> list = new LinkedList<>();
-		List<ProdottoBean> listTemp = null;
 		
+		list = (LinkedList<ProdottoBean>) prodottoDAO.doRetrieveByString(search);
+		
+		if(list != null && !list.isEmpty())
+			return list;
+		
+		
+		String[] array = search.split(" ");
+		List<ProdottoBean> listTemp = null;
+		list = new LinkedList<>();
 		
 		for(int i = 0; i < array.length; i++) {
 			
