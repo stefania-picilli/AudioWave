@@ -70,7 +70,7 @@
 									
 										<div id="cvv" class="form-item">
 											<label for="cvv" class="p3">CVV:</label>
-											<input type="text" name="cvv" placeholder="***" class="box p2">
+											<input type="text" name="cvv" placeholder="****" class="box p2">
 											
 											<div></div>
 											

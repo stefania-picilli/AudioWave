@@ -124,7 +124,6 @@
 						 	<div id="acquista-action">
 							 	<form method="GET" action="Ordine">
 							 		
-							 		<input type="hidden" name="totale" value="${carrello.totale}">
 							 		<input type="submit" value="Acquista" class="cta-button b1">
 				
 								</form>
