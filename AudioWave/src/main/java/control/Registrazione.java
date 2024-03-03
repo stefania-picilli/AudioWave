@@ -60,11 +60,11 @@ public class Registrazione extends HttpServlet {
 		
 		try {
 		
-			//controllare se email già presente in DB
+			//controllare se email giï¿½ presente in DB
 			
 			if(exists(email)) {
 				
-				request.setAttribute("messaggio", "Impossibile effettuare la registrazione, email già esistente.");
+				request.setAttribute("messaggio", "Impossibile effettuare la registrazione, email gi&agrave; esistente.");
 				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/common/registrazione.jsp");
 				dis.forward(request, response);
 				return;

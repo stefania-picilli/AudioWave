@@ -100,13 +100,17 @@
 					
 							</div>
 							
-							<% if(request.getAttribute("messaggio") != null){ %>
-								<div class="error-message">
-									<%= request.getAttribute("messaggio") %>
-								</div>
-							<%} %>
 							
-							<div id="form-error" class="error-message"></div>
+							<div id="form-error" class="error-message">
+							
+								<% if(request.getAttribute("messaggio") != null){ %>
+							
+									<i class='fas fa-exclamation-triangle'></i> <%= request.getAttribute("messaggio") %>
+
+								<%} %>
+							
+							
+							</div>
 			
 							
 							
