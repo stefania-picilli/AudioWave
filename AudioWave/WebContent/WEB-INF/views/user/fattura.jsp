@@ -16,7 +16,7 @@
 			
 			<div id="top">
 			
-				<img src="resources/images/logo-prova.jpg" alt="logo" height="70px"></img>
+				<img src="resources/images/logo.jpg" alt="logo" height="70px"></img>
 				
 				<h1>Fattura num. ${ordine.numeroOrdine}</h1>
 			
