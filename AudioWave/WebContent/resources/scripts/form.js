@@ -102,7 +102,7 @@ $(document).ready(function(){
 	
 	/*Registrazione */
 	$("#email input").change(function(){
-		validateFormItem(this, /^\S+@\S+\.\S+$/, "Inserire una e-mail valida. Il formato dell'email non &egrave; valido")
+		validateFormItem(this, /^\S{1,64}@\S{1,190}\.\S{1,63}$/, "Inserire una e-mail valida. Il formato dell'email non &egrave; valido")
 	});
 	
 	$("#password input").change(function(){ 
