@@ -44,9 +44,6 @@ public class CarrelloBean {
 	
 	public boolean add(ProdottoBean prodotto) {
 		
-		System.out.println("Carrello prima: " + this.prodotti);
-		System.out.println("Nome prodotto=" + prodotto.getNome() + ", Disp prodotto=" + prodotto.getDisponibilita());
-		
 		if(prodotto.getDisponibilita() <= 0)
 			return false;
 		
@@ -88,7 +85,6 @@ public class CarrelloBean {
 		
 		calcolaTotale();
 		
-		System.out.println("Carrello dopo: " + this.prodotti);
 		return true;
 		
 	}

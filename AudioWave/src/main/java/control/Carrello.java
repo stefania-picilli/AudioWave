@@ -29,7 +29,7 @@ import model.dto.ProdottoNelCarrelloBean;
 public class Carrello extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getLogger(Carrello.class.getName());
-	private static final String CARRELLO = "carrello";
+	private static final String CARRELLO_NAME = "carrello";
 
        
     /**
@@ -50,20 +50,20 @@ public class Carrello extends HttpServlet {
 			
 			
 			HttpSession session = request.getSession();
-			CarrelloBean carrello = (CarrelloBean) session.getAttribute(CARRELLO);
+			CarrelloBean carrello = (CarrelloBean) session.getAttribute(CARRELLO_NAME);
 			
 			
 			//se carrello non esiste nella sessione, ne crea uno
 			if(carrello == null) {
 						
 				carrello = new CarrelloBean();
-				session.setAttribute(CARRELLO, carrello);
+				session.setAttribute(CARRELLO_NAME, carrello);
 						
 			}
 				
 			List<String> messaggi = controlloProdotti(carrello.getProdotti());
 			
-			session.setAttribute(CARRELLO, carrello);	
+			session.setAttribute(CARRELLO_NAME, carrello);	
 			request.setAttribute("totale", carrello.getTotale());
 			
 			request.setAttribute("costoSpedizione", CarrelloBean.COSTO_SPEDIZIONE);
@@ -91,32 +91,24 @@ public class Carrello extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		try {
 		
-			System.out.println("Richesta ricevuta");
 			
 			String add = request.getParameter("add");
-			System.out.println("add=" + add);
 			String remove = request.getParameter("remove");
 			String removeAll = request.getParameter("removeAll");
 			
 			
 			HttpSession session = request.getSession();
-			System.out.println("Sessione ottenuta");
-			CarrelloBean carrello = (CarrelloBean) session.getAttribute(CARRELLO);
+			CarrelloBean carrello = (CarrelloBean) session.getAttribute(CARRELLO_NAME);
 			
 			//se carrello non esiste nella sessione, ne crea uno
 			if(carrello == null) {
 						
 				carrello = new CarrelloBean();
-				session.setAttribute(CARRELLO, carrello);
+				session.setAttribute(CARRELLO_NAME, carrello);
 						
 			}
-			
-			
-			System.out.println("Carrello ottenuto");
-			
 			
 			List<String> messaggi = controlloProdotti(carrello.getProdotti());
 			carrello.calcolaTotale();
@@ -129,7 +121,6 @@ public class Carrello extends HttpServlet {
 				
 				if((prod = search(add)) != null) {
 					
-					System.out.println("search diverso da null");
 					
 					if(!carrello.add(prod)) {
 						
@@ -140,9 +131,8 @@ public class Carrello extends HttpServlet {
 						quantita = 1;
 					
 					
-					System.out.println("Aggiunto a carrello");
 					
-					session.setAttribute(CARRELLO, carrello);
+					session.setAttribute(CARRELLO_NAME, carrello);
 				
 				}else {
 					
@@ -158,7 +148,7 @@ public class Carrello extends HttpServlet {
 				
 				if(carrello.remove(codice)) {
 					
-					session.setAttribute(CARRELLO, carrello);
+					session.setAttribute(CARRELLO_NAME, carrello);
 					quantita = -1;
 				
 				}else {
@@ -174,7 +164,7 @@ public class Carrello extends HttpServlet {
 				
 				if(carrello.removeAll(codice)) {
 				
-					session.setAttribute(CARRELLO, carrello);
+					session.setAttribute(CARRELLO_NAME, carrello);
 					
 				}else {
 					
@@ -195,8 +185,6 @@ public class Carrello extends HttpServlet {
 			json.put("quantita", quantita);
 			json.put("messaggi", messaggi);
 			
-			System.out.println("JSON da servlet:" + json);
-			
 			out.print(json.toString());
 			
 		
@@ -211,30 +199,17 @@ public class Carrello extends HttpServlet {
 	
 	
 	
-	private ProdottoBean search(String codiceProdotto){
+	private ProdottoBean search(String codiceProdotto) throws SQLException{
 		
 		ProdottoDAO dao = new ProdottoDAO();
 		ProdottoBean prodotto = null;
-		
-		
-		System.out.println("codiceProdotto=" + codiceProdotto + ".");
-		
-		try {
 			
-			prodotto = dao.doRetrieveByKey(codiceProdotto);
+		prodotto = dao.doRetrieveByKey(codiceProdotto);
 			
-			System.out.println("Prodotto=" + prodotto);
-			
-			if(prodotto == null)
-				return null;
-			
-			return prodotto;
-			
-		}catch(SQLException e) {
-			
-			System.out.println(e.getMessage());
+		if(prodotto == null)
 			return null;
-		}
+			
+		return prodotto;
 		
 		
 	}

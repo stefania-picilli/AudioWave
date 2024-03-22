@@ -136,17 +136,17 @@ $(document).ready(function(){
 	});
 	
 	$("#cellulare input").change(function(){
-		validateFormItem(this, /^([0-9]{3})([-.\s]?)([0-9]{3})([-.\s]?)([0-9]{4})$/, "Inserire un numero di cellulare valido (formato: 000 000 0000)")
+		validateFormItem(this, /^(\d{3})([-.\s]?)(\d{3})([-.\s]?)(\d{4})$/, "Inserire un numero di cellulare valido (formato: 000 000 0000)")
 	});
 
 
 	/*Ordine utente*/
 	$("#indirizzo input").change(function(){
-		validateFormItem(this, /^[A-z0-9',\.-\s]+$/, "Inserire un indirizzo valido. L'indirizzo non pu&ograve; contenere caratteri speciali")
+		validateFormItem(this, /^[A-z0-9',.-\s]+$/, "Inserire un indirizzo valido. L'indirizzo non pu&ograve; contenere caratteri speciali")
 	});
 	
 	$("#carta input").change(function(){
-		validateFormItem(this, /^[0-9]{13,16}$/, "Inserire un numero di carta valido. Esso pu&ograve; avere dalle 13 alle 16 cifre")
+		validateFormItem(this, /^\d{13,16}$/, "Inserire un numero di carta valido. Esso pu&ograve; avere dalle 13 alle 16 cifre")
 	});
 	
 	$("#intestatario input").change(function(){
@@ -156,7 +156,7 @@ $(document).ready(function(){
 	$("#scadenza input").change(function(){
 		
 		
-		if(!($(this).val().match(/^(0|1|\s)([0-9])([-|/])([0-9]{2})$/))){
+		if(!($(this).val().match(/^(0|1|\s)(\d)([-|/])(\d{2})$/))){
 		
 			invalidInput(this, "Inserire una data di scadenza valida (formato: MM/YY)");
 			
@@ -169,7 +169,7 @@ $(document).ready(function(){
 	});
 	
 	$("#cvv input").change(function(){
-		validateFormItem(this, /^[0-9]{3,4}$/, "Inserire un CVV valido. Il CVV deve contenere 3 o 4 cifre")
+		validateFormItem(this, /^\d{3,4}$/, "Inserire un CVV valido. Il CVV deve contenere 3 o 4 cifre")
 	});
 	
 	
@@ -210,15 +210,15 @@ $(document).ready(function(){
 	});
 	
 	$("#prezzo input").change(function(){
-		validateFormItem(this, /^([0-9]+)(.([0-9]{1,2}))?$/, "Inserire un prezzo valido (formato: 00.00)")
+		validateFormItem(this, /^(\d+)(.(\d{1,2}))?$/, "Inserire un prezzo valido (formato: 00.00)")
 	});
 	
 	$("#iva input").change(function(){
-		validateFormItem(this, /^([0-9]+)(.([0-9]{1,2}))?$/, "Inserire IVA valida (formato: 00.00)")
+		validateFormItem(this, /^(\d+)(.(\d{1,2}))?$/, "Inserire IVA valida (formato: 00.00)")
 	});
 	
 	$("#disponibilita input").change(function(){
-		validateFormItem(this, /^[0-9]+$/, "Inserire un valore numerico intero")
+		validateFormItem(this, /^\d+$/, "Inserire un valore numerico intero")
 	});
 	
 	
