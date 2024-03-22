@@ -51,29 +51,24 @@ public class Login extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		String pathRedirect = (String) session.getAttribute("path");
 		
+		String home = "/Home"; 
 		
 		if(pathRedirect == null || pathRedirect.equals(""))
-			pathRedirect = "/Home";   
+			pathRedirect = home;   
 		
 		UtenteBean account;
 		
 		if((account = recuperaAccount(email, password)) != null) {
 			
-			System.out.println("IF = Credenziali valide");
-			System.out.println("Bean utente recuperato=" + account);
-			
-			
 			session.setAttribute("account", account);
 			
-			// se a fare il login è l'admin, redirect alla admin home 
+			// se a fare il login ï¿½ l'admin, redirect alla admin home 
 			if(account.getRuolo().equals("admin"))
 				pathRedirect = request.getContextPath() + "/Amministratore?action=v-prodotti";
 			
 			response.sendRedirect(pathRedirect);
 			
 		}else {
-			
-			System.out.println("ELSE = Credenziali non valide");
 			
 			request.setAttribute("error", "Le credenziali sono sbagliate, riprovare");
 			

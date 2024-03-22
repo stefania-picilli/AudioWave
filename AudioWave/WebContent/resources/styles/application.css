@@ -60,7 +60,7 @@ body{
 	display:flex; 
 	flex-direction:column;
 	
-	font-family: 'Inter', sans-serif; /*Noto Sans, Helvetica, sans-serif;*/
+	font-family: 'Inter', sans-serif; 
 	
 }
 
@@ -383,6 +383,7 @@ h5{
 	
 	/* p1 - paragraph */
 
+	font-family: 'Inter', sans-serif;
 	font-style: normal;
 	font-weight: 200;
 	font-size: 22px;
@@ -394,7 +395,7 @@ h5{
 	
 	/* p2 - Input */
 	
-	font-family: 'Inter';
+	font-family: 'Inter', sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 18px;

@@ -56,8 +56,6 @@ public class Registrazione extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		String path = (String) session.getAttribute("path");
 		
-		System.out.println("Path=" + path);
-		
 		try {
 		
 			//controllare se email gi� presente in DB

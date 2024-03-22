@@ -217,22 +217,14 @@ public class Ordine extends HttpServlet {
 		else {
 			
 			//se scaduta ritorna false
-			System.out.println("Scadenza=" + scadenza);
-			
-			//String[] scad = scadenza.split("/|-");
 			String[] scad = scadenza.split("[/-]");
 			
 			int meseScad = Integer.parseInt(scad[0]);
-			System.out.println("mese=" + meseScad);
 			int annoScad = Integer.parseInt(scad[1]);
-			System.out.println("anno=" + annoScad);
 			
 			LocalDateTime localDate = LocalDateTime.now();
 			int annoAttuale = localDate.getYear() - 2000;
-			System.out.println("annoAttuale=" + annoAttuale);
 			int meseAttuale = localDate.getMonthValue();
-			System.out.println("meseAttuale=" + meseAttuale);
-			
 			
 			if((annoAttuale >= annoScad) && (annoAttuale != annoScad || meseAttuale > meseScad))
 				return false;

@@ -9,11 +9,13 @@ import model.dao.ProdottoDAO;
 import model.dto.ProdottoBean;
 
 public class RicercaProdotti {
+	
+	private RicercaProdotti() {}
 
 	public static Collection<ProdottoBean> search(ProdottoDAO prodottoDAO, String search) throws SQLException {
 		
 		search = search.trim();
-		List<ProdottoBean> list = new LinkedList<>();
+		List<ProdottoBean> list;
 		
 		list = (LinkedList<ProdottoBean>) prodottoDAO.doRetrieveByString(search);
 		
@@ -29,7 +31,7 @@ public class RicercaProdotti {
 			
 			listTemp = (LinkedList<ProdottoBean>) prodottoDAO.doRetrieveByString(array[i]);
 			
-			if(listTemp == null || listTemp.size() == 0)
+			if(listTemp == null || listTemp.isEmpty())
 				continue;
 			
 			addItems(list, listTemp);

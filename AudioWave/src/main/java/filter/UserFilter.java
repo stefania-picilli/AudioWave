@@ -43,13 +43,11 @@ public class UserFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		
-		
 		HttpServletRequest hRequest = (HttpServletRequest) request;  
 		
 		HttpSession session = hRequest.getSession(true);
 		UtenteBean account = (UtenteBean) session.getAttribute("account");
 		
-		System.out.println("Filtro, account=" + account);
 		
 		if(account == null || !account.getRuolo().equals("utente")) {
 			

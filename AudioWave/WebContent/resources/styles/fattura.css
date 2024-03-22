@@ -9,25 +9,11 @@
 	
 }
 
-/*#top{
-	
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	
-}
-
-#top > *{
-	
-	flex-basis: 100%;
-	
-}*/
 
 #top h1{
 	
 	text-align: center;
 	margin: 30px 0px;
-	/*width: 70%;*/
 	
 }
 

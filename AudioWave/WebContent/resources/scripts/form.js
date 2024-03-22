@@ -102,7 +102,7 @@ $(document).ready(function(){
 	
 	/*Registrazione */
 	$("#email input").change(function(){
-		validateFormItem(this, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Inserire una e-mail valida. Il formato dell'email non &egrave; valido")
+		validateFormItem(this, /^\S+@\S+\.\S+$/, "Inserire una e-mail valida. Il formato dell'email non &egrave; valido")
 	});
 	
 	$("#password input").change(function(){ 
@@ -142,7 +142,7 @@ $(document).ready(function(){
 
 	/*Ordine utente*/
 	$("#indirizzo input").change(function(){
-		validateFormItem(this, /^[A-z0-9',.-\s]+$/, "Inserire un indirizzo valido. L'indirizzo non pu&ograve; contenere caratteri speciali")
+		validateFormItem(this, /^[A-z0-9',\.-\s]+$/, "Inserire un indirizzo valido. L'indirizzo non pu&ograve; contenere caratteri speciali")
 	});
 	
 	$("#carta input").change(function(){

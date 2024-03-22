@@ -439,7 +439,6 @@ public class ProdottoDAO {
 			ps.setString(1, prodotto.getNome());
 			ps.setString(2, prodotto.getMarca());
 			ps.setString(3, prodotto.getDescrizione());
-			//ps.setString(4, prodotto.getTag());
 			ps.setDouble(4, prodotto.getPrezzo());
 			ps.setInt(5, prodotto.getDisponibilita());
 			ps.setDouble(6, prodotto.getIva());
