@@ -116,61 +116,17 @@ public class Carrello extends HttpServlet {
 			int quantita = 0;
 			
 			if(add != null && !add.equals("")) {
-					
-				ProdottoBean prod;
 				
-				if((prod = search(add)) != null) {
-					
-					
-					if(!carrello.add(prod)) {
-						
-						messaggi.add("Impossibile aggiungere il prodotto, disponibilità non sufficiente");
-						quantita = 0;
-						
-					}else 
-						quantita = 1;
-					
-					
-					
-					session.setAttribute(CARRELLO_NAME, carrello);
-				
-				}else {
-					
-					messaggi.add("Impossibile aggiungere il prodotto al carrello: il prodotto non esiste");
-					quantita = 0;
-					
-				}
+				quantita = aggiungiProdotto(add, carrello, messaggi, session);
 					
 				
 			}else if(remove != null && !remove.equals("")){
 				
-				int codice = Integer.parseInt(remove);
-				
-				if(carrello.remove(codice)) {
-					
-					session.setAttribute(CARRELLO_NAME, carrello);
-					quantita = -1;
-				
-				}else {
-					
-					messaggi.add("Impossibile rimuovere il prodotto");
-					quantita = 0;
-					
-				}
+				quantita = rimuoviProdotto(remove, carrello, messaggi, session);
 				
 			}else if(removeAll != null && !removeAll.equals("")) {
 				
-				int codice = Integer.parseInt(removeAll);
-				
-				if(carrello.removeAll(codice)) {
-				
-					session.setAttribute(CARRELLO_NAME, carrello);
-					
-				}else {
-					
-					messaggi.add("Impossibile rimuovere il prodotto");
-					
-				}
+				quantita = rimuoviProdotti(removeAll, carrello, messaggi, session);
 				
 			}
 			
@@ -233,7 +189,7 @@ public class Carrello extends HttpServlet {
 			if(prodottoDB == null) {
 				
 				//prodotto non trovato nel database
-				messaggioElim.append("Uno o pi� prodotti potrebbero non essere pi� presenti sulla piattaforma");
+				messaggioElim.append("Uno o pi&ugrave; prodotti potrebbero non essere pi&ugrave; presenti sulla piattaforma");
 				listProdotti.remove(i);
 				continue;
 				
@@ -260,12 +216,86 @@ public class Carrello extends HttpServlet {
 		}
 		
 		if(messaggioDisp.length() > 0)
-			messaggi.add("La disponibilita dei seguenti prodotti � diminuita (potrebbero non essere pi� presenti nel carrello):" +  messaggioDisp);
+			messaggi.add("La disponibilita dei seguenti prodotti &egrave; diminuita (potrebbero non essere pi&ugrave; presenti nel carrello):" +  messaggioDisp);
 			
 		if(messaggioElim.length() > 0)
 			messaggi.add(messaggioElim + "");
 		
 		return messaggi;
+		
+	}
+	
+	
+	private int aggiungiProdotto(String add, CarrelloBean carrello, List<String> messaggi, HttpSession session) throws SQLException{
+		
+		ProdottoBean prod;
+		int quantita = 0;
+		
+		if((prod = search(add)) != null) {
+			
+			
+			if(!carrello.add(prod)) {
+				
+				messaggi.add("Impossibile aggiungere il prodotto, disponibilità non sufficiente");
+				quantita = 0;
+				
+			}else 
+				quantita = 1;
+			
+			
+			
+			session.setAttribute(CARRELLO_NAME, carrello);
+		
+		}else {
+			
+			messaggi.add("Impossibile aggiungere il prodotto al carrello: il prodotto non esiste");
+			quantita = 0;
+			
+		}
+		
+		return quantita;
+		
+	}
+	
+	private int rimuoviProdotto(String remove, CarrelloBean carrello, List<String> messaggi, HttpSession session) throws SQLException{
+		
+		int quantita = 0;
+		int codice = Integer.parseInt(remove);
+		
+		if(carrello.remove(codice)) {
+			
+			session.setAttribute(CARRELLO_NAME, carrello);
+			quantita = -1;
+		
+		}else {
+			
+			messaggi.add("Impossibile rimuovere il prodotto");
+			quantita = 0;
+			
+		}
+		
+		return quantita;
+		
+	}
+	
+	private int rimuoviProdotti(String removeAll, CarrelloBean carrello, List<String> messaggi, HttpSession session) throws SQLException{
+		
+		int quantita = 0;
+		
+		int codice = Integer.parseInt(removeAll);
+		
+		if(carrello.removeAll(codice)) {
+		
+			session.setAttribute(CARRELLO_NAME, carrello);
+			
+		}else {
+			
+			messaggi.add("Impossibile rimuovere il prodotto");
+			
+		}
+		
+		
+		return quantita;
 		
 	}
 	
