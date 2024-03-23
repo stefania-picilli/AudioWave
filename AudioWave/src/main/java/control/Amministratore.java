@@ -59,188 +59,38 @@ public class Amministratore extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		try {
 		
 			String action = request.getParameter("action");
 			
+			
 			if(action.equals("c-prodotto")) {
 				
-				CategoriaDAO dao = new CategoriaDAO();
-				List<CategoriaBean> categorie = (List<CategoriaBean>) dao.doRetrieveAll();
-				request.setAttribute("categorie", categorie);
-				
-				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/creaProdotto.jsp");
-				dis.forward(request, response);
-				
+				visualizzaCreaProdotto(request, response);
 				
 			}else if(action.equals("v-prodotti")) {
 				
-				ProdottoDAO dao = new ProdottoDAO();
-				List<ProdottoBean> prodotti = (List<ProdottoBean>) dao.doRetrieveAll();
-				request.setAttribute("prodotti", prodotti);
-				
-				CategoriaDAO daoC = new CategoriaDAO();
-				List<CategoriaBean> categorie = (List<CategoriaBean>) daoC.doRetrieveAll();
-				request.setAttribute("categorie", categorie);
-				
-				ProdottoDAO daoP = new ProdottoDAO();
-				ProdottoBean prodotto = daoP.doRetrieveMaxPrezzo();
-				request.setAttribute("maxPrezzo", prodotto.getPrezzoConIva());
-				
-				request.setAttribute("title", "Prodotti");
-				
-				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/prodotti.jsp");
-				dis.forward(request, response);
+				visualizzaProdotti(request, response);
 				
 			}else if(action.equals("v-prodotto")){
 				
-				String codiceProdotto = request.getParameter("codice");
-				ProdottoDAO daoP = new ProdottoDAO();
-				ProdottoBean prodotto = daoP.doRetrieveByKey(codiceProdotto);
-				
-				if(prodotto == null) {
-					
-					request.setAttribute("admin", "1");
-					response.sendError(404);
-					return;
-					
-				}
-				
-				
-				request.setAttribute("prodotto", prodotto);
-				
-				
-				int disp = prodotto.getDisponibilita();
-				String disponibilita = "";
-				String colore = "";
-				
-				disponibilita = getDisponibilita(disp);
-				colore = getColore(disp);
-				
-				
-				
-				request.setAttribute("disponibilita", disponibilita);
-				request.setAttribute("colore", colore);
-				
-				
-				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/prodotto.jsp");
-				dis.forward(request, response);
-				
+				visualizzaProdotto(request, response);
 				
 			}else if(action.equals("m-prodotto")){
 				
-				String codiceProdotto = request.getParameter("codice");
-				ProdottoDAO daoP = new ProdottoDAO();
-				ProdottoBean prodotto = daoP.doRetrieveByKey(codiceProdotto);
-				request.setAttribute("prodotto", prodotto);
-				
-				CategoriaDAO daoC = new CategoriaDAO();
-				List<CategoriaBean> categorie = (List<CategoriaBean>) daoC.doRetrieveAll();
-				request.setAttribute("categorie", categorie);
-				
-				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/modificaProdotto.jsp");
-				dis.forward(request, response);
-				
+				visualizzaModificaProdotto(request, response);
 				
 			}else if(action.equals("v-ordini")) {
 				
-				OrdineDAO daoO = new OrdineDAO();
-				String dataIniziale = daoO.doRetrievePrimaData();
-				
-				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-				String dataFinale = simpleDateFormat.format(new Date());
-					
-				List<OrdineBean> ordini = (List<OrdineBean>) daoO.doRetrieveAll();
-	
-				if(ordini != null && !ordini.isEmpty())
-					request.setAttribute("ordini", ordini);
-				
-				UtenteDAO daoAcc = new UtenteDAO();
-				List<UtenteBean> utenti = (List<UtenteBean>) daoAcc.doRetrieveAll(); 
-				
-				request.setAttribute("utenti", utenti);
-				request.setAttribute("da", dataIniziale);
-				request.setAttribute("a", dataFinale);
-				
-				
-				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/ordini.jsp");
-				dis.forward(request, response);
+				visualizzaOrdini(request, response);
 				
 			}else if(action.equals("v-ordine")) {
 				
-				String num = request.getParameter("num");
-				
-				OrdineDAO ordDAO = new OrdineDAO();
-				OrdineBean ordine = ordDAO.doRetrieveByKey(num);
-				
-				if(ordine == null) {
-					
-					request.setAttribute("admin", "1");
-					response.sendError(404);
-					return;
-					
-				}
-				
-				String email = ordine.getEmail();
-				UtenteDAO utDAO = new UtenteDAO();
-				UtenteBean utente = utDAO.doRetrieveByKey(email);
-				
-				ProdottoAcquistatoDAO prodDAO = new ProdottoAcquistatoDAO();
-				List<ProdottoAcquistatoBean> prodotti = (List<ProdottoAcquistatoBean>) prodDAO.doRetrieveByOrdine(num);
-				
-				SpedizioneDAO spedDAO = new SpedizioneDAO();
-				SpedizioneBean spedizione = spedDAO.doRetrieveByOrdine(num);
-				
-				request.setAttribute("prodotti", prodotti);
-				request.setAttribute("ordine", ordine);
-				request.setAttribute("utente", utente);
-				request.setAttribute("spedizione", spedizione);
-				
-				RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/ordine.jsp");
-				dis.forward(request, response);
-				
+				visualizzaOrdine(request, response);
 				
 			}else if(action.equals("ricerca")) {
 				
-				
-				
-				String search = InputFilter.filter(request.getParameter("search"));
-				
-				Collection<ProdottoBean> coll = null;
-				
-				if(search != null && !search.equals("")) {
-				
-					ProdottoDAO prodottoDAO = new ProdottoDAO();
-					coll = RicercaProdotti.search(prodottoDAO, search);
-					
-					request.setAttribute("title", "Risultati ricerca: " + search);
-				
-				}else {
-				
-					response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
-					return;
-					
-				}
-			
-			
-				List<ProdottoBean> list = (List<ProdottoBean>) coll;
-				
-				if(list == null || list.isEmpty())
-					list = null;
-				
-				request.setAttribute("prodotti", list);
-				request.setAttribute("maxPrezzo", RicercaProdotti.maxPrezzo(list));
-				
-				CategoriaDAO daoC = new CategoriaDAO();
-				List<CategoriaBean> categorie = (List<CategoriaBean>) daoC.doRetrieveAll();
-				request.setAttribute("categorie", categorie);
-				
-				RequestDispatcher dis;
-				dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/prodotti.jsp");
-				
-				dis.forward(request, response);
-				
+				ricercaProdotti(request, response);
 				
 			}
 			
@@ -259,149 +109,26 @@ public class Amministratore extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
 		try {
-		
 		
 			String action = request.getParameter("action");
 			
 			
 			if(action.equals("c-prodotto")) {
 				
-				String nome = request.getParameter("nome");
-				String marca = request.getParameter("marca");
-				String descrizione = request.getParameter("descrizione");
-				double prezzo = Double.parseDouble(request.getParameter("prezzo"));
-				int disponibilita = Integer.parseInt(request.getParameter("disponibilita"));
-				double iva = Double.parseDouble(request.getParameter("iva"));
-				int categoria = Integer.parseInt(request.getParameter("categoria"));
-				
-				// Get the file part from the request
-	            Part filePart = request.getPart("immagine");
-
-	            // Generate a unique file name
-	            String fileName = UUID.randomUUID().toString() + extractFileName(filePart);
-	            
-	            // Define the directory where the file will be stored
-	            String uploadDir = getServletContext().getRealPath(SAVE_DIR);
-
-	            // Create the directory if it doesn't exist
-	            File dir = new File(uploadDir);
-	            if (!dir.exists()) {
-	                dir.mkdirs();
-	            }
-
-	            // Save the file to the specified directory
-	            String filePath = uploadDir + File.separator + fileName;
-	            filePath = filePath.replace("\\", "/");
-	            filePart.write(filePath);
-				
-				
-				ProdottoBean prodotto = new ProdottoBean();
-				prodotto.setNome(nome);
-				prodotto.setImmagine(SAVE_DIR + fileName);
-				prodotto.setMarca(marca);
-				prodotto.setDescrizione(descrizione);
-				prodotto.setPrezzo(prezzo);
-				prodotto.setDisponibilita(disponibilita);
-				prodotto.setIva(iva);
-				prodotto.setCategoriaID(categoria);
-				
-				
-				ProdottoDAO dao = new ProdottoDAO();
-				dao.doSave(prodotto);
-				
-				response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
+				creaProdotto(request, response);
 				
 			}else if(action.equals("m-prodotto")) {
 				
-				String codice = request.getParameter("id");		
-				String nome = request.getParameter("nome");
-				String marca = request.getParameter("marca");
-				String descrizione = request.getParameter("descrizione");
-				String prezzo = request.getParameter("prezzo");
-				String disponibilita = request.getParameter("disponibilita");
-				String iva = request.getParameter("iva");
-				String categoria = request.getParameter("categoria");
-				
-				
-				ProdottoDAO dao = new ProdottoDAO();
-				ProdottoBean prodotto = new ProdottoBean();
-				
-				prodotto.setCodiceProdotto(Integer.parseInt(codice));
-				prodotto.setNome(nome);
-				prodotto.setImmagine(null);
-				prodotto.setMarca(marca);
-				prodotto.setDescrizione(descrizione);
-				prodotto.setPrezzo(Double.parseDouble(prezzo));
-				prodotto.setDisponibilita(Integer.parseInt(disponibilita));
-				prodotto.setIva(Double.parseDouble(iva));
-				prodotto.setCategoriaID(Integer.parseInt(categoria));
-			
-				Part filePart = request.getPart("immagine");
-				
-				
-	            String fileName = extractFileName(filePart);
-				
-				if(fileName != null && !fileName.equals("")) {
-					
-					fileName = UUID.randomUUID().toString() + fileName;
-
-		            // Define the directory where the file will be stored
-		            String uploadDir = getServletContext().getRealPath(SAVE_DIR);
-
-		            // Create the directory if it doesn't exist
-		            File dir = new File(uploadDir);
-		            if (!dir.exists()) {
-		                dir.mkdirs();
-		            }
-
-		            // Save the file to the specified directory
-		            String filePath = uploadDir + File.separator + fileName;
-		            filePath = filePath.replace("\\", "/");
-		            filePart.write(filePath);
-		            
-		            prodotto.setImmagine(SAVE_DIR + fileName);
-					
-				}
-				
-				
-				dao.updateProdotto(prodotto);
-				
-				response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
-				
+				modificaProdotto(request, response);
 				
 			}else if(action.equals("m-spedizione")) {
 				
-				String corriere = request.getParameter("corriere");
-				String dataPartenza = request.getParameter("data-partenza");
-				String dataArrivo = request.getParameter("data-arrivo");
-				int numeroOrdine = Integer.parseInt(request.getParameter("numeroOrdine"));
-				
-				
-				SpedizioneBean spedizione = new SpedizioneBean();
-				
-				spedizione.setCorriere(corriere);
-				spedizione.setDataPartenza(dataPartenza);
-				spedizione.setDataArrivo(dataArrivo);
-				spedizione.setNumeroOrdine(numeroOrdine);
-				
-				SpedizioneDAO dao = new SpedizioneDAO();
-				dao.doSave(spedizione);
-				
-				OrdineDAO ordDAO = new OrdineDAO();
-				ordDAO.doUpdateStato(numeroOrdine, "Spedito");
-				
-				response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
+				modificaSpedizione(request, response);
 				
 			}else if(action.equals("r-prodotto")) {
 				
-				String codiceProdotto = request.getParameter("codice");
-				
-				ProdottoDAO dao = new ProdottoDAO();
-				dao.doDelete(codiceProdotto);
-				
-				response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
+				rimuoviProdotto(request, response);
 				
 			}else {
 				response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
@@ -416,6 +143,350 @@ public class Amministratore extends HttpServlet {
 		
 	}
 
+	
+	
+	
+	private void visualizzaCreaProdotto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException  {
+		
+		CategoriaDAO dao = new CategoriaDAO();
+		List<CategoriaBean> categorie = (List<CategoriaBean>) dao.doRetrieveAll();
+		request.setAttribute("categorie", categorie);
+		
+		RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/creaProdotto.jsp");
+		dis.forward(request, response);
+		
+	}
+	
+	
+	
+	private void visualizzaProdotti(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException {
+		
+		
+		ProdottoDAO dao = new ProdottoDAO();
+		List<ProdottoBean> prodotti = (List<ProdottoBean>) dao.doRetrieveAll();
+		request.setAttribute("prodotti", prodotti);
+		
+		CategoriaDAO daoC = new CategoriaDAO();
+		List<CategoriaBean> categorie = (List<CategoriaBean>) daoC.doRetrieveAll();
+		request.setAttribute("categorie", categorie);
+		
+		ProdottoDAO daoP = new ProdottoDAO();
+		ProdottoBean prodotto = daoP.doRetrieveMaxPrezzo();
+		request.setAttribute("maxPrezzo", prodotto.getPrezzoConIva());
+		
+		request.setAttribute("title", "Prodotti");
+		
+		RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/prodotti.jsp");
+		dis.forward(request, response);
+		
+	}
+
+	
+	private void visualizzaProdotto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException {
+		
+		String codiceProdotto = request.getParameter("codice");
+		ProdottoDAO daoP = new ProdottoDAO();
+		ProdottoBean prodotto = daoP.doRetrieveByKey(codiceProdotto);
+		
+		if(prodotto == null) {
+			
+			request.setAttribute("admin", "1");
+			response.sendError(404);
+			return;
+			
+		}
+		
+		
+		request.setAttribute("prodotto", prodotto);
+		
+		
+		int disp = prodotto.getDisponibilita();
+		String disponibilita = "";
+		String colore = "";
+		
+		disponibilita = getDisponibilita(disp);
+		colore = getColore(disp);
+		
+		
+		
+		request.setAttribute("disponibilita", disponibilita);
+		request.setAttribute("colore", colore);
+		
+		
+		RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/prodotto.jsp");
+		dis.forward(request, response);
+		
+	}
+	
+	private void visualizzaModificaProdotto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException {
+		
+		String codiceProdotto = request.getParameter("codice");
+		ProdottoDAO daoP = new ProdottoDAO();
+		ProdottoBean prodotto = daoP.doRetrieveByKey(codiceProdotto);
+		request.setAttribute("prodotto", prodotto);
+		
+		CategoriaDAO daoC = new CategoriaDAO();
+		List<CategoriaBean> categorie = (List<CategoriaBean>) daoC.doRetrieveAll();
+		request.setAttribute("categorie", categorie);
+		
+		RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/modificaProdotto.jsp");
+		dis.forward(request, response);
+		
+		
+	}
+
+	private void visualizzaOrdini(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException {
+	
+	
+		OrdineDAO daoO = new OrdineDAO();
+		String dataIniziale = daoO.doRetrievePrimaData();
+		
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String dataFinale = simpleDateFormat.format(new Date());
+			
+		List<OrdineBean> ordini = (List<OrdineBean>) daoO.doRetrieveAll();
+
+		if(ordini != null && !ordini.isEmpty())
+			request.setAttribute("ordini", ordini);
+		
+		UtenteDAO daoAcc = new UtenteDAO();
+		List<UtenteBean> utenti = (List<UtenteBean>) daoAcc.doRetrieveAll(); 
+		
+		request.setAttribute("utenti", utenti);
+		request.setAttribute("da", dataIniziale);
+		request.setAttribute("a", dataFinale);
+		
+		
+		RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/ordini.jsp");
+		dis.forward(request, response);
+	
+	}
+	
+	private void visualizzaOrdine(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException {
+		
+		String num = request.getParameter("num");
+		
+		OrdineDAO ordDAO = new OrdineDAO();
+		OrdineBean ordine = ordDAO.doRetrieveByKey(num);
+		
+		if(ordine == null) {
+			
+			request.setAttribute("admin", "1");
+			response.sendError(404);
+			return;
+			
+		}
+		
+		String email = ordine.getEmail();
+		UtenteDAO utDAO = new UtenteDAO();
+		UtenteBean utente = utDAO.doRetrieveByKey(email);
+		
+		ProdottoAcquistatoDAO prodDAO = new ProdottoAcquistatoDAO();
+		List<ProdottoAcquistatoBean> prodotti = (List<ProdottoAcquistatoBean>) prodDAO.doRetrieveByOrdine(num);
+		
+		SpedizioneDAO spedDAO = new SpedizioneDAO();
+		SpedizioneBean spedizione = spedDAO.doRetrieveByOrdine(num);
+		
+		request.setAttribute("prodotti", prodotti);
+		request.setAttribute("ordine", ordine);
+		request.setAttribute("utente", utente);
+		request.setAttribute("spedizione", spedizione);
+		
+		RequestDispatcher dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/ordine.jsp");
+		dis.forward(request, response);
+		
+	}
+
+	private void ricercaProdotti(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException {
+	
+		String search = InputFilter.filter(request.getParameter("search"));
+		
+		Collection<ProdottoBean> coll = null;
+		
+		if(search != null && !search.equals("")) {
+		
+			ProdottoDAO prodottoDAO = new ProdottoDAO();
+			coll = RicercaProdotti.search(prodottoDAO, search);
+			
+			request.setAttribute("title", "Risultati ricerca: " + search);
+		
+		}else {
+		
+			response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
+			return;
+			
+		}
+	
+	
+		List<ProdottoBean> list = (List<ProdottoBean>) coll;
+		
+		if(list == null || list.isEmpty())
+			list = null;
+		
+		request.setAttribute("prodotti", list);
+		request.setAttribute("maxPrezzo", RicercaProdotti.maxPrezzo(list));
+		
+		CategoriaDAO daoC = new CategoriaDAO();
+		List<CategoriaBean> categorie = (List<CategoriaBean>) daoC.doRetrieveAll();
+		request.setAttribute("categorie", categorie);
+		
+		RequestDispatcher dis;
+		dis = getServletContext().getRequestDispatcher("/WEB-INF/views/admin/prodotti.jsp");
+		
+		dis.forward(request, response);
+	
+	}
+	
+	private void creaProdotto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException {
+		
+		String nome = request.getParameter("nome");
+		String marca = request.getParameter("marca");
+		String descrizione = request.getParameter("descrizione");
+		double prezzo = Double.parseDouble(request.getParameter("prezzo"));
+		int disponibilita = Integer.parseInt(request.getParameter("disponibilita"));
+		double iva = Double.parseDouble(request.getParameter("iva"));
+		int categoria = Integer.parseInt(request.getParameter("categoria"));
+		
+		// Get the file part from the request
+        Part filePart = request.getPart("immagine");
+
+        // Generate a unique file name
+        String fileName = UUID.randomUUID().toString() + extractFileName(filePart);
+        
+        // Define the directory where the file will be stored
+        String uploadDir = getServletContext().getRealPath(SAVE_DIR);
+
+        // Create the directory if it doesn't exist
+        File dir = new File(uploadDir);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+
+        // Save the file to the specified directory
+        String filePath = uploadDir + File.separator + fileName;
+        filePath = filePath.replace("\\", "/");
+        filePart.write(filePath);
+		
+		
+		ProdottoBean prodotto = new ProdottoBean();
+		prodotto.setNome(nome);
+		prodotto.setImmagine(SAVE_DIR + fileName);
+		prodotto.setMarca(marca);
+		prodotto.setDescrizione(descrizione);
+		prodotto.setPrezzo(prezzo);
+		prodotto.setDisponibilita(disponibilita);
+		prodotto.setIva(iva);
+		prodotto.setCategoriaID(categoria);
+		
+		
+		ProdottoDAO dao = new ProdottoDAO();
+		dao.doSave(prodotto);
+		
+		response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
+		
+	}
+	
+	private void modificaProdotto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException {
+		
+		String codice = request.getParameter("id");		
+		String nome = request.getParameter("nome");
+		String marca = request.getParameter("marca");
+		String descrizione = request.getParameter("descrizione");
+		String prezzo = request.getParameter("prezzo");
+		String disponibilita = request.getParameter("disponibilita");
+		String iva = request.getParameter("iva");
+		String categoria = request.getParameter("categoria");
+		
+		
+		ProdottoDAO dao = new ProdottoDAO();
+		ProdottoBean prodotto = new ProdottoBean();
+		
+		prodotto.setCodiceProdotto(Integer.parseInt(codice));
+		prodotto.setNome(nome);
+		prodotto.setImmagine(null);
+		prodotto.setMarca(marca);
+		prodotto.setDescrizione(descrizione);
+		prodotto.setPrezzo(Double.parseDouble(prezzo));
+		prodotto.setDisponibilita(Integer.parseInt(disponibilita));
+		prodotto.setIva(Double.parseDouble(iva));
+		prodotto.setCategoriaID(Integer.parseInt(categoria));
+	
+		Part filePart = request.getPart("immagine");
+		
+		
+        String fileName = extractFileName(filePart);
+		
+		if(fileName != null && !fileName.equals("")) {
+			
+			fileName = UUID.randomUUID().toString() + fileName;
+
+            // Define the directory where the file will be stored
+            String uploadDir = getServletContext().getRealPath(SAVE_DIR);
+
+            // Create the directory if it doesn't exist
+            File dir = new File(uploadDir);
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+
+            // Save the file to the specified directory
+            String filePath = uploadDir + File.separator + fileName;
+            filePath = filePath.replace("\\", "/");
+            filePart.write(filePath);
+            
+            prodotto.setImmagine(SAVE_DIR + fileName);
+			
+		}
+		
+		
+		dao.updateProdotto(prodotto);
+		
+		response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
+		
+	}
+	
+	private void modificaSpedizione(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException {
+		
+		String corriere = request.getParameter("corriere");
+		String dataPartenza = request.getParameter("data-partenza");
+		String dataArrivo = request.getParameter("data-arrivo");
+		int numeroOrdine = Integer.parseInt(request.getParameter("numeroOrdine"));
+		
+		
+		SpedizioneBean spedizione = new SpedizioneBean();
+		
+		spedizione.setCorriere(corriere);
+		spedizione.setDataPartenza(dataPartenza);
+		spedizione.setDataArrivo(dataArrivo);
+		spedizione.setNumeroOrdine(numeroOrdine);
+		
+		SpedizioneDAO dao = new SpedizioneDAO();
+		dao.doSave(spedizione);
+		
+		OrdineDAO ordDAO = new OrdineDAO();
+		ordDAO.doUpdateStato(numeroOrdine, "Spedito");
+		
+		response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
+		
+	}
+	
+	private void rimuoviProdotto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException,SQLException {
+		
+		String codiceProdotto = request.getParameter("codice");
+		
+		ProdottoDAO dao = new ProdottoDAO();
+		dao.doDelete(codiceProdotto);
+		
+		response.sendRedirect(request.getContextPath() + "/Amministratore?action=v-prodotti");
+		
+	}
+		
+	
+	
+	
+	
+	
+	
 	
 	private String extractFileName(Part part) {
         String contentDisp = part.getHeader("content-disposition");
