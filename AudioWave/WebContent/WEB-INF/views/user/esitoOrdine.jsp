@@ -29,7 +29,7 @@
 					
 					<div id="mess-btn">
 						<form action='${pageContext.request.contextPath}/Home' method="GET">
-							<input type="submit" value="Torna alla Home Page" class="cta-button"/>
+							<input type="submit" value="Torna alla Home Page" class="cta-button b1"/>
 						</form>
 					</div>
 				
@@ -46,7 +46,7 @@
 					
 					<div id="mess-btn">
 						<form action='${pageContext.request.contextPath}/Home' method="GET">
-							<input type="submit" value="Torna alla Home Page" class="cta-button"/>
+							<input type="submit" value="Torna alla Home Page" class="cta-button b1"/>
 						</form>
 					</div>
 				
