@@ -1,7 +1,7 @@
 USE AudioWave;
 
-INSERT INTO Utente (email, password, nome, cognome, dataDiNascita, cellulare) VALUES ("email@gmail.com", sha2("password", 0), "Luca", "Rossi", "1995-05-07", "+39 33456765");
-INSERT INTO Utente (email, password, nome, cognome, dataDiNascita, cellulare, ruolo) VALUES ("admin@gmail.com", sha2("admin", 0), "Admin", "Rossi", "1995-05-07", "+39 334534355", "admin");
+INSERT INTO Utente (email, password, nome, cognome, dataDiNascita, cellulare) VALUES ("email@gmail.com", sha2("LucaRossi00?", 0), "Luca", "Rossi", "1995-05-07", "+39 33456765");
+INSERT INTO Utente (email, password, nome, cognome, dataDiNascita, cellulare, ruolo) VALUES ("admin@gmail.com", sha2("Admin33Admin-", 0), "Admin", "Rossi", "1995-05-07", "+39 334534355", "admin");
 
 
 INSERT INTO Categoria (nome) VALUES ("Cuffie");
