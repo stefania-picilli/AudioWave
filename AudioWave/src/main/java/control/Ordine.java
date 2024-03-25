@@ -209,7 +209,7 @@ public class Ordine extends HttpServlet {
 		if(intestatario == null || intestatario.equals(""))
 			return false;
 		
-		if(cvv == null || cvv.length() != 3)
+		if(cvv == null || (cvv.length() < 3 || cvv.length() > 4))
 			return false;
 		
 		if(scadenza == null || scadenza.equals("")) 
